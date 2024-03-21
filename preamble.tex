@@ -1,0 +1,274 @@
+% !TEX root = ./main.tex
+% --- Main packages ---
+
+\usepackage[dvipsnames]{xcolor} % Extended set of colors
+
+\usepackage{
+  amsmath, amsthm, amssymb, mathtools, dsfont, units, % Math typesetting
+  graphicx, wrapfig, subfig, float, % Figures and graphics formatting
+  listings, color, inconsolata, pythonhighlight, % Code formatting
+  fancyhdr, sectsty, hyperref, enumerate, enumitem, framed } % Headers/footers, section fonts, links, lists
+
+\usepackage{hyperref} 
+
+\usepackage{newpxtext, newpxmath, inconsolata} % Fonts
+
+% --- Page layout settings ---
+
+% Set page margins
+\usepackage[left=1.35in, right=1.35in, top=1.0in, bottom=.9in, headsep=.2in, footskip=0.35in]{geometry}
+
+% Anchor footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.2}
+
+% Set spacing between paragraphs
+\setlength{\parskip}{1.3mm}
+
+% Allow multi-line equations to break onto the next page
+\allowdisplaybreaks
+
+% --- Page formatting settings ---
+
+% Set image captions to be italicized
+\usepackage[font={it,footnotesize}]{caption}
+
+% Set link colors for labeled items (blue), citations (red), URLs (orange)
+\hypersetup{colorlinks=true, linkcolor=RoyalBlue, citecolor=RedOrange, urlcolor=ForestGreen}
+
+% Set font size for section titles (\large) and subtitles (\normalsize) 
+\usepackage{titlesec}
+\usepackage{adforn}
+\titleformat{\chapter}{\Large\bfseries}{{\fontsize{20}{21}\selectfont\adfhangingleafright}\;\;}{0em}{}
+\titleformat{\section}{\large\bfseries}{{\fontsize{14}{18}\selectfont\adfflatleafright}\;\; }{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries\selectfont}{{\fontsize{12}{16}\selectfont\adfoutlineleafright}\;\;}{0em}{}
+
+% Enumerated/bulleted lists: make numbers/bullets flush left
+%\setlist[enumerate]{wide=2pt, leftmargin=16pt, labelwidth=0pt}
+\setlist[itemize]{wide=0pt, leftmargin=16pt, labelwidth=10pt, align=left}
+
+% --- Table of contents settings ---
+
+\setcounter{tocdepth}{1} 
+\usepackage[subfigure]{tocloft}
+
+% Reduce spacing between sections in table of contents
+\setlength{\cftbeforesecskip}{.9ex}
+
+% Remove indentation for sections
+\cftsetindents{chapter}{0em}{0em}
+\cftsetindents{section}{0em}{0em}
+
+% Set font size (\large) for table of contents title
+\renewcommand{\cfttoctitlefont}{\large\bfseries}
+
+% Remove numbers/bullets from section titles in table of contents
+\makeatletter
+\renewcommand{\cftsecpresnum}{\begin{lrbox}{\@tempboxa}}
+\renewcommand{\cftsecaftersnum}{\end{lrbox}}
+\makeatother
+
+\makeatletter
+\renewcommand{\cftchappresnum}{\begin{lrbox}{\@tempboxa}}
+\renewcommand{\cftchapaftersnum}{\end{lrbox}}
+\makeatother
+
+% --- Math/Statistics commands ---
+
+% Add a reference number to a single line of a multi-line equation
+% Usage: "\numberthis\label{labelNameHere}" in an align or gather environment
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% Shortcut for bold text in math mode, e.g. $\b{X}$
+\let\b\mathbf
+
+% Shortcut for bold Greek letters, e.g. $\bg{\beta}$
+\let\bg\boldsymbol
+
+% Shortcut for calligraphic script, e.g. %\mc{M}$
+\let\mc\mathcal
+
+% --- Left/right header text (to appear on every page) ---
+
+% Do not include a line under header or above footer
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0pt}
+
+% Right header text: Lecture number and title
+\renewcommand{\sectionmark}[1]{\markright{#1} }
+\fancyhead[R]{\small\textit{\nouppercase{\rightmark}}}
+
+% Left header text: Short course title, hyperlinked to table of contents
+\fancyhead[L]{\hyperref[sec:contents]{\small HE-AP Th}}
+
+% Add bibliography to TOC
+\usepackage[nottoc,numbib]{tocbibind}
+
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{aas_macros}
+\usepackage{booktabs}
+%\usepackage{calc}
+\usepackage{cancel}
+%\usepackage{empheq}
+%\usepackage{enumitem}
+%\usepackage{fancyhdr}
+%\usepackage{framed}
+%\usepackage{fullpage}
+%\usepackage[margin=3cm]{geometry}
+%\usepackage[utf8]{inputenc}
+%\usepackage{lastpage}
+%\usepackage{mathabx}
+%\usepackage{mathrsfs}
+%\usepackage{mdframed}
+%\usepackage{multicol}
+%\usepackage{multirow}
+\usepackage{physics}
+%\usepackage{setspace}
+%\usepackage[most]{tcolorbox}
+%\usepackage{todonotes}
+%\usepackage{wrapfig}
+%%\usepackage[table]{xcolor}
+%
+%\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+%\colorlet{shadecolor}{orange!15}
+%\parindent 0in
+%\parskip 12pt
+%\geometry{margin=1in, headsep=0.25in}
+%
+%\theoremstyle{definition}
+%\newtheorem{defn}{Definition}
+%\newtheorem{reg}{Rule}
+%\newtheorem{exer}{Exercise}
+%\newtheorem{note}{Note}
+%\newtheorem{tbd}{Demonstration}
+%
+%\linespread{1.1}
+%
+%\usepackage{sectsty}
+%\sectionfont{\large}
+%
+%\usepackage{hyperref}
+%\hypersetup{
+%    colorlinks,
+%    citecolor=red,
+%    filecolor=red,
+%    linkcolor=blue,
+%    urlcolor=red
+%}
+
+\newcommand\drsh{\rotatebox[origin=c]{180}{$\Lsh$}}
+
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} 
+
+% theorems
+\makeatother
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+\theoremstyle{definition}
+
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{ForestGreen!70!black}, bodyfont=\normalfont,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
+%    }
+%]{thmgreenbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue, backgroundcolor=NavyBlue!5,
+    }
+]{thmbluebox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue
+    }
+]{thmblueline}
+
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=RawSienna, backgroundcolor=RawSienna!5,
+%    }
+%]{thmredbox}
+%
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+%    numbered=no,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=RawSienna, backgroundcolor=RawSienna!1,
+%    },
+%    qed=\qedsymbol
+%]{thmproofbox}
+%
+%\declaretheoremstyle[
+%    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+%    numbered=no,
+%    mdframed={
+%        linewidth=2pt,
+%        rightline=false, topline=false, bottomline=false,
+%        linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
+%    },
+%]{thmexplanationbox}
+
+%\declaretheorem[style=thmgreenbox, name=Definition]{definition}
+\declaretheorem[style=thmbluebox, numbered=no, name=Problem]{problem}
+%\declaretheorem[style=thmredbox, name=Proposition]{prop}
+%\declaretheorem[style=thmredbox, name=Theorem]{theorem}
+%\declaretheorem[style=thmredbox, name=Lemma]{lemma}
+%\declaretheorem[style=thmredbox, numbered=no, name=Corollary]{corollary}
+
+%\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
+%\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+%\declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
+%\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
+%\declaretheorem[style=thmredbox, numbered=no]{remark}
+
+\newmdenv[  
+topline=false,  
+rightline=false,  
+bottomline=false,  
+leftline=true,  
+linecolor=RawSienna!95!black,  
+linewidth=3pt,  
+backgroundcolor=RawSienna!10,  
+]{remark} 
+
+\declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
+
+% new \oset macro:
+\makeatletter
+\newcommand{\oset}[3][1.4ex]{%
+  \mathrel{\mathop{#3}\limits^{
+    \vbox to#1{\kern-2\ex@
+    \hbox{$\scriptstyle#2$}\vss}}}}
+\makeatother
+
+%\newtheorem*{uovt}{UOVT}
+%\newtheorem*{notation}{Notation}
+%\newtheorem*{previouslyseen}{As previously seen}
+%\newtheorem*{problem}{Problem}
+%\newtheorem*{observe}{Observe}
+%\newtheorem*{property}{Property}
+%\newtheorem*{intuition}{Intuition}
