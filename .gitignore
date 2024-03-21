@@ -1,7 +1,8 @@
 *.DS_Store
-lectures.aux
-lectures.log
-lectures.out
-lectures.pdf
-lectures.synctex.gz
-lectures.toc
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg

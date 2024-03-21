@@ -17,7 +17,7 @@ exercises.pdf: exercises.tex 2024-hea.bib
 	xelatex exercises
 
 clean:
-	rm -f *.aux *.log *.out	*.bbl *.blg *.toc
+	rm -fv *.aux *.log *.out *.bbl *.blg *.toc *.synctex.gz
 
 distclean:
-	rm -f *.pdf
+	rm -fv *.pdf
