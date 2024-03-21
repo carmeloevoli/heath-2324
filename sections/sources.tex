@@ -1,23 +1,4 @@
 % !TEX root = ../main.tex
-%\section{Waves}
-%
-%Waves are ubiquitous in magnetized plasmas. Just as sound waves are ubiquitous in air
-%
-%Waves are the simplest way that a system responds to disturbances and applied forces
-%
-%Waves propagate information and energy through a system 
-%
-%Waves are closely related to shocks, instabilities, and turbulence
-%
-%Plasmas display a rich variety of waves within and beyond MHD
-%
-% Waves are disturbances in the fluid quantities such as density and pressure that travel through space. They can transport energy and momentum.
-%
-%Whenever a plasma is disturbed, there will be waves! 
-%
-%In particular relevant role in cosmic ray acceleration and transport
-
-%%% BEGIN CGPT %%%
 \section{Small Perturbations in a Fluid: Sound Waves}
 
 In fluid dynamics, we often encounter scenarios where disturbances in the fluid are \emph{small} compared to the equilibrium values of a steady state solution. 
@@ -191,27 +172,8 @@ It is crucial to note that the group velocity \( V_g \) is equal to the phase ve
 
 Furthermore, these waves are compressional because \( \nabla \cdot \delta \vb v \ne 0 \), indicating that they involve variations in volume and density as they propagate through the medium.
 
-%Key properties of these waves include their phase velocity (\( V_p \)) and group velocity (\( V_g \)):
-%
-%1. **Phase Velocity (\( V_p \)):** This is the rate at which the phase of the wave propagates through space, defined as \( V_p = \frac{\omega}{k} \). For sound waves in our context, this equates to the speed of sound (\( c_s \)).
-%
-%2. **Group Velocity (\( V_g \)):** This represents the rate at which the overall shape of the waves’ amplitudes—essentially, the envelope of the wave—propagates through space. It is given by \( V_g = \frac{\partial \omega}{\partial k} \), which also equals the speed of sound (\( c_s \)) in our case.
-
 In summary, any solution of the wave equation, and thus any generic small perturbation in the fluid, can be expressed as a linear combination of plane waves, each described by the equation above and satisfying the dispersion relation. These solutions encapsulate the essence of what we term as \emph{sound waves}.
 
-%%%
-
-%Furthermore, we deduce that \( c_{s,0} \), the sound speed,  This relationship underscores the dependence of sound speed on the medium's properties, encapsulated in the specific form of the equation of state.
-
-%Assume an adiabatic equation of state \( P = K \rho^\gamma \) where for a monoatomic gas \( \gamma = \frac{5}{3} \)
-%
-%\[
-%\delta P = \left( \frac{\partial P}{\partial \rho} \right)_s \delta \rho = \frac{\gamma P}{\rho} \delta \rho \equiv c_s^2 \delta \rho
-%\]
-%
-%where \( c_s \) is the sound speed, as we are in regime of small perturbations \( c_{s,0}^2 = \frac{\gamma P_0}{\rho_0} \).
-%Viscosity is ignored
- 
 \begin{problem}
 Derive Gravity waves
 \end{problem}
@@ -238,7 +200,6 @@ Consider a waveform as the solution found beforehand. Since this crest represent
 %Ultimately, the gradients of pressure, density, temperature and velocity becomes so large that dissipative processes (viscosity) are no longer negligible
 %Then a steady wave-shape is attained, called a shock wave, with a balance between the steepening effect of nonlinear convective terms and broadening effect of dissipation.
 
-
 From this phenomenon, we can glean some insights into the nature of shock waves:
 %
 \begin{itemize}
@@ -246,14 +207,6 @@ From this phenomenon, we can glean some insights into the nature of shock waves:
 \item The transition to shock wave conditions occurs more rapidly than the medium can adjust or respond to the change.
 \item As the shock wave's speed exceeds any signal-bearing speed in the medium, the pre-shock region remains unaware of the impending disturbance. Thus, the alterations in fluid properties (such as density, temperature, and velocity) occur so abruptly that they manifest as discontinuities in these fluid variables.
 \end{itemize}
-
-
-%%% END CGPT
-
-%Slightly non-linear sound waves will steepen to form a discontinuity. formation of a discontinuity.
-%In most cases a shock involves a “discontinuous” change of fluid properties over a scale ∼ λ.
-%Example of supernova remnant shocks PLOTS.
-%The speed of propagation is higher at higher temperature, so the crest of the wave gradually overtakes the trough (T ∝ ργ−1).
 
 %What are places where astrophysical shocks occur?
 %
@@ -271,18 +224,11 @@ From this phenomenon, we can glean some insights into the nature of shock waves:
 \caption{}
 \end{figure}
 
-%%% CGPT
 Hydrodynamics often presents discontinuous solutions, meaning that there exist surfaces where physical quantities change abruptly. Mathematically, this is represented by differing values at the left and right limits of a point. However, physically, this discontinuity is not infinitely sharp as suggested in mathematical theory; rather, the change occurs over a region smaller than all other physical scales involved. 
 %
 A \emph{shock} is a specific type of discontinuity characterized by a surface that separates two fluid regions with differing properties. Importantly, this surface allows for the transfer of mass, momentum, and energy across it.
 
 As seen beforehand, shocks are a natural consequence in the non-linear regime of fluid dynamics or magnetohydrodynamics (MHD).
-
-%When the fluid perturbation is so small that linear theory applies, a
-%disturbance propagates as a sound wave.{\color{red}Put in appendix sound waves a la Kachelriess?} The wave profile maintains a fixed shape, since each part of wave moves with the same speed.
-%But when a disturbance within a fluid grows significantly, the non-linear terms become dominant. This leads to the wave's crest moving faster than its edges, resulting in a steeper wavefront and, eventually, the formation of a shock. 
-%
-%As a consequence, the shock wave moves at a speed in excess of the sound speed, so information cannot be propagated ahead to signal its imminent arrival.
 
 Shocks are especially relevant in astrophysics; the gas post-shock emits significantly more than pre-shock gas, making these events more detectable.
 
@@ -461,7 +407,6 @@ The plasma behind the shock is
 \item Heated \( T_2 \ll T_1 \)
 \end{itemize}
 \end{remark}
-%%% CGPT
 
 The transformation of inflow kinetic energy into thermal energy in shock waves is accompanied by the generation of entropy. The key to this transformation is the collisions among particles within the shock wave. These collisions convert the ordered bulk kinetic energy, where particle velocities are aligned, into disordered internal kinetic energy, or heat.
 
@@ -503,13 +448,6 @@ Notice then that the non trivial solution makes sense only if the Mach number $M
 %
 In other words we would have invented a system to transform heat in ordered work! Shocks can only form in supersonic motion.
 
-%Rankine-Hugoniot conditions give macroscopic description of shock.
-
-%Energy exchange through electromagnetic interactions (wave-particle inter- actions/reflection). Typical shock scale is thermal particle Larmor radius (a few 100 to 1000 km).
-
-%Particles carrying more energy (injection problem) have larger Larmor radius, and see shock as discontinuity.
-
-
 \subsection{Supernovae in the Milky Way}
 
 Historical SNe: Kepler 1604, {\color{red}Tycho SNR 1572}, SN1006 SNR, Cas A 1680?
@@ -534,38 +472,6 @@ We distinguish between:
 \item Total disruption of star
 \end{itemize}
 \end{itemize}
-
-%Supernova are last phase of the evolution of some stars->huge increase of the star’s luminosity. Show SN 1994D.
-%
-%Chinese astronomers (and others) reported on the appearance of bright stars. Crab SNR (1059).
-%
-%All ALL recorded SNe associated with SNRs in the MW
-%
-%extragalactic SNe + studies of galactic stellar population -> ~3 SN/century in the MW
-%
-%~1/200 yr -> obscured by interstellar dust
-%
-%. VVhen these massive stars die, they
-%explode as supernovae, releasing about 1051 erg of energy into the
-%surrounding medium in ejecta moving at velocities of up to 104 km
-%
-%About 104 years later, the remnant of a supernova may look like
-%the Veil Nebula in Cygnus (part of the Cygnus Loop supernova
-%remnant), which is expanding at several hundred kilometers per
-%second. Radio and infrared observations have shown that there is
-%another type of nebula that is normally obscured from our eyes by
-%interstellar dust: high-velocity molecular flows from newly forming
-%stars, which have typical injection velocities of order 200 km s- 1.
-%The effect of this energy injection depends on the velocity of the
-%injected mass relative to the sound speed in the ambient medium.
-%
-%zoology of SNe.
-
-%{\color{red}Energy budget \( | E_grav = 3/5 GM_c^2/R_c \simeq 10^{53} \)~erg, 99\% into neutrinos's and 1\% into mechanical energy Same source for supernovae (Ib/Ic and II),
-%- Explosion powered by the collapse (death) of a massive core
-%- Energy source: Potential Energy from the collapse of the iron core down to a neutron star or black hole:Mcore ~ 1.4-3 solar masses
-%RNS,BH ~ 10 km
-%Rcore ~ 10,000 km} 
 
 \section{Dynamical Evolution of Supernova Remnants}
 
@@ -597,11 +503,6 @@ R_s & = & v_0 t
 \end{eqnarray*}
 
 This phase is characterized by the shock wave expanding outward at a constant velocity, unimpeded by the surrounding medium.
- 
- %%%
- 
-% supernova che possiamo considerare come il rilascio improvviso di energia E in un volume trascurabile per r “ 0 e t “ 0. Se il mezzo esterno `e omogeneo e statico (⇢0 “ cost., ~v0 “ 0), il moto dell’onda d’urto che si genera per r “ 0 sar`a radialmente simmetrico. Suppo- nendo poi che il mezzo sia ”freddo” (T0 “ 0, ovvero temperatura trascurabile rispetto al mezzo post-shock), possiamo trovare la forma delle soluzioni con argomenti di auto-similarita` usando soltanto i dati a disposizione, ovvero E e ⇢0. Vogliamo ottenere Rsptq e Vsptq ovvero il raggio dell’onda d’urto e la sua velocita` in funzione del tempo.
-%
  
 The free expansion phase remains valid under the condition that the mass \( M_{\rm sw} \) swept up by the shock is negligible compared to the mass \( M_{\rm ej} \) of the ejecta:
 %
@@ -731,8 +632,4 @@ t_{\rm S} \simeq 2 \times 10^4 \left( \frac{E_{\rm SN}}{10^{51}~\text{erg}}\righ
 R_{\rm S} \simeq 20 \left( \frac{E_{\rm SN}}{10^{51}~\text{erg}} \right)^{1/14} \left( \frac{n_0}{\text{cm}^{-3}} \right)^{1/7}~\text{km}~\text{s}^{-1}
 \]
 
-%      The energies stay approximately constant over this phase, with only slight adjustment in kinetic and thermal energies once they reach the equilibrium value. The distinction between the shell and the bubble is not rigorous during this phase, since the thin shell has not yet formed. Therefore, the values associated with the shell or the bubble should be taken with caution. It is clear from the plots that the dynamical behavior of the SNR is not influenced until the cooling is near the maximum.
-
-%  Toward the end of the Sedov-Taylor phase, the effect of cooling in the density-enhanced shock front region gradually becomes significant and begins to influence the dynamical evolution. The pressure just behind the shock front decreases due to the temperature drop
-
-% https://iopscience.iop.org/article/10.1086/305704/fulltext/36680.text.html
+%%% https://iopscience.iop.org/article/10.1086/305704/fulltext/36680.text.html
