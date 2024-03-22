@@ -10,7 +10,7 @@ Exercises solved (✅) and work in progress (🤔):
 - 🤔 Diffuse Synchrotron Emission from Galactic Cosmic Ray Electrons
 - ✅ Synchrotron energetics and Electron Cooling
 - ✅ Energy Loss and Diffusion of Electrons in the Galactic Environments
-- 🤔 Characteristic Energy Loss Time for Cosmic Ray Electrons
+- ✅ Characteristic Energy Loss Time for Cosmic Ray Electrons
 - ✅ Low diffusivity around TeV halos
 - 🤔 Constraints on the ExtraGalactic Background Light from very-high-energy observations of blazars
 - ✅ Universe reionization
