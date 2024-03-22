@@ -13,7 +13,7 @@ Exercises solved (✅) and work in progress (🤔):
 - 🤔 Characteristic Energy Loss Time for Cosmic Ray Electrons
 - ✅ Low diffusivity around TeV halos
 - 🤔 Constraints on the ExtraGalactic Background Light from very-high-energy observations of blazars
-- 🤔 Universe reionization
+- ✅ Universe reionization
 - 🤔 Luminosity Ratio of Cosmic Ray Protons and Electrons
 - ✅ Threshold of UHECR Photo-Disintegration
 - 😱 Threshold of Anti-proton secondary production
