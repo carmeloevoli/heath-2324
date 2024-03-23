@@ -1,8 +1,12 @@
-.PHONY: lectures exercises clean distclean
+FIG_FILES := $(shell echo "figures/*") 
+BIB_FILES := $(shell echo "*.bib")
+LECTURE_FILES := $(shell echo "sections/*.tex") 
+PROBLEM_FILES := $(shell echo "problems/*.tex") 
 
-lectures: lectures.pdf
 
-lectures.pdf: lectures.tex 2024-hea.bib
+lectures: lectures.pdf 
+
+lectures.pdf: lectures.tex $(LECTURE_FILES) $(FIG_FILES) $(BIB_FILES)
 	xelatex lectures
 	bibtex lectures
 	xelatex lectures
@@ -10,14 +14,22 @@ lectures.pdf: lectures.tex 2024-hea.bib
 
 exercises: exercises.pdf
 
-exercises.pdf: exercises.tex 2024-hea.bib
+exercises.pdf: exercises.tex $(PROBLEM_FILES) $(FIG_FILES) $(BIB_FILES)
 	xelatex exercises
 	bibtex exercises
 	xelatex exercises
 	xelatex exercises
 
 clean:
-	rm -fv *.aux *.log *.out *.bbl *.blg *.toc *.synctex.gz
+	-rm -fv *.aux
+	-rm -fv *.log 
+	-rm -fv *.out 
+	-rm -fv *.bbl 
+	-rm -fv *.blg 
+	-rm -fv *.toc 
+	-rm -fv *.synctex.gz
 
-distclean:
-	rm -fv *.pdf
+cleanall: clean
+	-rm -fv *.pdf
+
+.PHONY: lectures exercises clean cleanall
