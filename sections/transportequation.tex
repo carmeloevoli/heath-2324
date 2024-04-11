@@ -1,4 +1,4 @@
-% !TEX root = ../main.tex
+% !TEX root = ../lectures.tex
 \section{The Advection-Diffusion Equation}
 
 Consider a beam of particles exhibiting a range of pitch angles. We aim to understand the evolution of this beam due to resonance effect introduced before. 
@@ -105,7 +105,7 @@ By Taylor expanding this expression, we further elucidate its implications:
 Integrating equation~\eqref{eq:detbalexp} over \(d\Delta\mu\) and using the general property in equation~\eqref{eq:normpsi}:
 %
 \begin{equation}
--\frac{\partial}{\partial \mu} \left( \int d\Delta\mu \Psi \Delta\mu \right) + \frac{1}{2}\frac{\partial^2}{\partial\mu^2}\left( \int d\Delta\mu \Delta\mu^2 \Psi \right) = 0
+-\frac{\partial}{\partial \mu} \left( \int d\Delta\mu \Psi \Delta\mu \right) + \frac{1}{2}\frac{\partial^2}{\partial\mu^2}\left( \int d\Delta\mu \Delta\mu^2 \Psi \right) = \cancelto{1}{\int d\Delta\mu \Psi(\mu, -\Delta\mu )} - \cancelto{1}{\int d\Delta\mu \Psi(\mu,\Delta\mu)} = 0
 \end{equation}
 %
 we recognize that we can write as:
@@ -118,12 +118,13 @@ we recognize that we can write as:
 \frac{\partial}{\partial\mu}\left[ \mathcal A-\frac{1}{2}\frac{\partial \mathcal B}{\partial \mu}\right] = 0
 \end{equation}
 
-It implies that the quantity \( \mathcal A - \frac{1}{2} \frac{\partial \mathcal B}{\partial \mu} \) must be a constant with respect to \( \mu \).  
+It implies that the quantity \( \mathcal A - \frac{1}{2} \frac{\partial \mathcal B}{\partial \mu} \) must be a \emph{constant} with respect to \( \mu \).  
 
 We compute explicitly the derivative of \( \mathcal B \) with respect to \( \mu \) as
 %
 \begin{equation}
 \frac{\partial B}{\partial \mu} = \frac{\partial}{\partial\mu} \int d\Delta\mu \Delta\mu\Delta\mu \Psi(\mu,  \Delta\mu)
+=   \int d\Delta\mu \Delta\mu\Delta\mu \frac{\partial}{\partial\mu} \Psi(\mu,  \Delta\mu)
 \end{equation}
 
 By invoking the principle of detailed balance again, we obtain:
