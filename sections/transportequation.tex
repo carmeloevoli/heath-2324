@@ -129,20 +129,35 @@ We compute explicitly the derivative of \( \mathcal B \) with respect to \( \mu 
 
 By invoking the principle of detailed balance again, we obtain:
 %
+{\color{red}\begin{equation}
+\frac{\partial\Psi}{\partial\mu}(\mu,\Delta\mu) = 
+%\frac{\partial\Psi}{\partial\mu}(\mu-\Delta\mu,\Delta\mu)=
+\frac{\partial\Psi}{\partial\mu}(\mu+\Delta\mu ,-\Delta\mu) = 
+-\frac{\partial}{\partial \Delta\mu} \Psi(\mu+\Delta\mu, -\Delta\mu)
+\end{equation}}
+
+%We introduce a new variable \( \mu^\prime = \mu+\Delta\mu \), which leads to \( \Delta\mu = \mu^\prime -\mu \) and:
+%%
+%\begin{equation}\label{eq:newmuequation}
+%\frac{\partial\Psi}{\partial\mu}(\mu,\Delta\mu) = \frac{\partial\Psi}{\partial\mu}(\mu^\prime, \mu - \mu^\prime) = 
+%\end{equation}
+
+Incorporating this into the definition of $\frac{\partial B}{\partial \mu}$, we find:
+%
 \begin{equation}
-\frac{\partial\Psi}{\partial\mu}(\mu,\Delta\mu) = \frac{\partial\Psi}{\partial\mu}(\mu-\Delta\mu,\Delta\mu)=\frac{\partial\Psi}{\partial\mu}(\mu+\Delta\mu ,-\Delta\mu)
+\frac{\partial \mathcal B}{\partial \mu} = - \int d\Delta\mu \Delta\mu\Delta\mu \frac{\partial}{\partial \Delta\mu} \Psi(\mu+\Delta\mu, -\Delta\mu)
 \end{equation}
 
-We introduce a new variable \( \mu^\prime = \mu+\Delta\mu \), which leads to \( \Delta\mu = \mu^\prime -\mu \) and:
-%
-\begin{equation}\label{eq:newmuequation}
-\frac{\partial\Psi}{\partial\mu}(\mu,\Delta\mu) = \frac{\partial\Psi}{\partial\mu}(\mu^\prime, \mu - \mu^\prime) = -\frac{\partial}{\partial \Delta\mu} \Psi(\mu+\Delta\mu, -\Delta\mu)
-\end{equation}
-
-Incorporating this into the definition of $\frac{\partial B}{\partial \mu}$ and using equation~\ref{eq:newmuequation}, we find:
+Integrating by parts, we find:
 %
 \begin{equation}
-\frac{\partial \mathcal B}{\partial \mu} = 2 \mathcal A
+\frac{\partial \mathcal B}{\partial \mu} = \int d\Delta\mu \Psi(\mu+\Delta\mu, -\Delta\mu) \frac{\partial}{\partial \Delta \mu} (\Delta\mu\Delta\mu) =  2 \int d\Delta\mu \Delta\mu \Psi(\mu+\Delta\mu, -\Delta\mu)
+\end{equation}
+
+Finally, invoking again the property of the detailed balance: 
+%
+\begin{equation}
+\frac{\partial \mathcal B}{\partial \mu} = 2 \int d\Delta\mu \Delta\mu \Psi(\mu, \Delta\mu) = 2 \mathcal A
 \end{equation}
 
 Substituting this back into the equation~\ref{eq:fwithawithb} governing \( f \), we arrive at:
