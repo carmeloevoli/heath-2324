@@ -1,6 +1,20 @@
-# HEA-Th Lecture Notes 
+# Lecture Notes on Theoretical High-Energy Astrophysics 
 
-This page contains material supporting the High-Energy Astroparticle Theory course A.Y. 2023/24 at GSSI.
+This course provides a comprehensive introduction to cosmic ray physics and astrophysics, covering the propagation of charged particles in turbulent magnetic fields, with diffusion as a natural implication. We will derive and utilize the transport (advection-diffusion) equation to describe cosmic ray propagation in the Galaxy and particle acceleration at shock waves. We will also outline key particle interactions and energy loss mechanisms in the Galactic and Extra-galactic environments, shaping cosmic ray spectra and producing secondary species like gamma rays, neutrinos, and antiparticles, which serve as diagnostic tools in multi-messenger astrophysics.
+
+## Syllabus
+
+The course is divided into three parts:
+
+## Suggested textbooks
+
+The course material will be drawn from a combination of textbooks, journal literature, and my own lecture notes. The following textbooks provide excellent topical coverage:
+
+- Radiative processes in astrophysics, G.B. Rybicki and A.P. Lightman, Wiley, 1979
+- Foundations of High-Energy Astrophysics, M. Vietri, University of Chicago Press, 2008
+- High-energy radiation from Black Holes, C.D. Dermer, and G. Menon, Princeton University Press, 2009
+- Cosmic Rays and Particle Physics, T.K. Geisser, R. Engel, and E. Resconi, Cambridge University Press, 2016
+
 
 - [lectures](files/CEvoli_HEATh24_lectures.pdf)
 - [exercises](files/CEvoli_HEATh24_exercises.pdf)
