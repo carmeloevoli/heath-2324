@@ -21,10 +21,9 @@ Lecture notes can be found [here](https://carmeloevoli.github.io/heath-2324/file
 
 For feedback or to report any mistakes, please use the GitHub [issues](https://github.com/carmeloevoli/heath-2324/issues)
 
-- [lectures](files/CEvoli_HEATh24_lectures.pdf)
+## Proposed exercises
 
-
-- [exercises](files/CEvoli_HEATh24_exercises.pdf)
+Exercise sets are available as a single booklet [here](https://carmeloevoli.github.io/heath-2324/files/CEvoli_HEATh24_exercises.pdf)
 
 Exercises solved (✅) and work in progress (🤔):
 
