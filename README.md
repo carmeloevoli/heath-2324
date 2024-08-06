@@ -4,7 +4,7 @@ This course provides a comprehensive introduction to cosmic ray physics and astr
 
 ## Syllabus
 
-The course is divided into three parts:
+A detailed syllabus can be found [here](#).
 
 ## Suggested textbooks
 
@@ -15,8 +15,15 @@ The course material will be drawn from a combination of textbooks, journal liter
 - High-energy radiation from Black Holes, C.D. Dermer, and G. Menon, Princeton University Press, 2009
 - Cosmic Rays and Particle Physics, T.K. Geisser, R. Engel, and E. Resconi, Cambridge University Press, 2016
 
+## Lecture Notes
+
+Lecture notes can be found [here](https://carmeloevoli.github.io/heath-2324/files/CEvoli_HEATh24_lectures.pdf)
+
+For feedback or to report any mistakes, please use the GitHub [issues](https://github.com/carmeloevoli/heath-2324/issues)
 
 - [lectures](files/CEvoli_HEATh24_lectures.pdf)
+
+
 - [exercises](files/CEvoli_HEATh24_exercises.pdf)
 
 Exercises solved (✅) and work in progress (🤔):
