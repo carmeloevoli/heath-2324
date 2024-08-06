@@ -11,6 +11,7 @@ lectures.pdf: lectures.tex $(LECTURE_FILES) $(FIG_FILES) $(BIB_FILES)
 	bibtex lectures
 	xelatex lectures
 	xelatex lectures
+	cp lectures.pdf files/CEvoli_HEATh24_lectures.pdf
 
 exercises: exercises.pdf
 
@@ -19,6 +20,7 @@ exercises.pdf: exercises.tex $(PROBLEM_FILES) $(FIG_FILES) $(BIB_FILES)
 	bibtex exercises
 	xelatex exercises
 	xelatex exercises
+	cp exercises.pdf files/CEvoli_HEATh24_exercises.pdf
 
 clean:
 	-rm -fv *.aux
