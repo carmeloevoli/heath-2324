@@ -61,22 +61,22 @@
 \setlength{\cftbeforesecskip}{.9ex}
 
 % Remove indentation for sections
-\cftsetindents{chapter}{0em}{0em}
-\cftsetindents{section}{0em}{0em}
+%\cftsetindents{chapter}{0em}{10em}
+%\cftsetindents{section}{0em}{10em}
 
 % Set font size (\large) for table of contents title
 \renewcommand{\cfttoctitlefont}{\large\bfseries}
 
 % Remove numbers/bullets from section titles in table of contents
-\makeatletter
-\renewcommand{\cftsecpresnum}{\begin{lrbox}{\@tempboxa}}
-\renewcommand{\cftsecaftersnum}{\end{lrbox}}
-\makeatother
-
-\makeatletter
-\renewcommand{\cftchappresnum}{\begin{lrbox}{\@tempboxa}}
-\renewcommand{\cftchapaftersnum}{\end{lrbox}}
-\makeatother
+%\makeatletter
+%\renewcommand{\cftsecpresnum}{\begin{lrbox}{\@tempboxa}}
+%\renewcommand{\cftsecaftersnum}{\end{lrbox}}
+%\makeatother
+%
+%\makeatletter
+%\renewcommand{\cftchappresnum}{\begin{lrbox}{\@tempboxa}}
+%\renewcommand{\cftchapaftersnum}{\end{lrbox}}
+%\makeatother
 
 % --- Math/Statistics commands ---
 
