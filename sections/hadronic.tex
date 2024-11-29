@@ -240,10 +240,11 @@ where the final expression holds true at very high energies, a regime in which t
 
 Even at this early stage, we can note that the gamma-ray spectrum maintains the same spectral index as the protons, albeit shifted in energy by a factor of approximately \( K_\pi / 2 \).
 
-To advance,  let us calculate the pion emissivity by moving beyond the delta-function approximation as follows:
+To advance, let us calculate the pion emissivity by moving beyond the delta-function approximation as follows:
 %
 \begin{equation}
-q(E_\pi) = c n_{\rm H} \int_{E_\pi}^\infty dE_p N_p (E_p) \frac{d\sigma}{dE_\pi}(E_p, E_\pi)
+q(E_\pi) = c n_{\rm H} \int_{E_\pi}^\infty dE_p N_p (E_p) \frac{d\sigma}{dE_\pi}(E_p, E_\pi) 
+= 4 \pi n_{\rm H} \int_{E_\pi}^\infty dE_p I_p (E_p) \frac{d\sigma}{dE_\pi}(E_p, E_\pi)
 \end{equation}
 %
 where $\frac{d\sigma}{dE_\pi}$ is the differential pion production cross section, $n_{\rm H}$ is the average matter density, \dots
@@ -254,11 +255,17 @@ The \emph{differential} cross-section for pion production in proton-proton inter
 \frac{d\sigma}{dE_\pi}(E_p, E_\pi) = \sigma_{pp}(E_p) \frac{f(E_p, E_\pi)}{E_\pi} \simeq \sigma_{0} \frac{f(E_p, E_\pi)}{E_\pi} 
 \end{equation}
 
-Here, \(f\) is an auxiliary function designed to fit experimental data, fulfilling the condition $\int_{E_{\rm \pi,min}}^{E_{\rm \pi,max}} \frac{dE_\pi}{E_\pi} f(E_p, E_\pi) = 1$. 
+Here, \(f\) is an auxiliary function designed to fit experimental data, fulfilling the condition 
+%
+\begin{equation}
+\int_{E_{\rm \pi,min}}^{E_{\rm \pi,max}} \frac{dE_\pi}{E_\pi} f(E_p, E_\pi) = 1. 
+\end{equation}
+%
+~\TODO{Should it be the K?}
 %
 Moreover, it has been observed that $f$ depends on \(E_p\) and \(E_\pi\) through the combined parameter \(x = E_\pi / E_p\). 
 
-A parametrization of \(f(x)\) is provided in the literature~\cite{Cavasinni2006aph}:
+A parametrization of \(f(x)\) is provided in the literature~\cite{Berezinskii1988sal}:
 %
 \begin{equation}
 f(x) = 0.67 (1-x)^{3.5} + 0.5 \exp(-18 x)
@@ -267,26 +274,31 @@ f(x) = 0.67 (1-x)^{3.5} + 0.5 \exp(-18 x)
 The proton intensity, as observed in cosmic radiation, is assumed to adhere to a power-law dependence on energy
 %
 \begin{equation}
-I_p(E_p) = I_0 \left(\frac{E_p}{E_0}\right)^{-\alpha}
+I_p(E_p) = I_{10} \left(\frac{E_p}{E_{10}}\right)^{-\alpha}
 \end{equation}
+%
+where \dots
 
 Upon substitution, the pion emissivity simplifies to
 %
 \begin{equation}
-q(E_\pi) \simeq 4 \pi n_{\rm H} I_0 \sigma_0 \int_{E_\pi}^\infty \frac{dE_p}{E_\pi} \left(\frac{E_p}{E_0} \right)^{-\alpha} f(x) = 4 \pi n_{\rm H} I_0 \sigma_0 \left(\frac{E_\pi}{E_0} \right)^{-\alpha} \underbrace{ \int_0^1 dx x^{\alpha-2} f(x)}_{Y(\alpha)}
+q(E_\pi) \simeq 4 \pi n_{\rm H} I_{10} \sigma_0 \int_{E_\pi}^\infty \frac{dE_p}{E_\pi} \left(\frac{E_p}{E_{10}} \right)^{-\alpha} f(x) = 4 \pi n_{\rm H} I_{10} \sigma_0 \left(\frac{E_\pi}{E_{10}} \right)^{-\alpha} \underbrace{ \int_0^1 dx x^{\alpha-2} f(x)}_{Y(\alpha)}
 \end{equation}
 %
 where $Y(\alpha)$ is the spectrum-weighted yield of pions produced from a power-law proton spectrum of spectral index $\alpha$.
 
 Finally, for a proton population following a power-law distribution, the photon emissivity can be expressed as:
 %
-\begin{remark}
 \begin{equation}
 q(E_\gamma) = 2 \! \int_{E_\gamma}^\infty \! \frac{dE_\pi}{E_\pi} q(E_\pi) = 
-8 \pi n_{\rm H} I_0 \sigma_0 Y(\alpha) \int_{E_\gamma}^\infty \! \frac{dE_\pi}{E_\pi}  \left(\frac{E_\pi}{E_0} \right)^{-\alpha}
-= \frac{8 \pi}{\alpha} n_{\rm H}  \sigma_0 Y(\alpha) I_p\left(E_\gamma \right)
+8 \pi n_{\rm H} I_{10} \sigma_0 Y(\alpha) \int_{E_\gamma}^\infty \! \frac{dE_\pi}{E_\pi}  \left(\frac{E_\pi}{E_{10}} \right)^{-\alpha}
 \end{equation}
-\end{remark}
+%
+and after integration
+%
+\begin{equation}
+E_\gamma^2 q(E_\gamma) = \frac{8 \pi}{\alpha} n_{\rm H}  \sigma_0 Y(\alpha) E_{10}^2 I_{10} \left( \frac{E_\gamma}{E_{10}} \right)^{2-\alpha}
+\end{equation}
 
 The final expression for \( q(E_\gamma) \) highlights the significant correlation between the spectral index of the proton energy spectrum and that of gamma rays, and by extension, with neutrinos:
 %
@@ -294,43 +306,49 @@ The final expression for \( q(E_\gamma) \) highlights the significant correlatio
 \alpha_p \simeq \alpha_\gamma \simeq \alpha_\nu
 \]
 
-In contrast to, e.g., IC scattering, this relationship aids in differentiating between the two processes. Specifically, the gamma-ray spectrum resulting from hadronic processes more closely mirrors the spectral index of the parent protons, whereas gamma rays produced via IC scattering exhibit a comparatively flatter behavior relative to their parent electrons $E^{\frac{-\alpha-1}{2}}$.
-
-\begin{problem}
-Compute the shape of $q_\gamma(E_\gamma)$ using the fitting formula of Eq.~(1) in 1302.3307 and using the $\delta$-function approximation. Plot $q_\gamma(E_\gamma)$ in linear scale and $E_\gamma^2q_\gamma(E_\gamma)$ in log-log one. 
-\end{problem}
+In contrast to IC scattering, this relationship aids in differentiating between the two processes. Specifically, the gamma-ray spectrum resulting from hadronic processes more closely mirrors the spectral index of the parent protons, whereas gamma rays produced via IC scattering exhibit a comparatively flatter behavior relative to their parent electrons $E^{\frac{-\alpha-1}{2}}$~\TODO{In realta non lo faccio per l'IC}.
 
 To demonstrate the utility of these results, we estimate the expected diffuse galactic gamma-ray background, which arises from the scattering of cosmic rays through proton-proton interactions within our Galaxy.
 
 Assuming the local cosmic rays are a fair representation of their overall density in the Galaxy, we can express the gamma-ray intensity as follows:
 %
-\[
-I_\gamma(E_\gamma) = \frac{1}{4\pi} \int_{\rm los} \! ds \, q(E_\gamma) = \frac{2}{\alpha} N_{\rm H} \sigma_0 Y(\alpha) I_p(K_\gamma E_p) 
-\]
-
-Here, \( N_{\rm H} = \int_{\rm los} \! ds \, n_{\rm H} \) represents the column density of the gas, and \( K_\gamma = K_\pi / 2 \sim 0.1 \).
-
-Consequently, the energy squared times the gamma-ray intensity is given by:
+\begin{equation}
+I_\gamma(E_\gamma) = \frac{1}{4\pi} \int_{\rm los} \! ds \, q(E_\gamma) 
+\end{equation}
 %
-\[
-E_\gamma^2 I_\gamma = \frac{2}{\alpha} N_{\rm H} \sigma_0 Y(\alpha) K_\gamma^2 \left[ E_p^2 I_p(E_p) \right]_{E_p = E_\gamma / K_\gamma}
-\]
-
-To calculate the gamma-ray intensity at 1 GeV, we utilize a gas column density along the Galactic plane of \( N_{\rm H} \simeq 10^{23} \) cm\(^{-2}\), as inferred from radio observations. The proton intensity, derived from direct measurements, is:
+and consequently, the energy squared times the gamma-ray intensity is given by:
 %
-\[
-\left[ E_p^2 I_p(E_p) \right]_{E_p = 10 \text{ GeV}} \simeq 2 \times 10^3 \text{ GeV m}^{-2} \text{s}^{-1} \text{sr}^{-1}
-\]
+\begin{remark}
+\begin{equation}
+E_\gamma^2 I_\gamma = \frac{2}{\alpha} N_{\rm H} \sigma_0 Y(\alpha) E_{10}^2 I_p(E_{10})  \left( \frac{E_\gamma}{E_{10}} \right)^{2-\alpha}
+\end{equation}
+\end{remark}
 
-Employing a cross-section \( \sigma_0 \simeq 30 \) mb, and {\color{red}a value of \( Y(\alpha) \) around 10}\footnote{Recompute...}, we find:
+Here, \( N_{\rm H} = \int_{\rm los} \! ds \, n_{\rm H} \) represents the column density of the gas.
+
+To calculate the gamma-ray intensity at \( E_\gamma = 1\)~GeV, we utilize a gas column density along the Galactic plane of \( N_{\rm H} \simeq 10^{22} \) cm\(^{-2}\), as inferred from radio observations~\TODO{add a ref.}:
+. 
 %
-\[
-E_\gamma^2 I_\gamma \simeq 5 \times 10^{-5} \text{ GeV cm}^{-2} \text{s}^{-1} \text{sr}^{-1}
-\]
+The proton intensity at \( E_p = 10\)~GeV, derived from direct measurements, is~\TODO{CRDB}:
+%
+\begin{equation}
+E_{10}^2 I_p(E_{10}) \simeq 0.2~\text{GeV}~\text{cm}^{-2} \text{s}^{-1} \text{sr}^{-1}
+\end{equation}
 
-This estimate closely aligns with the average value of the diffuse emission measured around the Galactic plane (within \( |b| < 5.0 \) degrees) for \( E_\gamma \simeq \) GeV, for instance, by the Fermi-LAT.
+Employing a cross-section \( \sigma_0 \simeq 30\) mb, and \( \alpha \simeq 2.7 \), which corresponds to a value for \( Y(\alpha) \) around \( 4 \times 10^{-2} \), we find:
+%
+\begin{equation}
+E_\gamma^2 I_\gamma \simeq 10^{-5} \text{ GeV cm}^{-2} \text{s}^{-1} \text{sr}^{-1}
+\end{equation}
 
-This correlation strongly suggests that the diffuse galactic gamma-ray background is likely the result of pp interactions within our Galaxy.
+This estimate closely aligns with the average value of the diffuse emission measured around the Galactic plane (within \( |b| < 5.0 \) degrees) for \( E_\gamma \simeq \) GeV, for instance, by the Fermi-LAT~\TODO{add a ref}.
+
+This correlation strongly suggests that the diffuse galactic gamma-ray background is likely the result of pp interactions within our Galaxy induced by a roughly homogeneous sea of cosmic rays along the Galactic disc.
+
+
+\begin{problem}
+Compute the shape of $q_\gamma(E_\gamma)$ using the fitting formula of Eq.~(1) in 1302.3307 and using the $\delta$-function approximation. Plot $q_\gamma(E_\gamma)$ in linear scale and $E_\gamma^2q_\gamma(E_\gamma)$ in log-log one. 
+\end{problem}
 
 %%% SUBSECTION %%%
 \section{Nuclei-$\gamma$ Interactions}
