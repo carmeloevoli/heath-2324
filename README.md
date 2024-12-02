@@ -4,7 +4,7 @@ This course provides a comprehensive introduction to cosmic ray physics and astr
 
 ## Syllabus
 
-A detailed syllabus can be found [here](#).
+A detailed syllabus can be found [here](syllabus.md).
 
 ## Suggested textbooks
 
