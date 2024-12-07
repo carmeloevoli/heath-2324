@@ -289,7 +289,7 @@ f_{0,\alpha}(p) = \frac{Q_{0,\alpha} H}{2D_\alpha} \frac{1}{1 + n_{\rm d} \frac{
 Notice that $\bar n = n_{\rm d} h/H$ represents the \emph{average} density experienced by CRs during their Galactic propagation, and thus $1/(\bar n c \sigma_\alpha)$ represents the effective spallation time, while $H^2/D_\alpha$ denotes their diffusion time.
 
 The grammage \(\chi(p)\), which quantifies the average matter thickness traversed by CRs during their propagation (see section~\ref{sec:pillar}), can be expressed as:  
-\begin{equation}
+\begin{equation}\label{eq:grammage}
 \chi(p) = m_p \left( n_{\rm d} \frac{h}{H} \right) c \left( \frac{H^2}{D_\alpha} \right),
 \end{equation}
 where \(m_p\) is the proton mass. 
@@ -358,19 +358,21 @@ The spectrum of boron in the disc is then given by:
 \begin{equation}
 f_{0,\rm B}(p) 
 %= \frac{Q_{0, \rm B}(p)}{2 n_{\rm d} h m_{\rm p} c} \frac{1}{\frac{1}{\rchi_{\rm B}(p)} + \frac{1}{\rchi_{\rm cr, B}}}
-= \frac{\sigma_{\rm C \rightarrow B}}{m_{\rm p}}  \frac{1}{\frac{1}{\rchi_{\rm B}(p)} + \frac{1}{\rchi_{\rm cr, B}}} f_{0, \rm C}\left(\frac{A}{A-1}p\right) \left(\frac{A}{A-1} \right)^3
+= \frac{\sigma_{\rm C \rightarrow B}}{m_{\rm p}}  \frac{1}{\frac{1}{\rchi_{\rm B}(p)} + \frac{1}{\rchi_{\rm cr, B}}} f_{0, \rm C}\left(\frac{A}{A-1}p\right) \left(\frac{A}{A-1} \right)^3~.
 \end{equation}
 
-Assuming \( A \gg 1 \) leads to the B/C ratio as:
+The approximation \( A \gg 1 \) leads to the B/C ratio as:
 %
+\begin{remark}
 \begin{equation}
 \frac{\rm B}{\rm C} \simeq \frac{1}{\rchi_{\rm cr, C\rightarrow B}} \left(\frac{1}{\rchi(p)} + \frac{1}{\rchi_{\rm cr, B}}\right)^{-1}
 \label{eq:chibc}
 \end{equation}
+\end{remark}
 
 It is important to note that the boron-to-carbon ratio is independent of the primary source and is solely a function of the grammage and relevant cross-sections.
 
-Once again, considering the two limits of strong and weak spallation, we find the following. 
+Once again, it is useful to consider he two limits of strong and weak spallation. 
 %
 In the case of strong spallation:
 %
@@ -401,11 +403,11 @@ This indicates that we are operating in the regime of weak spallation, allowing 
 %
 A quick fit to data shown in figure~\ref{fig:bcams02}, using $\sigma_{\rm C \rightarrow B} \simeq 60$~mb, indicates that the grammage is of the order of $8.5$~gr cm$^{-2}$ at $\simeq 10$~GV, exhibiting a scaling behavior approximately proportional to the rigidity raised to the power of $\simeq -1/3$. 
 
-Furthermore, by leveraging the observed slope of the proton spectrum, around 2.8 in the energy range 20-200 GeV (see figure~\ref{fig:protonshe}), we can estimate the injection slope $\gamma$ by recovering from \S\ref{sec:protons} that $\gamma + \delta \approx 2.8$, guiding us to $\gamma \approx 2.4$. 
+Furthermore, by leveraging the observed slope of the proton spectrum, around 2.8 in the energy range 20-200 GeV (see figure~\ref{fig:protonshe}), we can estimate the injection slope $\gamma$ by recovering from~\cref{sec:protons} that $\gamma + \delta \approx 2.8$, guiding us to $\gamma \approx 2.4$. 
 %
-Consequently, we arrived to the conclusion that the energy spectra of CRs at their sources must be relatively \emph{soft}, challenging the predictions based on the original version of DSA\footnote{Again, for a more comprehensive treatment of this topic, we refer readers to D.~Caprioli's lecture notes in this volume.}.
+Consequently, we arrived to the conclusion that the energy spectra of CRs at their sources must be relatively \emph{soft}, challenging the predictions based on the original version of DSA~\cite{Capriolilecturenotes}.
 
-Note that equation~\eqref{eq:grammage} shows that by measuring the grammage, we can only determine the combination $H/D$, and therefore we cannot determine the normalization of the diffusion coefficient without the knowledge of the halo size.
+Note that~\cref{eq:grammage} shows that by measuring the grammage, we can only determine the combination $H/D$, and therefore we cannot determine the normalization of the diffusion coefficient without the knowledge of the halo size.
 
 \begin{figure}
 \centering
@@ -426,8 +428,7 @@ To delve deeper into this topic, we require a reliable method for measuring this
 
 Combining this information with the grammage, which yields $H/D$, will allow us to obtain the average value of the diffusion coefficient on Galactic scales.
 
-As we will discuss in 
-\S\ref{sec:implications}, these advancements will pave the way for a theoretical comprehension of the microphysics behind the scattering and diffusion of cosmic particles by the fluctuations present in the interstellar turbulent magnetic fields.
+As we will discuss in~\cref{sec:implications}, these advancements will pave the way for a theoretical comprehension of the microphysics behind the scattering and diffusion of cosmic particles by the fluctuations present in the interstellar turbulent magnetic fields.
 
 \begin{figure}
 \centering
@@ -436,13 +437,13 @@ As we will discuss in
 \label{fig:protonshe}
 \end{figure}
 
-The scrupulous reader may have noticed in figure~\ref{fig:protonshe} that the canonical slope, approximately $\sim 2.8$, does not extend up to very high energies. Instead, the CR spectrum exhibits a notable change of slope, commonly referred to as a \emph{break}, at an energy around $200$~GeV, where it hardens to about $\sim 2.6$.
+The scrupulous reader may have noticed in figure~\ref{fig:protonshe} that the canonical slope, approximately $\sim 2.8$, does not extend up to very high energies. Instead, the CR spectrum exhibits a notable change of slope, commonly referred to as a \emph{break}, at an energy around $400$~GeV, where it hardens to about $\sim 2.6$.
 %
 At these energies, however, the equilibrium spectrum must be determined by the ratio $Q(p)/D(p)$, where both quantities are assumed to follow a pure power-law behavior. 
 
-Prior to questioning well-established theoretical models to seek the elusive physical mechanism responsible for this bizarreness, it is crucial to ascertain whether the break should be attributed to the numerator or the denominator of equation~\eqref{eq:finalprimary}. 
+Prior to questioning well-established theoretical models to seek the elusive physical mechanism responsible for this bizarreness, it is crucial to ascertain whether the break should be attributed to the numerator or the denominator of~\cref{eq:finalprimary}. 
 %
-In other words, we need to identify whether the break occurs at the injection stage or during the transport of CRs in the Galaxy.
+In other words, we need to identify whether the break occurs at the \emph{injection} stage or during the \emph{transport} of CRs in the Galaxy.
 
 Equation~\eqref{eq:bchene} quickly unravels this conundrum! 
 
@@ -457,11 +458,11 @@ If the same change of slope is also present in the B/C ratio, then the conclusio
 \label{fig:bchighen}
 \end{figure}
 
-As shown in figure~\ref{fig:bchighen}, where we extend B/C data over the multi-TeV range thanks to measurements by DAMPE and CALET, the situation indeed aligns with the former scenario, and thereby all the current explanations of this feature are given in terms of some alteration in the galactic transport. 
+As shown in~\cref{fig:bchighen}, where we extend B/C data over the multi-TeV range thanks to measurements by DAMPE and CALET, the situation indeed aligns with the former scenario, and thereby all the current explanations of this feature are given in terms of some alteration in the galactic transport. 
 %
 These revisions in the transport of CRs might be associated with a spatial dependence of the diffusion coefficient, as proposed in ~\cite{Tomassetti2012apj}, or due to the transition from selfgenerated turbulence to preexisting turbulence, see, e.g.,~\cite{Evoli2018prl}.
 
-At such, the recently reported departures from an otherwise boring scale-free power-law behavior in the galactic CR spectra are of paramount importance, as they offer valuable insights into the fundamental mechanisms governing the propagation of CRs in magnetized environments.
+At such, the recently reported departures from an otherwise uninteresting scale-free power-law behavior in the galactic CR spectra are of paramount importance, as they offer valuable insights into the fundamental mechanisms governing the propagation of CRs in magnetized environments.
 
 %%%%%%%%%% SECTION %%%%%%%%%%
 \section{Unstable nuclei: the case of beryllium}
