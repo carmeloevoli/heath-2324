@@ -1,7 +1,14 @@
-% !TEX root = ../main.tex
+% !TEX root = ../lectures.tex
 %%%%%%%%%% SECTION %%%%%%%%%
 \section{Cosmic-ray protons in the Galaxy}
 \label{sec:protons}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/halo.pdf}
+\caption{Illustrative depiction of the Milky Way's diffusive halo from the perspective of a cosmic ray physicist. Primary sources are distributed only in the disk. Also secondary nuclei emerge from cosmic ray interactions within the gaseous disk.}
+\label{fig:galaxy}
+\end{figure}
 
 The local density of CRs, their energy spectrum, and their relative abundances provide us with the only direct information we can obtain about CRs. These measurements, along with estimates of the CR column density deduced from diffuse $\gamma$-rays~\cite{Tibaldo2021universe, Grenier2015araa}, form the foundation for any model aiming to describe CR transport.
 %
@@ -17,16 +24,9 @@ After the injection, CRs propagate diffusively throughout the Galactic halo, whi
 
 Since the size of the halo is much smaller than the Galaxy's radius ($R_{\rm d} \gtrsim 10$ kpc), a one-dimensional model is sufficient to describe the escape of CRs along the z-direction.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.6\textwidth]{figures/halo.pdf}
-\caption{Illustrative depiction of the Milky Way's diffusive halo from the perspective of a cosmic ray physicist. Primary sources are distributed only in the disk. Also secondary nuclei emerge from cosmic ray interactions within the gaseous disk.}
-\label{fig:galaxy}
-\end{figure}
-
 The simplest representation of this framework is achieved by employing the diffusion equation in the form of Fick's law~\cite{Fick1855}. 
 %
-It is important to note that one could also utilize the more general Fokker-Planck equation (see P.~Blasi's lecture notes in this volume). 
+It is important to note that one could also utilize the more general Fokker-Planck equation~\cite{Mertschreview?}.
 %
 Both Fick's law and the Fokker-Planck equation are considered as purely phenomenological equations, as they represent different choices for the flux in the fundamental continuity equation.
 
@@ -55,13 +55,20 @@ For a spatially constant diffusion coefficient we can derive the associated Gree
 %
 which we interpret as the probability for finding a particle that is injected at the disc ($z = 0$) at a position $z$ after the time $t$.
 
-The mean distance from the Galactic plane can be calculated from equation~\eqref{eq:green}:
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/gaussian_1D.pdf} 
+\caption{1D Gaussian propagator as a function of distance for various time steps. The plot demonstrates the spreading behavior of the diffusion Green function, \cref{eq:green}, with increasing time.}
+\label{fig:gaussian1d}
+\end{figure}
+
+The mean distance from the Galactic plane can be calculated from~\cref{eq:green}:
 %
 \begin{equation}
 \langle z \rangle = \left(\frac{1}{{4 \pi D t}}\right)^{1/2} \int dz z {\rm e}^{-\frac{z^2}{4Dt}} \simeq \sqrt{Dt}
 \end{equation}
 
-The characteristic time to reach a height $\langle z \rangle = H$ can then be defined as  $t_{\rm H} \simeq H^2 / D$, and the characteristic averaged velocity with which CRs escape from the Galaxy as
+The characteristic time to reach a height $\langle z \rangle = H$ can then be defined as  $t_{\rm H} \simeq H^2 / D$, and the characteristic averaged velocity with which CRs escape from the Galaxy as the \emph{drift velocity}:
 %
 \begin{equation}
 v_{\rm D} \sim \frac{H}{t_{\rm H}} \sim \frac{D}{H}
@@ -77,7 +84,7 @@ Since the galactic disc is extremely thin with respect to the halo, we can descr
 Q(E,z) = \frac{\xi_{\rm CR} E_{\rm SN} \mathcal R_{\rm SN} N(E)}{\pi R_{\rm d}^2} \delta(z) 
 \end{equation}
 %
-where $E_{\rm SN} \simeq 10^{51}$~erg is the SN kinetic energy, $\xi_{\rm CR}$ is the fraction of this energy converted in CR acceleration, $\mathcal R_{\rm SN} \simeq 1 / 50$~yr$^{-1}$ is the rate of SNe in the Galaxy and $N(E)$ the spectrum of one SN. 
+where $E_{\rm SN} \simeq 10^{51}$~erg is the SN kinetic energy, $\xi_{\rm CR}$ is the fraction of this energy converted in CR acceleration, $\mathcal R_{\rm SN} \simeq 1 / 50$~yr$^{-1}$ is the rate of SNe in the Galaxy and $N(E)$ the energy spectrum of one SN. 
 
 Considering that our Galaxy has an age of several billion years and observations of light elements suggest that CRs spend at most a hundred million years within our Galaxy, it can be concluded that the dynamical timescale of the Galaxy is significantly longer than the phenomena we are investigating. Therefore, we are justified in assuming stationarity, and the diffusion equation for protons $n_p$ becomes:
 %
@@ -86,12 +93,7 @@ Considering that our Galaxy has an age of several billion years and observations
 \label{eq:protons}
 \end{equation}
 
-For $z \ne 0$, and imposing the boundary conditions $n_p(z = \pm H, E) = 0$, it gives the solution\footnote{The general solution to the differential equation can be written as $n_p(z)=A+Bz$:
-\begin{itemize}
-\item For $z>0$, we impose $n_p(H)=0$ which gives $n_p(z)=A\left(1-\frac{z}{H}\right)$
-\item For $z<0$, we impose $n_{\rm p}(-H)=0$ which gives $n_{\rm p}(z)=A\left(1+\frac{z}{H}\right)$
-\end{itemize}
-Combining the two regions and imposing $n_p(0)=n_0(E)$, we obtain the solution valid in both regions as in equation~\eqref{eq:nzwithabs}.}:
+For $z \ne 0$, and imposing the boundary conditions $n_p(z = \pm H, E) = 0$, it gives the solution\footnote{The general solution to the differential equation can be written as $n_p(z)=A+Bz$. For $z>0$, we impose $n_p(H)=0$ which gives $n_p(z)=A\left(1- z/H\right)$, and for $z<0$, we impose $n_{\rm p}(-H)=0$ which gives $n_{\rm p}(z)=A\left(1+ z/H\right)$. Combining the two regions and imposing $n_p(0)=n_0(E)$, we obtain the solution valid in both regions as in~\cref{eq:nzwithabs}.}:
 %
 \begin{equation}
 D \frac{\partial n_p}{\partial z} = \text{Constant} \, \longrightarrow \, n_p(z) = n_0(E) \left( 1 - \frac{|z|}{H} \right)
@@ -118,41 +120,45 @@ which leads to
 \left. -2D \frac{\partial n_p}{\partial z}\right|_{z=0^+} = \frac{\xi_p E_{\rm SN} \mathcal R_{\rm SN}}{\pi R_{\rm d}^2} N(E) 
 \end{equation}
 %
-and using the equation for the flux derived in equation~\eqref{eq:flux}:
+and using the equation for the flux derived in~\cref{eq:flux}:
 %
 \begin{equation}
 n_p(E) = \frac{\xi_p E_{\rm SN} \mathcal R_{\rm SN} N(E)}{2 \pi R_{\rm d}^2}  \frac{H}{D(E)} 
 \label{eq:protonsimplesolution}
 \end{equation}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.6\textwidth]{figures/diffusion_softening.pdf}
-\caption{Comparison between the \emph{injection spectrum} and the \emph{propagated spectrum} within an energy-dependent \emph{diffusion} toy-model. Higher-energy particles escape more swiftly, leading to a reduced equilibrium intensity. Consequently, the propagated spectrum consistently exhibits a \emph{steeper} profile than the injected counterpart.}
-\label{fig:softening}
-\end{figure}
-
 As a result, we have obtained the CR spectrum as measured by an observer placed within the galactic disc.
 %
 It can be simply re-written as:
 %
+\begin{remark}
 \begin{equation}
 n_p(E) = \frac{Q_{\rm SN}(E) \tau_{\rm esc}(E)}{V_{\rm G}}
 \end{equation}
+\end{remark}
 %
 where $Q_{\rm SN}(E) = \xi_p E_{\rm SN} \mathcal R_{\rm SN} N(E)$ is the number of particles injected per unit time by all supernovae, $\tau_{\rm esc} = H^2/D$ is the escape time, and $V_{\rm G} = 2\pi R_{\rm d}^2H$ is the total volume of the Galaxy.
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/diffusion_softening.pdf}
+\caption{Comparison between the \emph{injection spectrum} and the \emph{propagated spectrum} within an energy-dependent \emph{diffusion} model. Higher-energy particles escape more swiftly, leading to a reduced equilibrium intensity. Consequently, the propagated spectrum consistently exhibits a \emph{steeper} profile than the injected counterpart.}
+\label{fig:softening}
+\end{figure}
+
 In summary, since the diffusion coefficient increases with energy, following a power-law dependence as $D \propto E^{\delta}$, the escape time scales $\tau_{\rm esc} \propto E^{-\delta}$, and the spectrum we observe is always \emph{steeper} than the spectrum produced at the CR sources.
 
-In point of fact, assuming that the sources inject in the ISM a power-law spectrum $E^{-\gamma}$, what we measure is a spectrum proportional to $E^{-\gamma-\delta}$ since high-energy particles spend less time in the Galaxy compared to lower-energy particles, resulting in a significant suppression of their density relative to the low-energy part of the spectrum.
+In point of fact, assuming that the sources inject in the ISM a power-law spectrum $E^{-\gamma}$, what we measure is a spectrum proportional to $E^{-\gamma-\delta}$ since high-energy particles spend \emph{less time} in the Galaxy compared to lower-energy particles, resulting in a significant suppression of their density relative to the low-energy part of the spectrum.
 %
-This is depicted in figure~\ref{fig:softening}. 
+This is depicted in~\cref{fig:softening}. 
 
-It is important to note that since what we observe is a combination of the injection and transport processes, any deviation from a pure power-law in the observed spectrum of protons (or any primary species) cannot be easily disambiguate if due to propagation or acceleration effects. 
+It is important to note that since what we observe is a combination of the injection and transport processes, any deviation from a pure power-law in the observed spectrum of protons (or any primary species) cannot be easily disambiguate if due to propagation \emph{or} acceleration effects. 
 
 Finally, it is interesting to make some remarks on the assumptions we have made so far.  
-%
-The physics of CR transport is influenced not only by diffusion but also by boundary conditions\footnote{Further exploration of this subject is provided in the lecture notes by P.~Blasi within the same volume.}.
+
+\subsection{On the physics of boundary conditions}
+
+The physics of CR transport is influenced not only by diffusion but also by boundary conditions.
 %
 As discussed earlier, the condition of free escape, where $n(z = \pm H, E) = 0$, implies that the diffusion current does not depend on position.
 
@@ -170,9 +176,43 @@ On the other hand, we can express $D$ in terms of the mean free path $\lambda$ a
 n_{\rm out} = \frac{2D}{cH} n_0 \sim \frac{\lambda(E)}{H} n_0 % \ll n_0
 \end{equation}
 
-The condition of free-escape $n_{\rm out} \ll n_0$ is then satisfied as long as the path lenght $\lambda$ is much smaller than $H$, which remains true for $E \ll $~PeV~\cite{Blasi2019prl}. 
+The condition of free-escape $n_{\rm out} \ll n_0$ is then satisfied as long as the path lenght $\lambda$ is much smaller than $H$, which remains true for $E \ll $~PeV~\cite{}. 
 
 Despite the great importance of this assumption we do not have any knowledge on what determines the halo size or whether the halo size depends on energy or space (see however~\cite{Evoli2018prl,Dogiel2020apj} for an attempt to model the halo based on physical principles).
+
+\subsection{Relativistic Constraints on the Diffusion Equation }
+
+The diffusion equation permits solutions where the density is non-zero at arbitrarily large distances, even for arbitrarily small times, as in~\cref{eq:green}. 
+%
+Physically, this implies that information about the source propagates instantaneously to all points in space, violating the relativistic limit imposed by the speed of light, \(c\).  
+
+Mathematically, this arises because the diffusion equation is derived from a Fickian approach, where the flux is proportional to the gradient \( \mathbf{J} = -D \nabla n \), and does not account for the finite speed of information transfer.  
+
+When using the standard diffusion equation, it is essential to ensure that the timescales involved are consistent with relativistic constraints. Specifically, the \emph{diffusion timescale}:  
+\[
+t_{\rm diff} \sim \frac{R^2}{D},
+\]
+where \(R\) is the characteristic distance and \(D\) is the diffusion coefficient, must not be shorter than the light travel time to cover the same distance:
+\[
+t_{\rm diff} \gtrsim \frac{R}{c}.
+\]
+
+This imposes a \emph{lower} limit on the diffusion coefficient:
+\[
+D \gtrsim c R.
+\]
+
+To address the issue of superluminal propagation, relativistic formulations of the diffusion equation have been explored. One such attempt involves modifications based on the \emph{telegraph equation}, which incorporates a finite signal propagation speed. The telegraph equation takes the form:
+\[
+\frac{\partial^2 n}{\partial t^2} + \frac{\partial n}{\tau} = D \nabla^2 n,
+\]
+where \(\tau\) is a characteristic timescale related to the finite speed of information transfer. Unlike the standard diffusion equation, the telegraph equation respects causality by ensuring that disturbances in \( n(r, t)\) propagate at finite speeds.  
+
+For UHECRs, where particle energies exceed \(10^{18}~\text{eV}\), a non-relativistic diffusion description can lead to unphysical predictions, particularly for propagation timescales and distances. Relativistic diffusion models, such as those explored by~\cite{Berezinskii2012} take into account the finite velocity of UHECRs,  and provide solutions where information propagation respects the speed-of-light constraint.  
+%
+While these models are more accurate for describing UHECR transport, their complexity often leads to the continued use of the standard diffusion equation in most practical applications.  
+
+\subsection{The relevance of inelastic processes for protons}
 
 In the formulation of the transport equation for protons, we have initially disregarded the nuclear energy losses. For protons, the primary energy loss mechanism is the inelastic scattering with proton target leading to pion production. This process is characterized by a typical cross section of approximately $\sigma_{\rm pp}\sim 3\times 10^{-26}$ cm$^2$.
 
@@ -186,15 +226,15 @@ Here, $\bar{n} = n_{\rm d} h/H$ represents the average density within the diffus
 
 From this calculation, we observe that the timescale for $pp$ scattering is significantly long, on the order of a Gigayear. Consequently, we can confidently assume that this process does not significantly alter the spectrum of propagated protons. 
 
-However, despite being subdominant in terms of energy losses, the proton-proton interaction resulting in neutral pions that decay into two $\gamma$-rays is the leading mechanism for production of the spectacular diffuse emission observed along the Galactic Plane in Fermi-LAT data above $\sim 100$~MeV (see P.D.~Serpico's lecture notes in this volume).
+However, despite being subdominant in terms of energy losses, the proton-proton interaction resulting in neutral pions that decay into two $\gamma$-rays is the leading mechanism for production of the spectacular diffuse emission observed along the Galactic Plane in Fermi-LAT data above $\sim 100$~MeV (see~\cref{sec:nucleiproton}).
 
-On the other hand, the interaction cross-section becomes increasingly relevant when dealing with heavy nuclei. Therefore, in \S\ref{sec:nuclei}, we will discuss the incorporation of these effects in the transport of nuclei through the ISM.
+On the other hand, the interaction cross-section becomes increasingly relevant when dealing with heavy nuclei, see~\cref{eq:sgeo}. Therefore, in~\cref{sec:nuclei}, we will discuss the incorporation of these effects in the transport of nuclei through the ISM.
 
 %%%%%%%%%% SECTION %%%%%%%%%%
 \section{Primary nuclei}
 \label{sec:nuclei}
 
-Energy losses resulting from the fragmentation of nuclei in the ISM play a critical role in the propagation of CR nuclei across the Galaxy. It is worth noting that other loss mechanisms, such as ionization and Coulomb interactions, are only relevant for energies $T \lesssim 10$ GeV/n, and therefore, we will neglect them in the remainder of these lecture notes (see P.D.~Serpico's lecture notes in this volume).
+Energy losses resulting from the fragmentation of nuclei in the ISM play a critical role in the propagation of CR nuclei across the Galaxy. It is worth noting that other loss mechanisms, such as ionization and Coulomb interactions~\cite{Serpicolecture}, are only relevant for energies $T \lesssim 10$ GeV/n, and therefore, we will neglect them in the remainder of these lecture notes.
 
 When accounting for these losses, the transport equation for the phase-space distribution function\footnote{See appendix~\ref{app:intensity} for the formal definition of this quantity.} of a species $\alpha$ takes the following form:
 %
@@ -214,13 +254,9 @@ As the target gas for nuclear fragmentation is confined to the thin disk, we can
 %
 Additionally, we assume that spallation cross-sections are energy-independent. Interestingly, measurements of spallation cross-sections above a few GeV/n do not show any appreciable dependence on the projectile energy~\cite{Evoli2019prd}.
 
-On the other hand, the cross sections of various elements increase with the atomic mass number, roughly following a geometric scaling law~\cite{Letaw1983apjs}:
-%
-\begin{equation}
-\sigma_\alpha \simeq 45 \, \text{mb} \, A^{2/3}
-\end{equation}
+On the other hand, the cross sections of various elements increase with the atomic mass number, roughly following a geometric scaling law as in~\cref{eq:sgeo}.
 
-The source term is defined by assuming that particles are injected relativistically, $p \gtrsim p_{\rm min} = A m_p c$, with a power-law momentum distribution $p^{-\gamma}$:
+The source term is defined by assuming that particles are injected at $p \gtrsim p_{\rm min}$ with a power-law momentum distribution $p^{-\gamma}$:
 %
 \begin{equation}
 Q_\alpha(p, z) = Q_{0,\alpha} \left(\frac{p}{p_{\rm min}}\right)^{-\gamma} \delta (z) 
@@ -229,10 +265,10 @@ Q_\alpha(p, z) = Q_{0,\alpha} \left(\frac{p}{p_{\rm min}}\right)^{-\gamma} \delt
 To determine the normalization factor, $Q_{0,\alpha}$, we impose that the total luminosity in CRs equals that released by Galactic SNe:
 %
 \begin{equation}
-\xi_{\rm CR} E_{\rm SN} \mathcal R_{\rm SN} = \int \! dV \! \int \! d^3 \! p \, E(p) Q(z,p)
+\xi_{\rm CR} E_{\rm SN} \mathcal R_{\rm SN} = \int \! dV \! \int_{p_{\rm min}} \! d^3 \! p \, T(p) Q(z,p)
 \end{equation}
 
-This results in
+{\color{red}This results in}
 %
 \begin{equation}
 Q_{0,\alpha} = \frac{(\gamma - 4) c^3 \xi_{\rm CR} E_{\rm SN} \mathcal R_{\rm SN}}{4 \pi^2 R_{\rm d}^2 E_{\rm min}^4}
