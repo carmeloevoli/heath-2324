@@ -14,7 +14,7 @@ The local density of CRs, their energy spectrum, and their relative abundances p
 %
 In this section, our goal is to construct a basic model for CR propagation in the Galaxy that enables us to extract from these observables valuable information on the injection of CRs and the subsequent processes they undergo in the ISM.
 
-As discussed in \S~\ref{sec:intro}, the escape time of CRs is too long to be compatible with straight propagation along the large-scale magnetic field. Consequently, CRs must be confined to the Galaxy for a significant period of time, primarily spending most of their time in low-density gas regions, such as the Galactic halo.
+As discussed in~\cref{sec:pillar}, the escape time of CRs is too long to be compatible with straight propagation along the large-scale magnetic field. Consequently, CRs must be confined to the Galaxy for a significant period of time, primarily spending most of their time in low-density gas regions, such as the Galactic halo.
 %
 The existence of such an extended (larger than the gas disc) magnetized region is supported by observations of synchrotron emission from edge-on external galaxies~\cite{Beck2015aar}.
 
@@ -80,7 +80,7 @@ By adopting the phenomenological assumption of diffusion as the primary transpor
 
 Since the galactic disc is extremely thin with respect to the halo, we can describe the spatial part of the injection term as a delta-function $\delta(z)$, and therefore
 %
-\begin{equation}
+\begin{equation}\label{eq:qprotons}
 Q(E,z) = \frac{\xi_{\rm CR} E_{\rm SN} \mathcal R_{\rm SN} N(E)}{\pi R_{\rm d}^2} \delta(z) 
 \end{equation}
 %
@@ -232,112 +232,82 @@ On the other hand, the interaction cross-section becomes increasingly relevant w
 
 %%%%%%%%%% SECTION %%%%%%%%%%
 \section{Primary nuclei}
-\label{sec:nuclei}
+\label{sec:nuclei}  
 
-Energy losses resulting from the fragmentation of nuclei in the ISM play a critical role in the propagation of CR nuclei across the Galaxy. It is worth noting that other loss mechanisms, such as ionization and Coulomb interactions~\cite{Serpicolecture}, are only relevant for energies $T \lesssim 10$ GeV/n, and therefore, we will neglect them in the remainder of these lecture notes.
+The propagation of cosmic ray (CR) nuclei through the Galaxy is heavily influenced by energy losses due to nuclear fragmentation in the interstellar medium (ISM). These losses play a critical role in shaping the observed spectra of primary CR nuclei. While other processes, such as ionization and Coulomb interactions~\cite{Serpicolecture}, can also contribute to energy losses, they are only significant at low energies (\(T \lesssim 10\) GeV/n). As these notes focus on higher-energy CRs, we neglect such mechanisms for simplicity.
 
-When accounting for these losses, the transport equation for the phase-space distribution function\footnote{See appendix~\ref{app:intensity} for the formal definition of this quantity.} of a species $\alpha$ takes the following form:
-%
+When fragmentation losses are taken into account, the transport equation for the phase-space distribution function\footnote{For the formal definition of the phase-space distribution function, see Appendix~\ref{app:intensity}.} \(f_\alpha\) of a given species \(\alpha\) can be expressed as:  
 \begin{equation}
 -\frac{\partial}{\partial z} \left[ D_\alpha(p) \frac{\partial f_\alpha}{\partial z} \right] = 
-Q_\alpha(p) \delta(z) - \frac{f_\alpha}{\tau_{\rm f, \alpha}} + \sum_{\alpha^\prime > \alpha}  \frac{f_{\alpha^\prime}}{\tau_{\rm f, \alpha\alpha^\prime}}
+Q_\alpha(p) \delta(z) - \frac{f_\alpha}{\tau_{\rm f, \alpha}} + \sum_{\alpha^\prime > \alpha}  \frac{f_{\alpha^\prime}}{\tau_{\rm f, \alpha\alpha^\prime}},
+\end{equation}
+where \(Q_\alpha(p)\) is the source term describing CR injection, the \emph{sink term} \(-f_\alpha / \tau_{\rm f, \alpha}\) accounts for nuclear spallation losses, and the final term represents the production of species \(\alpha\) from the fragmentation of heavier nuclei \(\alpha^\prime\).  
+
+The spallation timescales, \(\tau_{\rm f, \alpha}\), depend on the spallation cross-sections \(\sigma_\alpha\), as well as the ISM density \(n_{\rm d}\) in the Galactic disk. 
+%
+As the target gas for nuclear fragmentation is confined to the thin disk, we can define the inelastic timescale for fragmentation losses as:  
+\begin{equation}
+\frac{1}{\tau_{\rm f, \alpha}} = 2 h n_{\rm d} \delta (z) c \sigma_\alpha,
+\end{equation}
+where \(h\) is the disk's half-thickness.
+
+It is important to note that spallation cross-sections above a few GeV/n show little to no dependence on energy~\cite{Evoli2019prd}, thereby we approximate them are energy independent. Furthermore, cross-sections generally scale with the atomic mass number \(A\) of the nucleus, following a geometric scaling law as in~\cref{eq:sgeo}. 
+
+
+The source term \(Q_\alpha(p, z)\) for a primary species is typically modeled as a power-law injection spectrum:  
+\begin{equation}
+Q_\alpha(p, z) = Q_{0,\alpha} \left(\frac{p}{m_\alpha c}\right)^{-\gamma} \delta (z),
+\end{equation}
+where \(p\) is the particle momentum, \(\gamma\) is the injection spectral index, and \(Q_{0,\alpha}\) is the normalization constant.  
+
+To determine \(Q_{0,\alpha}\), we impose the condition that the total CR luminosity matches the energy released by Galactic supernovae (SNe):  
+\begin{equation}
+\xi_{\rm CR} E_{\rm SN} \mathcal{R}_{\rm SN} = \int \! dV \int_{p_{\rm min}}^\infty \! d^3 \! p \, T(p) Q_\alpha(p, z),
+\end{equation}
+where \(\xi_{\rm CR}\) is the CR acceleration efficiency, \(E_{\rm SN}\) is the energy released per SN, and \(\mathcal{R}_{\rm SN}\) is the Galactic SN rate. Solving this constraint yields:  
+\begin{equation}
+Q_{0,\alpha} = \frac{\xi_{\rm CR} E_{\rm SN} \mathcal{R}_{\rm SN}}{\pi R_{\rm d}^2 c (m_\alpha c)^4 \Gamma(\gamma)},
+\end{equation}
+where \(R_{\rm d}\) is the radius of the Galactic disk, and \(\Gamma(\gamma) = 4\pi \int dx x^{2-\gamma} \left[ \sqrt{x^2 + 1} - 1 \right] \) is a normalization constant.
+
+For a purely primary species (one with no significant secondary contribution), the transport equation simplifies to:  
+\begin{equation}
+-\frac{\partial}{\partial z} \left[ D_\alpha(p) \frac{\partial f_\alpha}{\partial z} \right] = Q_{0,\alpha}(p)\delta(z) - 2 h n_{\rm d} \delta (z) c \sigma_\alpha f_\alpha(p)~.
 \end{equation}
 
-In this equation, the source term $Q_\alpha(p)$ is now accompanied by a \emph{sink} term, which accounts for the spallation of CR nuclei. The rate of spallation is proportional to the spallation cross section $\sigma_\alpha$ and the density of the interstellar gas in the disc $n_{\rm d}$. Additionally, the last term on the right-hand side represents the source term due to the spallation of heavier nuclei of type $\alpha^\prime$ into nuclei of type $\alpha$. In that regard, the quantities $\tau_{\rm f, \alpha\alpha^\prime}$ contain the branching ratio of spallation of $\alpha^\prime$ into $\alpha$.
-
-As the target gas for nuclear fragmentation is confined to the thin disk, we can explicitly define the timescale for inelastic losses as
+We notice that this equation can be solved in the same way and with the same boundary conditions at $z = \pm H$ as~\cref{eq:protons}. 
 %
+For $z \neq 0$, it gives:
 \begin{equation}
-\frac{1}{\tau_{\rm f, \alpha}} = 2 h n_{\rm d} \delta (z) c \sigma_\alpha
-\label{eq:scalingcs}
+f_\alpha(z, p) = f_{0,\alpha}(p) \left[ 1 - \frac{|z|}{H} \right],
 \end{equation}
-%
-Additionally, we assume that spallation cross-sections are energy-independent. Interestingly, measurements of spallation cross-sections above a few GeV/n do not show any appreciable dependence on the projectile energy~\cite{Evoli2019prd}.
-
-On the other hand, the cross sections of various elements increase with the atomic mass number, roughly following a geometric scaling law as in~\cref{eq:sgeo}.
-
-The source term is defined by assuming that particles are injected at $p \gtrsim p_{\rm min}$ with a power-law momentum distribution $p^{-\gamma}$:
-%
+where the normalization \(f_{0,\alpha}(p)\) can be determined by integrating around the Galactic disk:  
 \begin{equation}
-Q_\alpha(p, z) = Q_{0,\alpha} \left(\frac{p}{p_{\rm min}}\right)^{-\gamma} \delta (z) 
+f_{0,\alpha}(p) = \frac{Q_{0,\alpha} H}{2D_\alpha} \frac{1}{1 + n_{\rm d} \frac{h}{H} c \sigma_\alpha \frac{H^2}{D_\alpha}}.
 \end{equation}
 
-To determine the normalization factor, $Q_{0,\alpha}$, we impose that the total luminosity in CRs equals that released by Galactic SNe:
-%
+Notice that $\bar n = n_{\rm d} h/H$ represents the \emph{average} density experienced by CRs during their Galactic propagation, and thus $1/(\bar n c \sigma_\alpha)$ represents the effective spallation time, while $H^2/D_\alpha$ denotes their diffusion time.
+
+The grammage \(\chi(p)\), which quantifies the average matter thickness traversed by CRs during their propagation (see section~\ref{sec:pillar}), can be expressed as:  
 \begin{equation}
-\xi_{\rm CR} E_{\rm SN} \mathcal R_{\rm SN} = \int \! dV \! \int_{p_{\rm min}} \! d^3 \! p \, T(p) Q(z,p)
+\chi(p) = m_p \left( n_{\rm d} \frac{h}{H} \right) c \left( \frac{H^2}{D_\alpha} \right),
+\end{equation}
+where \(m_p\) is the proton mass. 
+
+We further define the \emph{critical grammage} as:  
+\begin{equation}
+\chi_{\rm cr} = \frac{m_p}{\sigma_\alpha} \simeq 40 \, A^{-2/3} \, \text{g} \, \text{cm}^{-2},
+\end{equation}
+which represents the grammage threshold where spallation losses become significant.  
+
+Using these definitions, the propagated spectrum of a species \(\alpha\) can be expressed as:  
+\begin{equation}\label{eq:finalprimary}
+f_{0,\alpha}(p) = \frac{Q_{0,\alpha}(p)}{2 n_{\rm d} h m_p c} \frac{1}{\frac{1}{\chi(p)} + \frac{1}{\chi_{\rm cr}}}.
 \end{equation}
 
-{\color{red}This results in}
-%
+In the limit of strong or weak spallation, the solution simplifies to:  
 \begin{equation}
-Q_{0,\alpha} = \frac{(\gamma - 4) c^3 \xi_{\rm CR} E_{\rm SN} \mathcal R_{\rm SN}}{4 \pi^2 R_{\rm d}^2 E_{\rm min}^4}
-\end{equation}
-%
-where $E_{\rm min} = p_{\rm min} c$.
-
-The transport equation for a pure primary species, i.e., without a significant secondary contribution, can be written as
-%
-\begin{equation}
--\frac{\partial}{\partial z} \left[ D_\alpha(p) \frac{\partial f_\alpha}{\partial z} \right] = Q_{0,\alpha}(p)\delta(z) - 2 h n_{\rm d} \delta (z) c \sigma_\alpha f_\alpha(p)
-\label{eq:primary}
-\end{equation}
-
-We notice that this equation can be solved in the same way and with the same boundary conditions at $z = \pm H$ as equation~\eqref{eq:protons}. For $z \neq 0$, it gives:
-%
-\begin{equation}
-f_\alpha(z,p) = f_{0,\alpha}(p) \left( 1 - \frac{|z|}{H} \right)
-\end{equation}
-
-The expression of $f_{0,\alpha}(p)$ can be obtained by integration of equation~\eqref{eq:primary} around the disc
-%
-\begin{equation}
-\left. -2 D_\alpha \frac{\partial f_\alpha}{\partial z} \right|_{0+} = Q_{0,\alpha}(p) - 2 h n_{\rm d} c \sigma_{\alpha} f_{0,\alpha}(p)
-\end{equation}
-
-Finally, we find:
-%
-\begin{equation}
-f_{0,\alpha}(p) = \frac{Q_{0,\alpha} H}{2D_\alpha} \frac{1}{1 + n_{\rm d} \frac{h}{H} c \sigma_{\alpha} \frac{H^2}{D_\alpha}}
-\end{equation}
-
-Notice that $\bar n = n_{\rm d} h/H$ represents the \emph{average} density experienced by CRs during their Galactic propagation, while $H^2/D_\alpha$ denotes their diffusion time, and $1/(\bar n c \sigma_\alpha)$ represents the effective spallation time.
-
-To express this in terms of the matter thickness traversed by CRs during their propagation, we introduce the concept of grammage, denoted as 
-%
-\begin{equation}
-\rchi(p) = m_{\rm p} \left( n_{\rm d} \frac{h}{H} \right) c \left( \frac{H^2}{D_\alpha} \right) \sim m_p \bar n c \tau_{\rm esc}(p)
-\label{eq:grammage}
-\end{equation}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.6\textwidth]{figures/grammage_critical.pdf}
-\caption{The grammage corresponding to the best fit model described in~\cite{Schroer2021prd} as a function of rigidity is shown as a solid blue line. The dashed lines refers to carbon (green), oxygen (orange), and iron (red) inelastic critical grammage.}
-\label{fig:grammage}
-\end{figure}
-
-Written in this form, the grammage serves to quantify the average density, $\bar n$, that particles traverse while moving across the Galaxy for a duration corresponding to the time it takes for particles to leave the Galaxy, $\tau_{\rm esc}$.
-
-Furthermore, we define the critical grammage as 
-%
-\begin{equation}
-\rchi_{\rm cr} = \frac{m_{\rm p}}{\sigma_\alpha} \simeq 40 \, A^{-2/3} \, \text{gr} \, \text{cm}^{-2}
-\end{equation}
-
-The critical grammage represents the threshold value where spallation becomes significant, requiring the grammage to be at least $\rchi_{\rm cr}$.
-
-By using these definitions, the propagated spectrum of a species $\alpha$ can be expressed as:
-%
-\begin{equation}
-f_{0,\alpha}(p) = \frac{Q_{0,\alpha}(p)}{2n_{\rm d}hm_{\rm p}c} \frac{1}{\frac{1}{\rchi(p)} + \frac{1}{\rchi_{\rm cr}}}
-\label{eq:finalprimary}
-\end{equation}
-
-In the limit of strong and weak spallation, we obtain:
-%
-\begin{equation}
-f_{0,\alpha}(p) = Q_{0,\alpha}(p) \times
+f_{0,\alpha}(p) = Q_{0,\alpha}(p)
 \begin{cases}
 \frac{1}{2n_{\rm d}hm_{\rm p}c}\rchi_{\rm cr} & \text{if } \, \rchi(p) \gg \rchi_{\rm cr} \\
 \frac{H}{2D(p)} & \text{if } \, \rchi(p) \ll \rchi_{\rm cr}
@@ -346,18 +316,28 @@ f_{0,\alpha}(p) = Q_{0,\alpha}(p) \times
 
 Hence, when $\chi(p)\gg \chi_{\rm cr}$, spallation dominates, the spectrum at the disc will exhibit a similar slope to the injection spectrum. Conversely, in the limit of weak spallation, the diffusion-dominated solution is recovered, resulting in an observed spectrum that is \emph{steeper} than the source spectrum due to the momentum dependence of the diffusion coefficient.
 
-At low energies, spallation may dominate because $D(p)$ is an increasing function of momentum, and spallation cross sections are independent of energy. For heavy nuclei, the effects become particularly relevant at higher energies due to the scaling with mass in equation~\eqref{eq:scalingcs}. In figure~\ref{fig:grammage} the critical grammage for different nuclei is compared with the Galactic value obtained by several recent analysis~\cite{Evoli2019prd,Weinrich2020aa}. For Iron, one of the heaviest species present in the Galactic radiation, the critical grammage becomes ruling for rigidities\footnote{We remind that rigidity is defined as momentum over charge, $p/Z$.} below $\lesssim 60$~GV~\cite{Schroer2021prd}.
+At low energies, spallation may dominate because $D(p)$ is an increasing function of momentum, and spallation cross sections are independent of energy. For heavy nuclei, the effects become particularly relevant at higher energies due to the scaling with mass in~\cref{eq:sgeo}.
+%
+In~\cref{fig:grammage} the critical grammage for different nuclei is compared with the Galactic value obtained by several recent analysis~\cite{Evoli2019prd,Weinrich2020aa}. For Iron, one of the heaviest species present in the Galactic radiation, the critical grammage becomes ruling for rigidities\footnote{We remind that rigidity is defined as momentum over charge, $p/Z$.} below $\lesssim 60$~GV~\cite{Schroer2021prd}.
 
 Equation~\eqref{eq:finalprimary} highlights that if we could somehow measure the grammage, we would be able to retrieve the acceleration efficiency $\xi_{\rm CR}$ from the spectrum observed at Earth. This parameter is of crucial importance for the development of any acceleration paradigm.
 
 However, obtaining this crucial information relies on a different observable, which will be discussed in detail in the next section.
 
-\section{The secondary over primary ratio}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/grammage_critical.pdf}
+\caption{The grammage corresponding to the best fit model described in~\cite{Schroer2021prd} as a function of rigidity is shown as a solid blue line. The dashed lines refers to carbon (green), oxygen (orange), and iron (red) inelastic critical grammage.}
+\label{fig:grammage}
+\end{figure}
+
+%%%%%%%%%% SECTION %%%%%%%%%%
+\section{The Secondary-to-Primary Ratio}
 \label{sec:secondaryoverprimary}
 
 As mentioned in the Introduction, light and fragile elements such as lithium, beryllium, and boron are mainly synthesized through the collisions of galactic CRs with the interstellar gas in the Galaxy. Here we investigate the production of these elements, and how they constrain CR models for Galactic propagation. 
 %
-For the sake of simplicity, we focus on a case with only carbon as the primary species ($\alpha' = \text{C}$), whereas boron is almost exclusively created in secondary processes ($\alpha = \text{B}$).
+For the sake of simplicity, we focus on a case with only carbon as the primary species ($\alpha^\prime = \text{C}$), whereas boron is almost exclusively created in secondary processes ($\alpha = \text{B}$).
 
 The solution for carbon has been obtained in the previous section and is given by:
 %
@@ -368,7 +348,7 @@ f_{0,\rm C}(p) = \frac{Q_{0,\rm C}}{2n_{\rm d}h m_{\rm p}c} \frac{1}{\frac{1}{\r
 Since boron is a pure secondary species, the solution of its transport equation takes the same form as the previous equation, with the injection rate proportional to the equilibrium solution for carbon:
 %
 \begin{equation}
-4 \pi Q_{\rm B}(p) p^2 dp = 2 h n_{\rm d} c \sigma_{\rm C \rightarrow B} 4 \pi \delta(z) f_{\rm C}(p^\prime) p^{\prime \, 2} dp^\prime
+4 \pi Q_{\rm B}(p) p^2 dp = 2 h n_{\rm d} c \sigma_{\rm C \rightarrow B} \delta(z) 4 \pi f_{\rm C}(p^\prime) p^{\prime \, 2} dp^\prime
 \end{equation}
 
 Here, $A$ is the atomic number of carbon, and the Jacobian $\frac{dp'}{dp} = \frac{A}{A-1}$ is introduced to ensure conservation of energy per nucleon.
@@ -381,7 +361,7 @@ f_{0,\rm B}(p)
 = \frac{\sigma_{\rm C \rightarrow B}}{m_{\rm p}}  \frac{1}{\frac{1}{\rchi_{\rm B}(p)} + \frac{1}{\rchi_{\rm cr, B}}} f_{0, \rm C}\left(\frac{A}{A-1}p\right) \left(\frac{A}{A-1} \right)^3
 \end{equation}
 
-This leads to the B/C ratio as:
+Assuming \( A \gg 1 \) leads to the B/C ratio as:
 %
 \begin{equation}
 \frac{\rm B}{\rm C} \simeq \frac{1}{\rchi_{\rm cr, C\rightarrow B}} \left(\frac{1}{\rchi(p)} + \frac{1}{\rchi_{\rm cr, B}}\right)^{-1}

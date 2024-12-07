@@ -1,0 +1,66 @@
+% !TEX root = ../lectures.tex
+%%%%%%%%%% SECTION %%%%%%%%%
+\section{The Cosmic Ray Intensity}  
+\label{app:intensity}
+
+In this appendix, we provide an introduction to the key definitions used to describe the density and intensity of cosmic rays (CRs). These concepts are essential for connecting CR measurements and their physical implications.  
+
+The starting point for describing the cosmic ray density is the \emph{distribution function}, \(\phi(\vb{r}, \vb{p}, t)\), which represents the number of particles in a small spatial volume \(d^3 \vb{r}\) around \(\vb{r}\) and within a momentum interval \(d^3 \vb{p}\) around \(\vb{p}\):  
+\begin{equation}
+d\rho = \phi(\vb{r}, \vb{p}, t) \, d^3 \vb{r} \, d^3 \vb{p}.
+\end{equation}
+
+To account for the geometry of momentum space, we rewrite \(d^3 \vb{p}\) in spherical coordinates as:  
+\begin{equation}
+d^3 \vb{p} = p^2 dp \, d\Omega,
+\end{equation}
+where \(p = |\vb{p}|\) is the magnitude of the momentum, \(dp\) is the infinitesimal momentum interval, and \(d\Omega\) represents the solid angle element. Substituting this into the expression for \(d\rho\) gives:  
+\begin{equation}
+d\rho = \phi(\vb{r}, p, t) \, d^3 \vb{r} \, p^2 dp \, d\Omega.
+\end{equation}
+
+In practice, it is often not possible to measure \(\phi(\vb{r}, \vb{p}, t)\) directly. Instead, measurements typically involve quantities averaged over the direction of \(\vb{p}\). For this reason, we define the \emph{phase-space distribution function} \(f(\vb{r}, p, t)\), which averages \(\phi(\vb{r}, p, t)\) over all directions:  
+\begin{equation}
+f(\vb{r}, p, t) = \frac{1}{4\pi} \int_\Omega \phi(\vb{r}, p, t) \, d\Omega.
+\end{equation}
+
+Using this definition, the number of particles in a spatial volume \(d^3 \vb{r}\) and within a momentum interval \(dp\), regardless of the direction of \(\vb{p}\), is given by:  
+\begin{equation}\label{eq:dnd3p}
+dn = 4\pi p^2 f(\vb{r}, p, t) \, d^3 \vb{r} \, dp.
+\end{equation}
+
+It is important to emphasize here that if the phase-space distribution function scales with momentum as
+\begin{equation}
+f \propto p^{-\gamma}~,
+\end{equation}
+then the corresponding number density \( n\), when expressed as differential in energy \( E\), is:
+\begin{equation}
+n(E) dE = n(p) dp = 4 \pi p^2 f(\vb{r}, p, t) \, dp~,
+\end{equation}
+%
+thus, for relativistic particles, it scales as
+\begin{equation}
+n(E) \propto E^{2-\gamma}~.
+\end{equation}
+
+This relationship arises because the conversion from momentum to energy introduces an additional factor of \(p^2\) due to the geometry of momentum space. Consequently, the spectral index in energy space is shifted by 2 compared to the spectral index in momentum space.  
+
+\subsection{Differential Intensity}
+
+Experimental measurements of cosmic rays are usually reported in terms of the \emph{differential intensity}, \(I\), which is defined as the number of particles detected per unit energy, unit area, unit time, and unit solid angle. This quantity provides a direct way to compare observed cosmic ray spectra.  
+
+Moreover, for convenience, CR spectra are often expressed as a function of the \emph{kinetic energy per nucleon}, \(T\). This choice is particularly useful because \(T\) remains approximately conserved when a nucleus undergoes fragmentation in interactions with interstellar gas.  
+
+The intensity of a specific nuclear species \(\alpha\) can be related to the phase-space distribution \(f_\alpha(p)\). 
+%
+For a given kinetic energy interval \(dT\), the differential intensity, using~\cref{eq:dnd3p}, is:  
+\begin{equation}
+I_\alpha(T) \, dT = c \, p^2 \, f_\alpha(p) \, \beta(p) \, dp,
+\end{equation}
+where \(\beta(p) \) is the particle’s velocity expressed as a fraction of the speed of light, and \(p\) is the momentum corresponding to the kinetic energy \(T\).  
+
+Reminding that \( \frac{dp}{dT} = \frac{A}{v} \), this expression can be further simplified as:  
+\[
+I_\alpha(T) = A \, p^2 \, f_\alpha(p),
+\]  
+where \(A\) is the nuclear mass.
