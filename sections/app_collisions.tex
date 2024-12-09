@@ -1,0 +1,75 @@
+% !TEX root = ../lectures.tex
+\section{Kinematics of Head-On and Tail-On Collisions in Newtonian Elastic Scattering}
+
+Elastic scattering describes collisions in which the total kinetic energy of the system is conserved. This appendix focuses on energy changes during elastic collisions between a particle and a larger moving target, specifically for two distinct scenarios:  
+%
+\begin{itemize}
+\item Head-on collisions: The particle and target move toward each other.
+\item Tail-on collisions: The particle moves in the same direction as the target, trailing behind it.  
+\end{itemize}
+
+These cases illustrate fundamental principles of energy transfer in Newtonian mechanics, which underpin phenomena like cosmic ray acceleration.
+
+We begin with a particle of mass \( m_1 \) and velocity \( v_1 \), colliding elastically with a target of mass \( m_2 \) and velocity \( v_2 \). For simplicity, we restrict the analysis to one-dimensional (1D) motion along a straight line.  
+
+In elastic collisions, \emph{momentum} and \emph{kinetic energy} are conserved. 
+%
+The conservation laws are expressed as:  
+\[
+m_1 v_1 + m_2 v_2 = m_1 v_1^\prime + m_2 v_2^\prime~\quad\text{(momentum conservation)}~,
+\]  
+and
+\[
+\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 = \frac{1}{2} m_1 {v_1^\prime}^2 + \frac{1}{2} m_2 {v_2^\prime}^2~\quad\text{(energy conservation)}~.
+\]
+
+From these principles, the post-collision velocities \( v_1^\prime \) and \( v_2^\prime \) are derived:  
+\[
+v_1^\prime = \frac{(m_1 - m_2)v_1 + 2 m_2 v_2}{m_1 + m_2}~, \quad v_2^\prime = \frac{(m_2 - m_1)v_2 + 2 m_1 v_1}{m_1 + m_2}~.
+\]
+
+These expressions encapsulate the dynamics of the collision, where the final velocities depend on the masses \( m_1, m_2 \) and the initial relative velocity \( v_1 - v_2 \).
+
+The energy change for the particle, \( \Delta K_1 \), is defined as the difference in the particle's kinetic energy before and after the collision:  
+\[
+\Delta K_1 = \frac{1}{2} m_1 {v_1^\prime}^2 - \frac{1}{2} m_1 v_1^2~.
+\]
+
+Substituting \( v_1^\prime \) from the velocity expression, we obtain:  
+\[
+\Delta K_1 = \frac{1}{2} m_1 \left[ \left( \frac{(m_1 - m_2)v_1 + 2 m_2 v_2}{m_1 + m_2} \right)^2 - v_1^2 \right]~.
+\]
+
+This result shows how the energy transfer depends on the configuration of the system.
+%
+Let’s examine two important scenarios in the limit \( m_1 \ll m_2 \), where the target is significantly more massive than the particle.
+
+In a \emph{head-on collision}, the particle and target move toward each other, meaning \( v_1 > 0 \) and \( v_2 < 0 \). 
+
+When \( m_1 \ll m_2 \), the target’s velocity remains approximately constant, and the particle’s post-collision velocity simplifies to:  
+\[
+v_1^\prime \approx -v_1 + 2 v_2 <0 ~.
+\]
+This result indicates that the particle's direction is reversed.
+
+In the same approximation, the energy gained by the particle can be approximated as:  
+\[
+\Delta K_1 \approx 2 m_1 v_2 (v_2 - v_1) > 0~.
+\]
+Since \( v_2 < 0 \) (opposite to \( v_1 \)), the particle \emph{gains energy} in the collision.
+
+In a \emph{tail-on collision}, the particle trails the target, meaning \( v_1 > v_2 > 0 \). 
+
+For \( m_1 \ll m_2 \), the particle's velocity after the collision is approximately:  
+\[
+v_1^\prime \approx -v_1 + 2 v_2~,
+\]  
+with its direction determined by the relative velocity \( v_1 - v_2 \).
+
+The kinetic energy change is approximately:  
+\[
+\Delta K_1 \approx 2 m_1 v_2 (v_2 - v_1) < 0~.
+\]
+Since \( v_2 - v_1 < 0 \), the particle \emph{loses energy} during the collision.
+
+These principles of head-on and tail-on collisions are pivotal in understanding energy transfer mechanisms in high-energy astrophysics. For example, head-on collisions dominate energy gain in second-order Fermi acceleration, where particles interact with moving magnetic turbulence.
