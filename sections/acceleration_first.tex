@@ -1,0 +1,149 @@
+% !TEX root = ../lectures.tex
+\section{First-Order Fermi Mechanism or Diffusive Shock Acceleration}
+
+The mechanism often associated with Fermi is, in fact, the result of the work by several authors, as Krymsky, Bell, Blandford, and Ostriker in the late 1970s~\cite{addref}. 
+%
+%Krymsky, G. F. Dokl. Akad. Nauk SSSR 243, 1306 (1977). 13. 
+%Bell, A. R. M.N.R.A.S. 182, 147 (1978).
+%Axford, W. I., Leer, E., and Skadron, G. Proc. 15th ICRC (Plovdiv) XI, 132 (1977). 15. 
+%Blandford, R. D. & Ostriker, J. P. Astrophys. J. Lett. 221, L29 (1978).
+%
+They discovered that \emph{astrophysical shocks} could act as extremely efficient accelerators for cosmic particles, a process now known as \emph{diffusive shock acceleration (DSA)}.
+
+Current observations confirm that particles are indeed accelerated at these shocks, evidenced by the radiation emitted from such regions, typically interpreted as the energy losses of fresh accelerated electrons~\cite{ref}. 
+
+We know at this point that, in the vicinity of the discontinuity, the upstream region is characterized by fast-moving, cold plasma, whereas the downstream region contains slower, hotter plasma. 
+%
+The typical shock wave's velocity in the ISM is approximately \( \sim 10^3-10^4 \) km/s, which corresponds to a Mach number of about 100-1000, placing us firmly in the \emph{strong} shock regime.
+
+The key concept here revolves around how particles perceive the plasma in the context of a shock front. From a particle's perspective, the plasma appears to approach at about the shock velocity from both the upstream and downstream sides. 
+%
+Consider a group of particles with energy \( E \) initially located on the upstream side of the shock. These particles undergo diffusion through collisions with magnetic turbulence present in the plasma, which tends to isotropize their angular distribution in the frame where the upstream plasma is at rest.
+%
+Upon crossing the shock to the downstream side, these particles encounter magnetic turbulence associated with the downstream plasma. This plasma is moving towards the particles at a velocity \( \sim \frac{3}{4} u_s \) in the same reference frame. If collisions with the downstream plasma further isotropize the particles, then from the particles' viewpoint, they effectively experience a collision with a \emph{cloud} moving towards them. 
+%
+Some of these particles will eventually diffuse back to the upstream side of the shock. Upon their return, they perceive the upstream plasma as moving towards them, on average. In the shock frame, the unshocked plasma advances towards the downstream at a speed of \( |u_1 - u_2| \sim u_s \), resulting again in a head-on \emph{cloud} collision.
+%
+There are never crossings in which the particles lose energy, and the increment in energy is the same going in both directions. At such, the continual diffusion of particles back and forth across the shock front can significantly accelerate the particles. 
+
+As in both upstream and downstream scenarios, the particles experience head-on collisions, this mechanism will result in a  \emph{first-order} Fermi acceleration.
+
+%Therefore, numerous cycles of crossing the shock can significantly accelerate the particles. 
+%Scattering ensures that once the particles enter in the upstream or downstream regions there their velocities become isotropically distributed.
+%There are never crossings in which the particles lose energy, and the increment in energy is the same going in both directions.
+
+It is clear from this description that, for this process to occur effectively, particle directions need to be isotropized, which can happen through pitch-angle scattering by MHD waves. The generation of these waves is attributed to large-scale turbulence cascade downstream, and upstream by the energetic particles themselves (cosmic-ray streaming).
+
+Additionally, it's crucial for particles to have a finite probability of escaping downstream to fulfill the conditions of the generalized Fermi acceleration mechanism.
+
+More quantitatively, consider now a particle in the upstream with energy \( E_u \). This particle diffuses and crosses the shock, and its energy in the downstream \( E_d \) can be calculated using Lorentz transformation:
+%
+\begin{equation}
+E_d = \gamma E_u (1 + \beta \mu_d)
+\end{equation}
+%
+here, \( 0 \le \mu \le 1 \) and \( \beta = \frac{u_1 - u_2}{c} > 0 \).
+
+The same principle applies to a particle transitioning from downstream to upstream, with the angle \( \mu^\prime \) having the opposite sign:
+%
+\begin{equation}
+E_u = \gamma E_d (1 - \beta \mu^\prime)
+\end{equation}
+here, \( -1 \le \mu^\prime \le 0 \).
+
+As a consequence, after completing a cycle (upstream $\rightarrow$ downstream $\rightarrow$ upstream), there is an overall gain in energy:
+%
+\begin{equation}
+%= \gamma^2 E (1 + \beta \mu) (1 - \beta \mu^\prime) \rightarrow 
+\frac{\Delta E}{E} = \frac{E_u - E}{E} = \gamma^2 (1 + \beta \mu) (1 - \beta \mu^\prime) - 1
+\end{equation}
+
+Notice that now, due to the different angular distributions, there are no configurations leading to an energy decrease, and \( \Delta E / E \) is \emph{always positive}.
+
+\end{document}
+
+To compute the mean energy gain over all the possible configurations, we have to compute the probability of a particle encountering the shock front with a specific pitch angle \( \mu \). 
+
+Assuming \( n \) is the number density of isotropically distributed particles due to diffusion, this probability can be derived from the ratio of the flux of particles moving in the direction of \( \mu \) to the total flux \( J \):
+%
+\begin{equation}
+J = \int d\Omega \frac{n}{4\pi} v \mu = \frac{n v}{4\pi} \int_0^{2\pi} d\phi \int_0^1 d\mu \mu = \frac{n v}{4}
+\end{equation}
+%
+where we use the information that only those particles with a projected \( \cos \theta < 0 \) will actually cross the shock front.
+
+Therefore, the probability density is given by:
+%
+\begin{equation}
+P(\mu) \propto \frac{n \mu v}{J} = 4 \mu
+\end{equation}
+
+To normalize \( P \) as a probability, we impose the condition:
+%
+\begin{equation}
+\int_0^1 d\mu P(\mu) = 1 \rightarrow P(\mu) = 2\mu 
+\end{equation}
+
+It is evident that this probability is symmetric in both directions. Consequently, the average energy gain can be calculated as follows:
+%
+\begin{remark}
+\begin{equation}
+\left\langle \frac{E_u -E}{E} \right\rangle_{\mu,\mu^\prime} = -\int_0^1 d\mu \int_{-1}^0 d\mu^\prime P(\mu)P(\mu^\prime)\left[ \gamma^2(1+\beta\mu)(1-\beta\mu')-1 \right] = \frac{4}{3} \beta = \frac{4}{3} \frac{u_1-u_2}{c}
+\end{equation}
+\end{remark}
+
+This result implies that the energy gain per cycle is first order in $\beta$ as expected, for interstellar shock the resulting energy gain is of the order of \( 10^{-2}-10^{-3} \), which is enormously more than the second order mechanism! 
+
+In assessing the efficiency of the proposed mechanism, we must additionally ensure that particles can effectively cross the shock in both directions. 
+%
+In the upstream region, particles, regardless of the diffusion coefficient, will eventually encounter the shock front, which moves towards them at thousands of kilometers per second. Hence, the probability of crossing from upstream to downstream, \( P_{1 \rightarrow 2} \), is 1. Particles leave the upstream region only when their Larmor radius becomes larger than the accelerator's size or the maximum scale of the upstream turbulence.
+
+In the downstream region, besides diffusion, we must consider that the plasma moves away from the shock, dragging particles with it. This leads to a finite probability of particles not returning to the shock front, resulting in a leakage. To estimate this escape probability, we recall that the particle flux through an infinite planar shock is \( n v / 4 \), assuming efficient isotropization in the upstream. In the shock rest frame, there is a particle flow \( u_2 n \) downstream, away from the shock front, which is lost to the acceleration process. Therefore, the escape probability is:
+%
+\begin{equation}
+P_{2 \rightarrow \infty} = \frac{4 u_2}{c}
+\end{equation}
+
+The probability of return to the shock front is simply:
+%
+\begin{equation}
+P_{2 \rightarrow 1} = 1 - P_{2 \rightarrow \infty} = 1 - \frac{4 u_2}{c}
+\end{equation}
+
+With \( u_2/c \sim 10^{-2} \), most particles from the downstream will return to the upstream. This results in a highly efficient first-order Fermi acceleration mechanism with a high probability of completing a cycle.
+
+The existence of a small escape probability is crucial, as it leads to a distribution of energies rather than uniform acceleration. Applying previous results, the slope of the \emph{differential spectrum}\footnote{The differential spectrum \( n(E)dE \) is  the number of particles with energy between \( E \) and \( E + dE \) thus \( E n(E) \propto E^{-\gamma} \)} produced by shock acceleration is:
+%
+\begin{remark}
+\begin{equation}
+\gamma \simeq \frac{3 u_2}{u_1 - u_2} + 1 = \frac{r + 2}{r - 1} \rightarrow 2
+\end{equation}
+\end{remark}
+
+We found that this mechanism results in a \emph{universal} power-law spectrum for strong shocks, as the slope depends only on the compression factor. Worth noticing, the accelerated spectrum is independent of the diffusion coefficient, which in turn depends on the poor-understood microphysics of particle-wave scattering.
+
+On the other hand, the acceleration process's efficiency and the potential to accelerate particles to sufficiently high energies dramatically depend on the diffusion coefficient. 
+%
+To estimate the acceleration time, we need to consider the energy gain per crossing and the time taken for each crossing. %
+The average distance traveled by a particle in each region is obtained by equating the diffusion length (\( l_{\text{d,i}} \simeq \sqrt{2 D_i t_i} \)) to the distance covered by the shock or the advected plasma.
+
+The total cycle time is the sum of the times spent in the downstream and upstream\footnote{$
+t_{\rm c, i} = \frac{\lambda_i}{\langle v_{x,i} \rangle} = \frac{\lambda_i}{-\int_0^{\pi/2} v_i \cos \theta d\cos\theta} = \frac{\lambda_i}{v_i / 2} \sim \frac{2\lambda_i}{c}$}:
+%
+\begin{equation}
+t_{\text{cycle}} = \frac{2\lambda_1}{c} + \frac{2\lambda_2}{c} = \frac{4}{c} \left(\frac{D_1}{u_1} + \frac{D_2}{u_2}\right)
+\end{equation}
+
+The characteristic acceleration timescale is then:
+%
+\begin{equation}
+\tau_{\text{acc}} = \frac{3}{u_1 - u_2} \left( \frac{D_1}{u_1} + \frac{D_2}{u_2} \right)
+\end{equation}
+
+To compare this time with the age of the system, we use typical values for the upstream diffusion coefficient and the shock speed of a young SNR. For example, with \( D_1 \simeq 10^{28}~\text{cm}^2~\text{s}^{-1} (E/\text{GeV})^{1/2} \) and \( u_1 = 10^4 \) km/s, we find:
+%
+\begin{equation}
+{\color{red}\tau_{\text{acc}} \simeq 1~\text{kyr}~(E/\text{GeV})^{1/2}}
+\end{equation}
+
+However, observations of particles accelerated up to 100 TeV in events like Tycho's supernova (age \( \sim 500 \) years) suggest that our estimates are off by orders of magnitude. Reconciling this discrepancy requires \emph{reducing} the diffusion coefficient, possibly through cosmic-ray induced plasma instabilities. This leads to an inherently non-linear problem, underscoring the complexity of particle acceleration in astrophysical shocks.
