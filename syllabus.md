@@ -4,7 +4,6 @@
    - Introduction to High-Energy Astroparticle Physics
    - Overview of the field and key questions  
    - Course logistics and structure  
-   - Historical and modern perspectives  
 
 2. November 26, 2024
    - Synchrotron power and electron energy loss timescales  
@@ -47,7 +46,25 @@
    - Transport equation for secondary nuclei: applications and implications  
    - Secondary-to-primary ratio: insights into cosmic ray physics  
    - Transport equation for unstable secondary nuclei and observational significance
+   - The *SN paradigm*
 
 9. December 5, 2024
-    
+   - Charged particle motion in a turbulent magnetic field: the QLT approach
+   - Pitch angle diffusion
+   - The Kolmogorov turbulence power spectrum
+  
 10. December, 6, 2024
+   - The resonant scattering
+   - The diffusion coefficient in space
+   - Implications on the Galactic mean free path
+
+11. December 16, 2024
+
+12. December 17, 2024
+
+13. December 18, 2024
+
+14. December 19, 2024
+
+15. December 20, 2024
+
