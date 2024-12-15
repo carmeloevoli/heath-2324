@@ -54,9 +54,9 @@
    - The Kolmogorov turbulence power spectrum
   
 10. December, 6, 2024
-   - The resonant scattering
-   - The diffusion coefficient in space
-   - Implications on the Galactic mean free path
+    - The resonant scattering
+    - The diffusion coefficient in space
+    - Implications on the Galactic mean free path
 
 11. December 16, 2024
 
