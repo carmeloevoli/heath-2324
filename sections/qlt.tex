@@ -1,4 +1,4 @@
-% !TEX root = ../main.tex
+% !TEX root = ../lectures.tex
 \section{Charged Particle Motion in Turbulent Magnetic Fields}
 \label{app:diffusioncoefficient}
 
@@ -40,8 +40,6 @@ Here, we introduce the Larmor frequency
 \Omega = \frac{q B_0}{m \gamma c} \simeq 10^{-2} Z \left(\frac{B_0}{\rm \mu G}\right) \left(\frac{E}{\rm GeV}\right)^{-1}~\text{rad}~\text{s}^{-1}
 \end{equation}
 
-{\color{red}Introduce here the Larmor radius...}
-
 This equation can be easily solved as simple harmonic motion along the $\hat{\vb x}$ axis, where $v_{x} = v_{0,x} \cos (\Omega t)$. Using this solution, we can solve the system~\eqref{eq:lorentzcomponents} as follows:
 %
 \begin{equation}
@@ -63,6 +61,8 @@ Here, $\phi$ is an arbitrary phase, $v_{0,\perp}$ represents the initial velocit
 The solution above represents a helical motion with a uniform drift along $\hat{\vb z}$, described by the equation of motion $z = v \mu t$.
 
 Now we consider introducing a perturbation to the magnetic field with components $\delta \mathbf{B} \equiv (\delta {\rm B}_x, \delta {\rm B}_y, \delta {\rm B}_z)$, where $|\delta \mathbf{B}| \ll |\mathbf{B}_0|$. In this case, we assume a pure Alfvénic wave propagating along the background magnetic field, which implies $\delta {\rm B}_z = 0$ and the wave oscillates such that $\delta \mathbf{B} \perp \mathbf{k}$.
+
+{\color{red}Dire che non possiamo piu' ignorare il campo elettrico...}
 
 This allows us to express the system of equations~\eqref{eq:lorentz} as follows:
 %
@@ -162,7 +162,7 @@ However, if we instead consider the square of the pitch-angle variation:
 
 The integrand functions are even, so we can double the interval of the $dt^\prime$ integral as $\int_{-\Delta t}^{\Delta t} dt^\prime$ and add a factor of $\frac{1}{2}$. Additionally, as we are considering sufficiently large times to evaluate the effect of scattering ($\Delta t \gg t, t^\prime$), the same interval can be approximated as $\int_{-\infty}^{\infty} dt^\prime$.
 
-Therefore, we have\footnote{We are grateful to A.~Marcowith for providing clarification on this passage.}:
+Therefore, we have:
 %
 \begin{multline}
 \langle \Delta \mu \Delta \mu \rangle = \\ \Omega^2 \frac{(1 - \mu^2)}{2} \left( \frac{\delta {\rm B}}{{\rm B}_0} \right)^2 \int_{0}^{\Delta t} \!\! dt \, {\rm Re} \{ \exp[i(\Omega \pm k v \mu) t] \} \, \int_{-\infty}^{\infty} \!\! dt^\prime \,  {\rm Re}\{\exp[i(\Omega \pm k v \mu) t^\prime]\}

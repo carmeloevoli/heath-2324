@@ -1,4 +1,4 @@
-% !TEX root = ../main.tex
+% !TEX root = ../lectures.tex
 \section{Small Perturbations in a Fluid: Sound Waves}
 
 In fluid dynamics, we often encounter scenarios where disturbances in the fluid are \emph{small} compared to the equilibrium values of a steady state solution. 
@@ -59,7 +59,7 @@ The Euler equation describes the conservation of momentum in the fluid:
 \frac{\partial \vb v}{\partial t} + \vb v \cdot \nabla \vb v = - \frac{\nabla P}{\rho}
 \end{equation}
 
-This equation relates the rate of momentum density (\( \rho \vb v \)) to the gradient of pressure.
+This equation relates the variation of momentum density (\( \rho \vb v \)) to the gradient of pressure (which act a net force on the system).
 
 Additional forces, like gravity (represented through its potential by \( - \nabla \phi \)), can be included on the RHS.
 
@@ -69,12 +69,12 @@ In the case of a barotropic fluid, a common simplification in fluid dynamics, th
 
 For more complex scenarios, where the EoS also depends on temperature, an additional equation governing the evolution of temperature is necessary. 
 
-{\color{red}See appendix on hydrostatic. TBD}
+\TODO{See appendix on hydrostatic. TBD}
 
 Consider a fluid in a static steady state defined by a constant density \( \rho_0(x) \), pressure \( P_0(x) \), and zero velocity \( \vb v_0(x) = 0 \). This state, being time-independent, will persist indefinitely in the absence of external disturbances.
 
-Now, let's introduce small perturbations into this system, denoted by \( \delta A \) where \( A \) represents the fluid properties, and the relative perturbation \( \delta A / A \ll 1 \). 
-%
+Now, let's introduce small perturbations into this system, denoted by \( \delta A \), where \( A \) represents the fluid properties, and we assume the relative perturbation to be \( \delta A / A \ll 1 \). 
+
 These perturbations lead to changes in the fluid's velocity, density, and pressure:
 %
 \begin{eqnarray}
@@ -129,7 +129,7 @@ Indeed, the general solution of this equation is in the form of:
 
 Here, \( R \) and \( L \) are arbitrary functions representing disturbances propagating to the right and left, respectively, at a velocity \( c_{s,0} \), which turns our to be the speed of sound in the medium.
 
-Given that the problem is both linear and homogeneous, the solution to the wave equation can be effectively found using eigenmode decomposition. This approach allows us to break down any disturbance into a series of Fourier modes, each of which can be solved independently.
+Given that the problem is both linear and homogeneous, the solution to the wave equation can be effectively found using \emph{eigenmode} decomposition. This approach allows us to break down any disturbance into a series of Fourier modes, each of which can be solved independently.
 
 For each mode characterized by a wavenumber \( k \), we seek solutions in the following form:
 %
@@ -164,7 +164,7 @@ Reverting to the original form of the perturbation and taking the real part\foot
 %
 here, \( A \) and \( B \) are constants that determine the amplitude of the waves traveling in the positive and negative \( x \)-directions, respectively.
 
-This equation represents plane wave solutions with phase velocity \( V_p = \frac{\omega}{k} = c_{s,0} \), and group velocity \( V_g = \frac{\partial \omega}{\partial k} = c_{s,0} \).
+This equation represents \emph{plane wave solutions} with phase velocity \( V_p = \frac{\omega}{k} = c_{s,0} \), and group velocity \( V_g = \frac{\partial \omega}{\partial k} = c_{s,0} \).
 
 It is crucial to note that the group velocity \( V_g \) is equal to the phase velocity \( V_p \), indicating that these waves are non-dispersive. This means that all waves travel at the same speed in the medium, preserving the shape of the wave packet over distance.
 
@@ -174,9 +174,11 @@ Furthermore, these waves are compressional because \( \nabla \cdot \delta \vb v 
 
 In summary, any solution of the wave equation, and thus any generic small perturbation in the fluid, can be expressed as a linear combination of plane waves, each described by the equation above and satisfying the dispersion relation. These solutions encapsulate the essence of what we term as \emph{sound waves}.
 
-\begin{problem}
-Derive Gravity waves
-\end{problem}
+\end{document}
+
+%\begin{problem}
+%Derive Gravity waves
+%\end{problem}
 
 \section{From Linear to Non-Linear: The Formation of Shock Waves}
 
