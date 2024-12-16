@@ -3,15 +3,17 @@
 
 This section aims to qualitatively illustrate how the formation of shock waves is a natural and, consequently, a frequent phenomenon in astrophysical environments.
 
-In the linear regime, small perturbations in a medium propagate at the sound speed, \( c_{s,0} \), which we earlier defined in terms of the pressure \( P_0 \) and density \( \rho_0 \) of the medium (see eq.~\ref{eq:cs02}). For linear waves, \( c_{s,0} \) is assumed to be constant across the medium. 
+In the linear regime, small perturbations in a medium propagate at the sound speed, \( c_{s,0} \), which we earlier defined in terms of the pressure \( P_0 \) and density \( \rho_0 \) of the medium (see equation~\ref{eq:cs02}). For linear waves, \( c_{s,0} \) is assumed to be constant across the medium. 
 
 When the amplitude of the perturbation increases, the wave enters the non-linear regime, where the propagation speed depends on the local density. Specifically:  
 \[
 c_s^2 \propto \frac{P}{\rho} \propto \rho^{\gamma - 1},
 \]  
-where \( \gamma \sim 5/3 \) is the adiabatic index of the medium. High-density regions propagate faster than low-density regions. This effect fundamentally alters the wave's behavior.  
+where \( \gamma \sim 5/3 \) is the adiabatic index of the medium. \emph{High-density regions propagate faster than low-density regions}. 
+%
+This effect fundamentally alters the wave's behavior.  
 
-Imagine a sinusoidal wave (as the solution found in eq.~\ref{eq:rhowaveform}) traveling through a medium. As density peaks (crests) move faster than the troughs, the waveform becomes increasingly asymmetric. Over time, this leads to the steepening of the wave front until the crest overtakes the trailing edge. At this point, the wave profile develops a physical inconsistency --- a \emph{multi-valued} solution (see fig.~\ref{fig:landau}). The resolution to this breakdown is the formation of a \emph{shock wave}, a discontinuity in the fluid properties.
+Imagine a sinusoidal wave (as the solution found in equation~\ref{eq:rhowaveform}) traveling through a medium. As density peaks (crests) move faster than the troughs, the waveform becomes increasingly asymmetric. Over time, this leads to the steepening of the wave front until the crest overtakes the trailing edge. At this point, the wave profile develops a physical inconsistency --- a \emph{multi-valued} solution (see figure~\ref{fig:landau}). The resolution to this breakdown is the formation of a \emph{shock wave}, a discontinuity in the fluid properties.
 
 As a direct consequence of their formation process, shock waves exhibit several distinctive properties:
 %
@@ -23,7 +25,7 @@ As a direct consequence of their formation process, shock waves exhibit several 
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.5\textwidth]{figures/shocklandau.pdf}
+\includegraphics[width=0.45\textwidth]{figures/shocklandau.pdf}
 \caption{}
 \label{fig:landau}
 \end{figure}
@@ -40,8 +42,6 @@ Notable examples include:
 \end{itemize}
 
 Their presence in is a testament to the dynamic, high-energy processes shaping the universe.
-
-\end{document}
 
 \section{Interstellar Shock Waves}
 
@@ -69,7 +69,7 @@ In contrast, astrophysical environments, where most particles are ionized, prese
 %
 More importantly, these environments have much lower particle densities, about \( n \sim 1~\text{cm}^{-3} \). As a result, the mean free path in such settings is \( \gg \) Mpc! 
 %
-This means that the formation of the shock and its energy dissipation mechanisms do not primarily occur through particle collisions or Coulomb interactions. Instead, these processes are predominantly governed by interactions with the ambient magnetic field. The detailed microphysics of astrophysical shocks are complex and beyond the scope of this discussion.
+This means that the formation of the shock and its energy dissipation mechanisms do not primarily occur through particle collisions or Coulomb interactions. Instead, these processes are predominantly governed by interactions with the ambient magnetic field. The detailed microphysics of astrophysical shocks are complex and beyond the scope of these lectures.
 
 Despite the microscale complexity at discontinuities (e.g., finite conductivity determining the size), conservation laws of mass, momentum, and energy remain applicable.
 
@@ -124,13 +124,13 @@ Applying the mass continuity equation, we derive:
 \frac{\partial}{\partial z} (\rho u) = 0
 \end{equation}
 
-Next, from the momentum equation, and utilizing the mass continuity equation in Eq.~\ref{eq:mass}, we obtain:
+Next, from the momentum equation, and utilizing the mass continuity equation in~\ref{eq:mass}, we obtain:
 %
 \begin{equation}
 \rho u \frac{\partial u}{\partial z} = -\frac{\partial P}{\partial z}  \, \rightarrow \, \frac{\partial}{\partial z} (P + \rho u^2) = 0 
 \end{equation}
 
-%Here, \( P_{\text{g}} \) represents the gas pressure.
+{\color{red}Here, \( P_{\text{g}} \) represents the gas pressure.}
 
 Moving to the energy equation and again invoking the continuity equation, we find:
 %
@@ -274,28 +274,3 @@ In another terminology, a shock changes the entropy shifting gas to a higher adi
 Notice then that the non trivial solution makes sense only if the Mach number $M_1$ is larger than one. In the opposite case, we the variation of entropy would be in the sense to decrease it, which is not allowed by second principle of thermodynamics. 
 %
 In other words we would have invented a system to transform heat in ordered work! Shocks can only form in supersonic motion.
-
-\subsection{Supernovae in the Milky Way}
-
-Historical SNe: Kepler 1604, {\color{red}Tycho SNR 1572}, SN1006 SNR, Cas A 1680?
-
-We distinguish between: 
-%
-\begin{itemize}
-\item Core collapse supernovae (Type II, Ib/c,..)
-\begin{itemize}
-\item Progenitor: Massive star (\( \gtrsim 8~M_\odot \))
-\item Energy source: gravitational collapse (\( \gtrsim 10^{53} \)~erg) 
-\item Kinetic energy: \( \sim 10^{51} \)~erg
-\item Ejecta mass \( >4~M_\odot \)  
-\item Neutron star (or BH)
-\end{itemize}
-\item Thermonuclear supernovae (Type Ia)
-\begin{itemize}
-\item Progenitor: accreting CO white dwarf, or merging white dwarfs 
-\item Energy source: nuclear fusion (C/O -> Fe-group)
-\item Kinetic energy: \( 1.2 \times 10^{51} \) erg
-\item Ejecta mass \( \sim 1.4~M_\odot \)
-\item Total disruption of star
-\end{itemize}
-\end{itemize}

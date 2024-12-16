@@ -18,13 +18,15 @@ where the motion of particles is predominantly along the \( z \)-axis, the Alfv�
 
 \subsection{The Diffusion Equation in Pitch Angle}
 
-Our objective is to describe the evolution of the phase-space density \( f \) over a small time interval \( \Delta t \). To model the effect of pitch-angle scattering, we introduce the \emph{transition probability density} \( \Psi(\mu, \Delta\mu) \), which represents the likelihood of a particle experiencing a pitch-angle change \( \Delta\mu \) during \( \Delta t \). This probability density satisfies the normalization condition:
-\begin{equation}
+Our objective is to describe the evolution of the phase-space density \( f \) over a small time interval \( \Delta t \). To model the effect of pitch-angle scattering, we introduce the \emph{transition probability density} \( \Psi(\mu, \Delta\mu) \), which represents the likelihood of a particle experiencing a pitch-angle change \( \Delta\mu \) during \( \Delta t \). 
+%
+This probability density satisfies the normalization condition:
+\begin{equation}\label{eq:normpsi}
 \int \Psi(\mu, \Delta\mu) \, d\Delta\mu = 1, \quad \forall \mu.
 \end{equation}
 
 The phase-space density at time \( t + \Delta t \) can then be expressed as an integral over all possible pitch-angle variations \( \Delta\mu \), accounting for the contribution of particles that scattered into the pitch angle \( \mu \). The evolution equation is given by:
-\begin{equation}
+\begin{equation}\label{eq:distribpert}
 f(z + v\mu \Delta t, \mu, t + \Delta t) = \int d\Delta\mu \, f(z, \mu - \Delta\mu, t) \Psi(\mu - \Delta\mu, \Delta\mu),
 \end{equation}
 
@@ -32,7 +34,7 @@ Assuming small variations in \( \mu \), we apply perturbation theory and perform
 
 For the left-hand side, expanding \( f(z + v \mu \Delta t, \mu, t + \Delta t) \) yields:
 \begin{equation}
-f(z + v \mu \Delta t, \mu, t + \Delta t) = f + \frac{\partial f}{\partial z} v \mu \Delta t + \frac{\partial f}{\partial t} \Delta t.
+f(z + v \mu \Delta t, \mu, t + \Delta t) \simeq f + \frac{\partial f}{\partial z} v \mu \Delta t + \frac{\partial f}{\partial t} \Delta t.
 \end{equation}
 
 For the right-hand side, we expand each term:
@@ -40,12 +42,12 @@ For the right-hand side, we expand each term:
 \begin{itemize}
 \item Expanding \( f(z, \mu - \Delta \mu, t) \):
 \begin{equation}
-f(z, \mu - \Delta \mu, t) = f - \frac{\partial f}{\partial \mu} \Delta \mu + \frac{1}{2} \frac{\partial^2 f}{\partial \mu^2} (\Delta \mu)^2.
+f(z, \mu - \Delta \mu, t) \simeq f - \frac{\partial f}{\partial \mu} \Delta \mu + \frac{1}{2} \frac{\partial^2 f}{\partial \mu^2} (\Delta \mu)^2~.
 \end{equation}
 
 \item Expanding \( \Psi(\mu - \Delta \mu, \Delta \mu) \):
 \begin{equation}
-\Psi(\mu - \Delta \mu, \Delta \mu) = \Psi - \frac{\partial \Psi}{\partial \mu} \Delta \mu + \frac{1}{2} \frac{\partial^2 \Psi}{\partial \mu^2} (\Delta \mu)^2.
+\Psi(\mu - \Delta \mu, \Delta \mu) \simeq \Psi - \frac{\partial \Psi}{\partial \mu} \Delta \mu + \frac{1}{2} \frac{\partial^2 \Psi}{\partial \mu^2} (\Delta \mu)^2.
 \end{equation}
 \end{itemize}
 
@@ -74,7 +76,7 @@ To proceed, we introduce the moments of the transition probability density \( \P
 
 Substituting the first and second moments into the expanded integral equation~\eqref{eq:distribpert} and simplifying (keeping into account that  \( f \) does not depend on \( \Delta \mu \)), we obtain the following differential equation for \( f \):
 %
-\begin{equation}
+\begin{equation}\label{eq:diffftemp}
 \cancel{f} + \frac{\partial f}{\partial t} \Delta t + v \mu \frac{\partial f}{\partial z} \Delta t = 
 \cancel{f} -\frac{\partial}{\partial \mu} \left( f \langle \Delta \mu \rangle \right) + \frac{1}{2} \frac{\partial^2}{\partial \mu^2} \left( f \langle (\Delta \mu)^2 \rangle \right).
 \end{equation}
@@ -82,7 +84,7 @@ Substituting the first and second moments into the expanded integral equation~\e
 To proceed, we incorporate the principle of \emph{detailed balance}, which applies symmetry constraints to the transition probability distribution \( \Psi \). 
 %
 Specifically, detailed balance implies:
-\begin{equation}
+\begin{equation}\label{eq:detbalance}
 \Psi(\mu, -\Delta \mu) = \Psi(\mu - \Delta \mu, \Delta \mu)~.
 \end{equation}
 %
@@ -90,7 +92,7 @@ This symmetry ensures that the probability of a particle scattering from \( \mu 
 
 By Taylor expanding \( \Psi(\mu - \Delta \mu, \Delta \mu) \) about \( \mu \), we obtain:
 \begin{equation}
-\Psi(\mu - \Delta \mu, \Delta \mu) = \Psi(\mu, \Delta \mu) - \frac{\partial \Psi}{\partial \mu} \Delta \mu + \frac{1}{2} \frac{\partial^2 \Psi}{\partial \mu^2} (\Delta \mu)^2 + \mathcal O(\Delta \mu^3)~.
+\Psi(\mu - \Delta \mu, \Delta \mu) \simeq \Psi(\mu, \Delta \mu) - \frac{\partial \Psi}{\partial \mu} \Delta \mu + \frac{1}{2} \frac{\partial^2 \Psi}{\partial \mu^2} (\Delta \mu)^2~.
 \end{equation}
 
 Notice that using the normalization condition for \( \Psi \), equation~\eqref{eq:normpsi}, we obtain:
@@ -98,7 +100,7 @@ Notice that using the normalization condition for \( \Psi \), equation~\eqref{eq
 \int d\Delta \mu \Psi(\mu, -\Delta \mu) - \int d\Delta \mu \Psi(\mu, \Delta \mu) = 0~.
 \end{equation}
 
-Substituting the expanded expression for \( \Psi(\mu, -\Delta \mu) \) and using~, we arrive at:
+Substituting the expanded expression for \( \Psi(\mu, -\Delta \mu) \) and using equation~\eqref{eq:detbalance}, we arrive at:
 \begin{equation}
 -\frac{\partial}{\partial \mu} \left( \int d\Delta \mu \Psi \Delta \mu \right) + \frac{1}{2} \frac{\partial^2}{\partial \mu^2} \left( \int d\Delta \mu \Psi (\Delta \mu)^2 \right) = 0.
 \end{equation}
@@ -108,11 +110,11 @@ Thus, the above equation can be rewritten as:
 \frac{\partial}{\partial \mu} \left[ \langle \Delta \mu \rangle - \frac{1}{2} \frac{\partial \langle (\Delta \mu)^2 \rangle}{\partial \mu} \right] = 0~.
 \end{equation}
 
-The above equation implies that the quantity \( \langle \Delta \mu \rangle - \frac{1}{2} \frac{\partial  \langle (\Delta \mu)^2 \rangle}{\partial \mu} \) is independent of \( \mu \), i.e., it is a \emph{constant} with respect to \( \mu \). 
+The above equation implies that the quantity \( A(\mu) \equiv \langle \Delta \mu \rangle - \frac{1}{2} \frac{\partial  \langle (\Delta \mu)^2 \rangle}{\partial \mu} \) is independent of \( \mu \), i.e., it is a \emph{constant} with respect to \( \mu \). 
 
-{\color{red}ASSUME THIS IS 0}
+{\color{red}Heuristic derivation: \( A(\mu) \) is 0 for \( \mu = 0 \) so it is 0 for each \( \mu \).}
 
-Substituting the result \( \mathcal{A} - \frac{1}{2} \frac{\partial \mathcal{B}}{\partial \mu} = 0 \) back into equation~\eqref{eq:fwithawithb}, we find:
+Substituting the result back into equation~\eqref{eq:diffftemp}, we find:
 \begin{equation}
 \frac{\partial f}{\partial t} \Delta t  +  v \mu \frac{\partial f}{\partial z} \Delta t = 
 \frac{1}{2} \frac{\partial}{\partial \mu} \left[ \langle (\Delta \mu)^2 \rangle \frac{\partial f}{\partial \mu} \right].
@@ -125,16 +127,22 @@ D_{\mu\mu} \equiv \frac{1}{2} \left\langle \frac{\Delta \mu \Delta \mu}{\Delta t
 
 Substituting \( D_{\mu\mu} \) into the equation and dividing through by \( \Delta t \), we obtain:
 \begin{remark}
-\begin{equation}
+\begin{equation}\label{eq:fdiffmu}
 \frac{\partial f}{\partial t} + v \mu \frac{\partial f}{\partial z} = \frac{\partial}{\partial \mu} \left[ D_{\mu\mu} \frac{\partial f}{\partial \mu} \right].
 \end{equation}
 \end{remark}
 
-This equation, known as the \emph{Fokker-Planck equation}, describes the evolution of the particle distribution \( f \) due to pitch angle diffusion. It balances the effects of advection (motion along \( z \)) and pitch angle scattering, which redistributes particles in \( \mu \).
+This equation, known as the \emph{Fokker-Planck equation}, describes the evolution of the particle distribution \( f \) due to pitch angle diffusion. 
 
-The term \( \frac{\partial}{\partial \mu} \left[ D_{\mu\mu} \frac{\partial f}{\partial \mu} \right] \) represents the diffusive spreading of the particle distribution in pitch angle \( \mu \). This \emph{collision term} arises from interactions between particles and Alfvén waves, where random scattering events drive the system toward isotropy.
+{\color{red}The total derivative evolves due to the pitch angle scattering by redistributing particles in \( \mu \)}.
+
+The~\emph{collision term} 
+\[
+\frac{\partial}{\partial \mu} \left[ D_{\mu\mu} \frac{\partial f}{\partial \mu} \right] 
+\]
+represents the \emph{diffusive} spreading of the particle distribution in pitch angle \( \mu \). As shown in section~\ref{sec:qlt}, this term arises from interactions between particles and Alfvén waves, where random scattering events drive the system toward isotropy.
 %
-For that reason, \( D_{\mu\mu} \) depends on the wave spectrum and the particle momentum, in particular, for a background of Alfvén waves, \( D_{\mu\mu} \) can be shown to be proportional to \( (1 - \mu^2) F(k, p) \), where \( F(k, p) \) encodes the wave-particle resonance condition. 
+For that reason, \( D_{\mu\mu} \) depends on the wave spectrum and the particle momentum, in particular, for a background of Alfvén waves, \( D_{\mu\mu} \) can be shown to be proportional to \( (1 - \mu^2) \mathcal F(k, p) \), where \( \mathcal F(k, p) \) encodes the wave-particle resonance condition. 
 
 Over time, pitch angle scattering leads to \emph{isotropization} of the particle distribution in the reference frame of the Alfvén waves. However, a slight residual anisotropy remains, determined by the Alfvén speed \( v_A \), which is much smaller than the speed of light \( c \). The resulting anisotropy is proportional to the ratio \( v_A / c \).
 
@@ -143,7 +151,7 @@ Over time, pitch angle scattering leads to \emph{isotropization} of the particle
 \subsection{The Diffusion Equation in Space}
 
 As discussed in the previous section, after prolonged scattering, the phase-space distribution \( f \) becomes nearly isotropic. To account for the slight anisotropy, we write:
-\begin{equation}
+\begin{equation}\label{eq:fmf1}
 f = M + f_1 \mu~,
 \end{equation}
 where \( M \) is the isotropic component, which dominates, and \( f_1 \mu \) represents the dipole anisotropy, reflecting the residual directional dependence introduced by the wave-particle dynamics.
@@ -165,34 +173,40 @@ The term \( \left[ D_{\mu\mu} \frac{\partial f}{\partial \mu} \right]_{-1}^1 \) 
 Moreover, as \( f \) becomes isotropic, \( \frac{\partial f}{\partial \mu} \to 0 \).
 
 Thus, the equation simplifies to:
-\begin{equation}
+\begin{equation}\label{eq:MtJz}
 \frac{\partial M}{\partial t} + \frac{\partial J}{\partial z} = 0,
 \end{equation}
 where we define the \emph{particle flux} (or current) \( J \) as:
-\begin{equation}
+\begin{equation}\label{eq:jdef}
 J = \frac{1}{2} \int_{-1}^1 d\mu \, v \mu f.
 \end{equation}
 
-The pitch angle scattering drives the system toward isotropy, with any remaining anisotropy contributing to the flux \( J \).
+Notice that if \( f \) were perfectly isotropic, thus \( J = 0 \), and therefore \( \partial_t M = 0 \), which implies stable equilibrium, and again confirms that is the anisotropic component of \( f \) drives the evolution of the isotropic part of the distribution function.
 
-To calculate \( J \), we use the decomposition \( f = M + f_1 \mu \). Substituting this into the definition of \( J \), we find:
+We can rewrite \( J \) as:
 \begin{equation}
-J = \frac{v}{2} \int_{-1}^1 d\mu \, \mu \left(M + f_1 \mu\right).
+J = \frac{1}{2} \int_{-1}^1 d\mu \, v \left[ -\frac{1}{2} \frac{\partial}{\partial \mu} (1-\mu^2) \right] f = - \frac{v}{4} \int_{-1}^1 d\mu f \frac{\partial}{\partial \mu} (1 - \mu^2)
+\end{equation}
+and integrating by parts
+\begin{equation}
+J = \cancelto{0}{\left[ -\frac{v}{4} (1-\mu^2) f \right]_{-1}^{1}} + \frac{v}{4} \int_{-1}^1 d\mu (1 - \mu^2) \frac{\partial f}{\partial \mu}
+\end{equation}
+%
+which is another expression which highlights that with an isotropic \( f \) there would not be any current \( J \).
+
+{\color{red}Now as a first step, we apply the operator \( \frac{1}{2} \int_{-1}^\mu d\mu^\prime \) to equation~\eqref{eq:fdiffmu}:}
+\begin{equation}
+\dots
 \end{equation}
 
-The term involving \( M \) vanishes because:
+{\color{red}Secondly, we multiply everything by \( \frac{1-\mu^2}{D_{\mu \mu}} \):}
 \begin{equation}
-\int_{-1}^1 d\mu \, \mu = 0.
+\dots
 \end{equation}
+{\color{red}where we also assume \( f \simeq M \), that is, we drop the dependence of \( f \) on \( \mu \) except wherever there is an explicit \( \partial_\mu f \)~.}
 
-Thus, \( J \) reduces to:
-\begin{equation}
-J = \frac{v}{2} \int_{-1}^1 d\mu \, \mu^2 f_1.
-\end{equation}
-
-Since \( f_1 \ll M \), the flux \( J \) is much smaller than \( v M \). We now turn to a more explicit expression for \( f_1 \) by leveraging the anisotropic term in equation~\eqref{eq:fdiffmu}.
-
-From equation~\eqref{eq:fdiffmu}, we find that \( f_1 \) satisfies:
+Leading to:
+%
 \begin{equation}
 (1 - \mu^2) \frac{\partial f}{\partial \mu} = \frac{1 - \mu^2}{D_{\mu\mu}} \left[\frac{\partial M}{\partial t}(1 + \mu) + v \frac{\partial M}{\partial z} \frac{1}{2} (\mu^2 - 1)\right].
 \end{equation}
@@ -205,8 +219,12 @@ J = \frac{v}{4} \frac{\partial M}{\partial t} \int_{-1}^1 d\mu \, \frac{(1 - \mu
 which we can rewrite in terms of the \emph{temporal} and \emph{spatial} diffusion coefficients as:
 %
 \begin{equation}
-J = K_t \frac{\partial M}{\partial t} - K_z \frac{\partial M}{\partial z}
+J = K_t \frac{\partial M}{\partial t} - K_z \frac{\partial M}{\partial z} = - K_t \frac{\partial J}{\partial z} - K_z \frac{\partial M}{\partial z} 
 \end{equation}
+%
+where we make us of equation~\eqref{eq:eq:MtJz}. 
+%
+We finally obtain an equation which relates the space and time derivatives of the isotropic part of \( f \).
 
 We can estimate the magnitudes of the terms in the diffusion equation.
 
@@ -223,18 +241,18 @@ K_z \equiv \frac{v^2}{8} \int_{-1}^1 d\mu \, \frac{(1 - \mu^2)^2}{D_{\mu\mu}} \,
 Based on the definition in equation~\eqref{eq:defj}, we can express the current \( J \) as follows:
 %
 \begin{equation}
-J = \frac{1}{2} \int_{-1}^1 d\mu \, v\mu f \simeq \frac{1}{2} \int_{-1}^1 d\mu \, v\mu (f_0 + \mu f_1) 
+J = \frac{1}{2} \int_{-1}^1 d\mu \, v\mu f \simeq \frac{1}{2} \int_{-1}^1 d\mu \, v\mu (M + \mu f_1) 
 \end{equation}
-
-Here, \( f_1 \ll f_0 = M \) due to the near-isotropic nature of the distribution function, allowing for a linear expansion.
 
 This leads us to:
 %
 \begin{equation}
-J = \frac{v}{2} \left[ f_0 \cancel{\int_{-1}^1 d\mu \, \mu} + f_1 \int_{-1}^1 d\mu \, \mu^2 \right] \sim v f_1 \ll v M
+J = \frac{v}{2} \left[ M \cancel{\int_{-1}^1 d\mu \, \mu} + f_1 \int_{-1}^1 d\mu \, \mu^2 \right] \sim v f_1 \ll v M
 \end{equation}
 
-Since \( f_1 \) is much smaller than \( f_0 \), this implies that \( J \) is significantly smaller than \( vM \).
+Since \( f_1 \) is much smaller than \( M \), this implies that \( J \) is significantly smaller than \( vM \).
+
+%Here, \( f_1 \ll f_0 = M \) due to the near-isotropic nature of the distribution function, allowing for a linear expansion.
 
 With these considerations, in good approximation, we can write an equation for the time evolution of the isotropic component of the distribution function, \( M \), as:
 %
@@ -249,8 +267,6 @@ The equation we have derived is a classic \emph{diffusion equation}, where \( K_
 In this context, the diffusive flux \( J \) is expressed as \( J = -K_z \frac{\partial M}{\partial z} \). This formulation allows us to compute the current from the distribution function \( M \), considering it as a first-order correction to the particle flux. 
 
 This dynamic emerges from the somewhat nature of the function \( f \). It's the gradient of \( f \) that generates a net current, driving the evolution of the isotropic component \( M \) over time. The gradient effectively causes a net transport of particles, leading to smooth out the distribution \( M \) in response to spatial inhomogeneities, reflecting typical diffusive behavior. 
-
-\end{document}
 
 %Assuming small variations, we apply perturbation theory and perform a second-order Taylor expansion.
 %
@@ -338,52 +354,52 @@ This dynamic emerges from the somewhat nature of the function \( f \). It's the 
 %
 %It implies that the quantity \( \mathcal A - \frac{1}{2} \frac{\partial \mathcal B}{\partial \mu} \) must be a \emph{constant} with respect to \( \mu \).  
 %
-We compute explicitly the derivative of \( \mathcal B \) with respect to \( \mu \) as
-%
-\begin{equation}
-\frac{\partial B}{\partial \mu} = \frac{\partial}{\partial\mu} \int d\Delta\mu \Delta\mu\Delta\mu \Psi(\mu,  \Delta\mu)
-=   \int d\Delta\mu \Delta\mu\Delta\mu \frac{\partial}{\partial\mu} \Psi(\mu,  \Delta\mu)
-\end{equation}
-
-By invoking the principle of detailed balance again, we obtain:
-%
-{\color{red}\begin{equation}
-\frac{\partial\Psi}{\partial\mu}(\mu,\Delta\mu) = 
-%\frac{\partial\Psi}{\partial\mu}(\mu-\Delta\mu,\Delta\mu)=
-\frac{\partial\Psi}{\partial\mu}(\mu+\Delta\mu ,-\Delta\mu) = 
--\frac{\partial}{\partial \Delta\mu} \Psi(\mu+\Delta\mu, -\Delta\mu)
-\end{equation}}
-
-%We introduce a new variable \( \mu^\prime = \mu+\Delta\mu \), which leads to \( \Delta\mu = \mu^\prime -\mu \) and:
+%We compute explicitly the derivative of \( \mathcal B \) with respect to \( \mu \) as
 %%
-%\begin{equation}\label{eq:newmuequation}
-%\frac{\partial\Psi}{\partial\mu}(\mu,\Delta\mu) = \frac{\partial\Psi}{\partial\mu}(\mu^\prime, \mu - \mu^\prime) = 
+%\begin{equation}
+%\frac{\partial B}{\partial \mu} = \frac{\partial}{\partial\mu} \int d\Delta\mu \Delta\mu\Delta\mu \Psi(\mu,  \Delta\mu)
+%=   \int d\Delta\mu \Delta\mu\Delta\mu \frac{\partial}{\partial\mu} \Psi(\mu,  \Delta\mu)
 %\end{equation}
-
-Incorporating this into the definition of $\frac{\partial B}{\partial \mu}$, we find:
 %
-\begin{equation}
-\frac{\partial \mathcal B}{\partial \mu} = - \int d\Delta\mu \Delta\mu\Delta\mu \frac{\partial}{\partial \Delta\mu} \Psi(\mu+\Delta\mu, -\Delta\mu)
-\end{equation}
-
-Integrating by parts, we find:
+%By invoking the principle of detailed balance again, we obtain:
+%%
+%{\color{red}\begin{equation}
+%\frac{\partial\Psi}{\partial\mu}(\mu,\Delta\mu) = 
+%%\frac{\partial\Psi}{\partial\mu}(\mu-\Delta\mu,\Delta\mu)=
+%\frac{\partial\Psi}{\partial\mu}(\mu+\Delta\mu ,-\Delta\mu) = 
+%-\frac{\partial}{\partial \Delta\mu} \Psi(\mu+\Delta\mu, -\Delta\mu)
+%\end{equation}}
 %
-\begin{equation}
-\frac{\partial \mathcal B}{\partial \mu} = \int d\Delta\mu \Psi(\mu+\Delta\mu, -\Delta\mu) \frac{\partial}{\partial \Delta \mu} (\Delta\mu\Delta\mu) =  2 \int d\Delta\mu \Delta\mu \Psi(\mu+\Delta\mu, -\Delta\mu)
-\end{equation}
-
-Finally, invoking again the property of the detailed balance: 
+%%We introduce a new variable \( \mu^\prime = \mu+\Delta\mu \), which leads to \( \Delta\mu = \mu^\prime -\mu \) and:
+%%%
+%%\begin{equation}\label{eq:newmuequation}
+%%\frac{\partial\Psi}{\partial\mu}(\mu,\Delta\mu) = \frac{\partial\Psi}{\partial\mu}(\mu^\prime, \mu - \mu^\prime) = 
+%%\end{equation}
 %
-\begin{equation}
-\frac{\partial \mathcal B}{\partial \mu} = 2 \int d\Delta\mu \Delta\mu \Psi(\mu, \Delta\mu) = 2 \mathcal A
-\end{equation}
-
-Substituting this back into the equation~\ref{eq:fwithawithb} governing \( f \), we arrive at:
+%Incorporating this into the definition of $\frac{\partial B}{\partial \mu}$, we find:
+%%
+%\begin{equation}
+%\frac{\partial \mathcal B}{\partial \mu} = - \int d\Delta\mu \Delta\mu\Delta\mu \frac{\partial}{\partial \Delta\mu} \Psi(\mu+\Delta\mu, -\Delta\mu)
+%\end{equation}
 %
-\begin{equation}
-\frac{\partial f}{\partial t} \Delta t  +  v \mu \frac{\partial f}{\partial z} \Delta t = 
-\Delta t \frac{\partial}{\partial\mu} \left[D_{\mu\mu}\frac{\partial f}{\partial\mu}\right]
-\end{equation}
+%Integrating by parts, we find:
+%%
+%\begin{equation}
+%\frac{\partial \mathcal B}{\partial \mu} = \int d\Delta\mu \Psi(\mu+\Delta\mu, -\Delta\mu) \frac{\partial}{\partial \Delta \mu} (\Delta\mu\Delta\mu) =  2 \int d\Delta\mu \Delta\mu \Psi(\mu+\Delta\mu, -\Delta\mu)
+%\end{equation}
+%
+%Finally, invoking again the property of the detailed balance: 
+%%
+%\begin{equation}
+%\frac{\partial \mathcal B}{\partial \mu} = 2 \int d\Delta\mu \Delta\mu \Psi(\mu, \Delta\mu) = 2 \mathcal A
+%\end{equation}
+%
+%Substituting this back into the equation~\ref{eq:fwithawithb} governing \( f \), we arrive at:
+%%
+%\begin{equation}
+%\frac{\partial f}{\partial t} \Delta t  +  v \mu \frac{\partial f}{\partial z} \Delta t = 
+%\Delta t \frac{\partial}{\partial\mu} \left[D_{\mu\mu}\frac{\partial f}{\partial\mu}\right]
+%\end{equation}
 
 %Here, the RHS includes the pitch angle diffusion coefficient, representing a \emph{collision term}:
 %%
