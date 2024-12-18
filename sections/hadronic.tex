@@ -120,7 +120,7 @@ To describe pion production in proton-proton collisions, \cite{Norbury2009nimpb}
 \sigma_{pp \rightarrow \pi^0 X} = \left( 0.007 + 0.1 \frac{\log T_p}{T_p} + \frac{0.3}{T_p^2} \right)^{-1}~\text{mb}.
 \end{equation}  
 
-These equations provide approximate fits to experimental data and are particularly useful for modeling pion production in astrophysical scenarios. The cross-sections are plotted in~\cref{fig:pionprod}, as a function of \(p_{\rm lab}\), the momentum of the incoming proton in the LAB frame~\TODO{rifare il plot}.  
+These equations provide approximate fits to experimental data and are particularly useful for modeling pion production in astrophysical scenarios. The cross-sections are plotted in~\ref{fig:pionprod}, as a function of \(p_{\rm lab}\), the momentum of the incoming proton in the LAB frame~\TODO{rifare il plot}.  
 
 The term \emph{inclusive cross-section} refers to the total probability of a specific outcome in a reaction, summed over all possible accompanying final states. In the context of proton-proton collisions, an inclusive cross-section for pion production, such as \(\sigma_{pp \rightarrow \pi^+ X}\), represents the cross-section for producing a \(\pi^+\) meson, regardless of what other particles (\(X\)) may also be produced in the final state.  
 
@@ -162,7 +162,7 @@ The factor \(K_\pi\) is a dimensionless constant called the \emph{inelasticity}.
 The delta function, \(\delta(T_\pi - K_\pi T_p)\), is used to approximate the relationship between the energy of the outgoing pion (\(T_\pi\)) and the energy of the incoming proton (\(T_p\)) assuming that the kinetic energy of the outgoing pion is a \emph{fixed} fraction (\(K_\pi\)) of the kinetic energy of the incoming proton:
 \( T_\pi \simeq K_\pi T_p \).
 
-Performing the integration in~\cref{eq:qpi} yields:
+Performing the integration in~\ref{eq:qpi} yields:
 %
 \begin{equation}
 q_\pi (E_\pi) \simeq \frac{c n_{\rm H}}{K_\pi} \sigma_{pp} \left(\frac{T_\pi}{K_\pi} + m_p \right) N_p \! \left(\frac{T_\pi}{K_\pi} + m_p \right).
@@ -221,7 +221,7 @@ Conversely, in the ultra-relativistic limit, the pion moves close to the speed o
 
 %These behaviors reflect the highly anisotropic photon distribution in the LAB frame for ultra-relativistic pions, with most photon energy concentrated in the forward direction.
 
-The relationship between the photon energy and the emission angle in the LAB frame can be further analyzed. From the LAB-frame energy in~\cref{eq:egammaboost}, we can compute the differential relationship between photon energy and the cosine of the angle:
+The relationship between the photon energy and the emission angle in the LAB frame can be further analyzed. From the LAB-frame energy in~\ref{eq:egammaboost}, we can compute the differential relationship between photon energy and the cosine of the angle:
 \begin{equation}\label{eq:degamma}
 dE_\gamma = \frac{m_\pi}{2} \gamma_\pi \beta_\pi \, d\!\cos \theta^\prime.
 \end{equation}
@@ -242,7 +242,7 @@ and the differential number of photons emitted in a given angular range \(d\cos\
 dN_\gamma = \frac{1}{2} \, d\cos\theta^\prime.
 \end{equation}
 
-Combining the derivative of \(E_\gamma\) with respect to \(\cos \theta^\prime\) from~\cref{eq:degamma} with the isotropic emission result in~\cref{eq:dngammadcos}, the photon energy distribution can be expressed as:
+Combining the derivative of \(E_\gamma\) with respect to \(\cos \theta^\prime\) from~\ref{eq:degamma} with the isotropic emission result in~\ref{eq:dngammadcos}, the photon energy distribution can be expressed as:
 %
 \begin{remark}
 \begin{equation}
@@ -257,7 +257,7 @@ To characterize this box-like distribution, we calculate the central energy in l
 \langle \log E_\gamma \rangle = \frac{1}{2} \left( \log E_{\gamma, \rm min} + \log E_{\gamma, \rm max} \right).
 \end{equation}
 
-Substituting~\cref{eq:gammaminmax}, and simplifying using \(\gamma_\pi^2 - 1 = \beta_\pi^2 \gamma_\pi^2\), we find:
+Substituting~\ref{eq:gammaminmax}, and simplifying using \(\gamma_\pi^2 - 1 = \beta_\pi^2 \gamma_\pi^2\), we find:
 \begin{remark}
 \begin{equation}
 \langle \log E_\gamma \rangle 
@@ -275,16 +275,16 @@ This result shows that the logarithmic central energy of the spectrum is fixed a
 \label{fig:pionbump}
 \end{figure}
 
-Assuming a distribution of pion energies, the resulting gamma-ray spectrum is composed of a weighted sum of individual \emph{box-like} distributions. Each box-like distribution is symmetrically centered in logarithmic space around \(m_\pi / 2\), which corresponds to the logarithmic central energy of the photons produced in the pion's rest frame. As a result, the combined gamma-ray spectrum exhibits a clear peak at \( \log E_\gamma \simeq \log \left(\frac{m_\pi}{2}\right) \)~(see \cref{fig:pionbump}).  
+Assuming a distribution of pion energies, the resulting gamma-ray spectrum is composed of a weighted sum of individual \emph{box-like} distributions. Each box-like distribution is symmetrically centered in logarithmic space around \(m_\pi / 2\), which corresponds to the logarithmic central energy of the photons produced in the pion's rest frame. As a result, the combined gamma-ray spectrum exhibits a clear peak at \( \log E_\gamma \simeq \log \left(\frac{m_\pi}{2}\right) \)~(see \ref{fig:pionbump}).  
 
 This spectral feature, often referred to as the \emph{pion bump}, is a prominent characteristic of gamma rays originating from hadronic processes. The bump appears at \(\sim 70~\text{MeV}\), followed by a decline at higher energies, and is largely independent of the underlying pion spectrum or the spectrum of the parent protons.  
 
-Such a bump-like structure in the gamma-ray spectrum, combined with its distinct position and shape, provides a strong diagnostic tool for identifying gamma rays resulting from hadronic interactions (see \cref{fig:pionbumpfermi}).  
+Such a bump-like structure in the gamma-ray spectrum, combined with its distinct position and shape, provides a strong diagnostic tool for identifying gamma rays resulting from hadronic interactions (see \ref{fig:pionbumpfermi}).  
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.45\textwidth]{figures/1231160fig2a.pdf}
-\includegraphics[width=0.45\textwidth]{figures/1231160fig2a.pdf}
+\includegraphics[width=0.45\textwidth]{figures/1231160fig2b.pdf}
 \caption{In 2013 FERMI detected a feature compatible with the pion-bump in two old SNRs in interaction with Molecular Cloud~\cite{Ackermann2013sci}}
 \label{fig:pionbumpfermi}
 \end{figure}
@@ -378,7 +378,7 @@ q(E_\pi) = 4 \pi n_{\rm H} I_{10} \sigma_0 \left(\frac{E_\pi}{E_{10}} \right)^{-
 \end{equation}
 where \(Y(\alpha)\) is the \emph{spectrum-weighted yield of pions} produced from a proton population with a power-law spectral index \(\alpha\).  
 
-The photon emissivity \(q_\gamma(E_\gamma)\) can now be calculated from~\cref{eq:qgamma2}:  
+The photon emissivity \(q_\gamma(E_\gamma)\) can now be calculated from~\ref{eq:qgamma2}:  
 \begin{equation}
 q_\gamma(E_\gamma) = 8 \pi n_{\rm H} \sigma_0 Y(\alpha) I_{10} \int_{E_\gamma}^\infty \frac{dE_\pi}{E_\pi} \left(\frac{E_\pi}{E_{10}}\right)^{-\alpha}.
 \end{equation}
@@ -519,7 +519,7 @@ At the highest proton energies, photo-pion production becomes the dominant energ
 
 Astrophysical sources capable of accelerating particles to ultra-high energies, such as gamma-ray bursts (GRBs), active galactic nuclei (AGNs), and starburst galaxies, are promising candidates for high-energy neutrino production. This connection provides a basis for estimating the expected upper limits of high-energy neutrino flux from these cosmic accelerators.  
 
-The dominant mechanism for high-energy pion production in extragalactic environments is \(p\)-\(\gamma\) interactions, as discussed earlier. When high-energy protons interact with dense radiation fields, they produce pions through the \(\Delta^+\)-resonance as in~\cref{eq:deltares}.
+The dominant mechanism for high-energy pion production in extragalactic environments is \(p\)-\(\gamma\) interactions, as discussed earlier. When high-energy protons interact with dense radiation fields, they produce pions through the \(\Delta^+\)-resonance as in~\ref{eq:deltares}.
 
 Due to \emph{isospin symmetry}, the decay of the \(\Delta^+\)-resonance preferentially produces protons over neutrons in a ratio of 2:1. Similarly, analogous processes involving neutrons can lead to the production of \(\pi^-\) mesons.
 
@@ -615,7 +615,7 @@ By comparing the observed flux with theoretical predictions, we can constrain th
 \end{equation}
 having used \(R_{\rm H} = c H_0^{-1} \simeq 4420~\text{Mpc}\). 
 
-This result provides a benchmark for the energy density of high-energy neutrino sources in the universe. Comparing this upper limit with the energy density of known astrophysical objects, such as gamma-ray bursts, active galactic nuclei, or starburst galaxies, can help identify the dominant contributors to the diffuse neutrino background (see~\cref{fig:nuluminosity}). 
+This result provides a benchmark for the energy density of high-energy neutrino sources in the universe. Comparing this upper limit with the energy density of known astrophysical objects, such as gamma-ray bursts, active galactic nuclei, or starburst galaxies, can help identify the dominant contributors to the diffuse neutrino background (see~\ref{fig:nuluminosity}). 
 
 \begin{figure}[!t]
 \centering
@@ -672,7 +672,7 @@ Here \(x_\pi\) is the fraction of proton energy converted into pion energy, \(\x
 \label{fig:uhemm}
 \end{figure}
 
-The value \(3 \times 10^{-8}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}\) represents the \emph{Waxman-Bahcall bound}~\cite{aaa}, also known as the calorimetric limit (see~\cref{fig:uhemm}).  
+The value \(3 \times 10^{-8}~\text{GeV}~\text{cm}^{-2}~\text{s}^{-1}~\text{sr}^{-1}\) represents the \emph{Waxman-Bahcall bound}~\cite{aaa}, also known as the calorimetric limit (see~\ref{fig:uhemm}).  
 
 The Waxman-Bahcall bound assumes that all proton energy is efficiently converted into pions and subsequently into neutrinos. For that reason, this bound is applicable to \emph{transparent sources}, where interactions with radiation and matter inside the source allow neutrinos to escape without significant reabsorption or secondary interactions.
 

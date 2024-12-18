@@ -14,7 +14,7 @@ The local density of CRs, their energy spectrum, and their relative abundances p
 %
 In this section, our goal is to construct a basic model for CR propagation in the Galaxy that enables us to extract from these observables valuable information on the injection of CRs and the subsequent processes they undergo in the ISM.
 
-As discussed in~\cref{sec:pillar}, the escape time of CRs is too long to be compatible with straight propagation along the large-scale magnetic field. Consequently, CRs must be confined to the Galaxy for a significant period of time, primarily spending most of their time in low-density gas regions, such as the Galactic halo.
+As discussed in section~\ref{sec:pillar}, the escape time of CRs is too long to be compatible with straight propagation along the large-scale magnetic field. Consequently, CRs must be confined to the Galaxy for a significant period of time, primarily spending most of their time in low-density gas regions, such as the Galactic halo.
 %
 The existence of such an extended (larger than the gas disc) magnetized region is supported by observations of synchrotron emission from edge-on external galaxies~\cite{Beck2015aar}.
 
@@ -58,11 +58,11 @@ which we interpret as the probability for finding a particle that is injected at
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.6\textwidth]{figures/gaussian_1D.pdf} 
-\caption{1D Gaussian propagator as a function of distance for various time steps. The plot demonstrates the spreading behavior of the diffusion Green function, \cref{eq:green}, with increasing time.}
+\caption{1D Gaussian propagator as a function of distance for various time steps. The plot demonstrates the spreading behavior of the diffusion Green function, \ref{eq:green}, with increasing time.}
 \label{fig:gaussian1d}
 \end{figure}
 
-The mean distance from the Galactic plane can be calculated from~\cref{eq:green}:
+The mean distance from the Galactic plane can be calculated from~\ref{eq:green}:
 %
 \begin{equation}
 \langle z \rangle = \left(\frac{1}{{4 \pi D t}}\right)^{1/2} \int dz z {\rm e}^{-\frac{z^2}{4Dt}} \simeq \sqrt{Dt}
@@ -93,7 +93,7 @@ Considering that our Galaxy has an age of several billion years and observations
 \label{eq:protons}
 \end{equation}
 
-For $z \ne 0$, and imposing the boundary conditions $n_p(z = \pm H, E) = 0$, it gives the solution\footnote{The general solution to the differential equation can be written as $n_p(z)=A+Bz$. For $z>0$, we impose $n_p(H)=0$ which gives $n_p(z)=A\left(1- z/H\right)$, and for $z<0$, we impose $n_{\rm p}(-H)=0$ which gives $n_{\rm p}(z)=A\left(1+ z/H\right)$. Combining the two regions and imposing $n_p(0)=n_0(E)$, we obtain the solution valid in both regions as in~\cref{eq:nzwithabs}.}:
+For $z \ne 0$, and imposing the boundary conditions $n_p(z = \pm H, E) = 0$, it gives the solution\footnote{The general solution to the differential equation can be written as $n_p(z)=A+Bz$. For $z>0$, we impose $n_p(H)=0$ which gives $n_p(z)=A\left(1- z/H\right)$, and for $z<0$, we impose $n_{\rm p}(-H)=0$ which gives $n_{\rm p}(z)=A\left(1+ z/H\right)$. Combining the two regions and imposing $n_p(0)=n_0(E)$, we obtain the solution valid in both regions as in~\ref{eq:nzwithabs}.}:
 %
 \begin{equation}
 D \frac{\partial n_p}{\partial z} = \text{Constant} \, \longrightarrow \, n_p(z) = n_0(E) \left( 1 - \frac{|z|}{H} \right)
@@ -120,7 +120,7 @@ which leads to
 \left. -2D \frac{\partial n_p}{\partial z}\right|_{z=0^+} = \frac{\xi_p E_{\rm SN} \mathcal R_{\rm SN}}{\pi R_{\rm d}^2} N(E) 
 \end{equation}
 %
-and using the equation for the flux derived in~\cref{eq:flux}:
+and using the equation for the flux derived in~\ref{eq:flux}:
 %
 \begin{equation}
 n_p(E) = \frac{\xi_p E_{\rm SN} \mathcal R_{\rm SN} N(E)}{2 \pi R_{\rm d}^2}  \frac{H}{D(E)} 
@@ -150,7 +150,7 @@ In summary, since the diffusion coefficient increases with energy, following a p
 
 In point of fact, assuming that the sources inject in the ISM a power-law spectrum $E^{-\gamma}$, what we measure is a spectrum proportional to $E^{-\gamma-\delta}$ since high-energy particles spend \emph{less time} in the Galaxy compared to lower-energy particles, resulting in a significant suppression of their density relative to the low-energy part of the spectrum.
 %
-This is depicted in~\cref{fig:softening}. 
+This is depicted in~\ref{fig:softening}. 
 
 It is important to note that since what we observe is a combination of the injection and transport processes, any deviation from a pure power-law in the observed spectrum of protons (or any primary species) cannot be easily disambiguate if due to propagation \emph{or} acceleration effects. 
 
@@ -182,7 +182,7 @@ Despite the great importance of this assumption we do not have any knowledge on 
 
 \subsection{Relativistic Constraints on the Diffusion Equation }
 
-The diffusion equation permits solutions where the density is non-zero at arbitrarily large distances, even for arbitrarily small times, as in~\cref{eq:green}. 
+The diffusion equation permits solutions where the density is non-zero at arbitrarily large distances, even for arbitrarily small times, as in~\ref{eq:green}. 
 %
 Physically, this implies that information about the source propagates instantaneously to all points in space, violating the relativistic limit imposed by the speed of light, \(c\).  
 
@@ -226,9 +226,9 @@ Here, $\bar{n} = n_{\rm d} h/H$ represents the average density within the diffus
 
 From this calculation, we observe that the timescale for $pp$ scattering is significantly long, on the order of a Gigayear. Consequently, we can confidently assume that this process does not significantly alter the spectrum of propagated protons. 
 
-However, despite being subdominant in terms of energy losses, the proton-proton interaction resulting in neutral pions that decay into two $\gamma$-rays is the leading mechanism for production of the spectacular diffuse emission observed along the Galactic Plane in Fermi-LAT data above $\sim 100$~MeV (see~\cref{sec:nucleiproton}).
+However, despite being subdominant in terms of energy losses, the proton-proton interaction resulting in neutral pions that decay into two $\gamma$-rays is the leading mechanism for production of the spectacular diffuse emission observed along the Galactic Plane in Fermi-LAT data above $\sim 100$~MeV (see~\ref{sec:nucleiproton}).
 
-On the other hand, the interaction cross-section becomes increasingly relevant when dealing with heavy nuclei, see~\cref{eq:sgeo}. Therefore, in~\cref{sec:nuclei}, we will discuss the incorporation of these effects in the transport of nuclei through the ISM.
+On the other hand, the interaction cross-section becomes increasingly relevant when dealing with heavy nuclei, see~\ref{eq:sgeo}. Therefore, in~\ref{sec:nuclei}, we will discuss the incorporation of these effects in the transport of nuclei through the ISM.
 
 %%%%%%%%%% SECTION %%%%%%%%%%
 \section{Primary nuclei}
@@ -251,7 +251,7 @@ As the target gas for nuclear fragmentation is confined to the thin disk, we can
 \end{equation}
 where \(h\) is the disk's half-thickness.
 
-It is important to note that spallation cross-sections above a few GeV/n show little to no dependence on energy~\cite{Evoli2019prd}, thereby we approximate them are energy independent. Furthermore, cross-sections generally scale with the atomic mass number \(A\) of the nucleus, following a geometric scaling law as in~\cref{eq:sgeo}. 
+It is important to note that spallation cross-sections above a few GeV/n show little to no dependence on energy~\cite{Evoli2019prd}, thereby we approximate them are energy independent. Furthermore, cross-sections generally scale with the atomic mass number \(A\) of the nucleus, following a geometric scaling law as in~\ref{eq:sgeo}. 
 
 
 The source term \(Q_\alpha(p, z)\) for a primary species is typically modeled as a power-law injection spectrum:  
@@ -275,7 +275,7 @@ For a purely primary species (one with no significant secondary contribution), t
 -\frac{\partial}{\partial z} \left[ D_\alpha(p) \frac{\partial f_\alpha}{\partial z} \right] = Q_{0,\alpha}(p)\delta(z) - 2 h n_{\rm d} \delta (z) c \sigma_\alpha f_\alpha(p)~.
 \end{equation}
 
-We notice that this equation can be solved in the same way and with the same boundary conditions at $z = \pm H$ as~\cref{eq:protons}. 
+We notice that this equation can be solved in the same way and with the same boundary conditions at $z = \pm H$ as~\ref{eq:protons}. 
 %
 For $z \neq 0$, it gives:
 \begin{equation}
@@ -316,9 +316,9 @@ f_{0,\alpha}(p) = Q_{0,\alpha}(p)
 
 Hence, when $\chi(p)\gg \chi_{\rm cr}$, spallation dominates, the spectrum at the disc will exhibit a similar slope to the injection spectrum. Conversely, in the limit of weak spallation, the diffusion-dominated solution is recovered, resulting in an observed spectrum that is \emph{steeper} than the source spectrum due to the momentum dependence of the diffusion coefficient.
 
-At low energies, spallation may dominate because $D(p)$ is an increasing function of momentum, and spallation cross sections are independent of energy. For heavy nuclei, the effects become particularly relevant at higher energies due to the scaling with mass in~\cref{eq:sgeo}.
+At low energies, spallation may dominate because $D(p)$ is an increasing function of momentum, and spallation cross sections are independent of energy. For heavy nuclei, the effects become particularly relevant at higher energies due to the scaling with mass in~\ref{eq:sgeo}.
 %
-In~\cref{fig:grammage} the critical grammage for different nuclei is compared with the Galactic value obtained by several recent analysis~\cite{Evoli2019prd,Weinrich2020aa}. For Iron, one of the heaviest species present in the Galactic radiation, the critical grammage becomes ruling for rigidities\footnote{We remind that rigidity is defined as momentum over charge, $p/Z$.} below $\lesssim 60$~GV~\cite{Schroer2021prd}.
+In~\ref{fig:grammage} the critical grammage for different nuclei is compared with the Galactic value obtained by several recent analysis~\cite{Evoli2019prd,Weinrich2020aa}. For Iron, one of the heaviest species present in the Galactic radiation, the critical grammage becomes ruling for rigidities\footnote{We remind that rigidity is defined as momentum over charge, $p/Z$.} below $\lesssim 60$~GV~\cite{Schroer2021prd}.
 
 Equation~\eqref{eq:finalprimary} highlights that if we could somehow measure the grammage, we would be able to retrieve the acceleration efficiency $\xi_{\rm CR}$ from the spectrum observed at Earth. This parameter is of crucial importance for the development of any acceleration paradigm.
 
@@ -403,11 +403,11 @@ This indicates that we are operating in the regime of weak spallation, allowing 
 %
 A quick fit to data shown in figure~\ref{fig:bcams02}, using $\sigma_{\rm C \rightarrow B} \simeq 60$~mb, indicates that the grammage is of the order of $8.5$~gr cm$^{-2}$ at $\simeq 10$~GV, exhibiting a scaling behavior approximately proportional to the rigidity raised to the power of $\simeq -1/3$. 
 
-Furthermore, by leveraging the observed slope of the proton spectrum, around 2.8 in the energy range 20-200 GeV (see figure~\ref{fig:protonshe}), we can estimate the injection slope $\gamma$ by recovering from~\cref{sec:protons} that $\gamma + \delta \approx 2.8$, guiding us to $\gamma \approx 2.4$. 
+Furthermore, by leveraging the observed slope of the proton spectrum, around 2.8 in the energy range 20-200 GeV (see figure~\ref{fig:protonshe}), we can estimate the injection slope $\gamma$ by recovering from~\ref{sec:protons} that $\gamma + \delta \approx 2.8$, guiding us to $\gamma \approx 2.4$. 
 %
 Consequently, we arrived to the conclusion that the energy spectra of CRs at their sources must be relatively \emph{soft}, challenging the predictions based on the original version of DSA~\cite{Capriolilecturenotes}.
 
-Note that~\cref{eq:grammage} shows that by measuring the grammage, we can only determine the combination $H/D$, and therefore we cannot determine the normalization of the diffusion coefficient without the knowledge of the halo size.
+Note that~\ref{eq:grammage} shows that by measuring the grammage, we can only determine the combination $H/D$, and therefore we cannot determine the normalization of the diffusion coefficient without the knowledge of the halo size.
 
 \begin{figure}
 \centering
@@ -428,7 +428,7 @@ To delve deeper into this topic, we require a reliable method for measuring this
 
 Combining this information with the grammage, which yields $H/D$, will allow us to obtain the average value of the diffusion coefficient on Galactic scales.
 
-As we will discuss in~\cref{sec:implications}, these advancements will pave the way for a theoretical comprehension of the microphysics behind the scattering and diffusion of cosmic particles by the fluctuations present in the interstellar turbulent magnetic fields.
+As we will discuss in~\ref{sec:implications}, these advancements will pave the way for a theoretical comprehension of the microphysics behind the scattering and diffusion of cosmic particles by the fluctuations present in the interstellar turbulent magnetic fields.
 
 \begin{figure}
 \centering
@@ -441,7 +441,7 @@ The scrupulous reader may have noticed in figure~\ref{fig:protonshe} that the ca
 %
 At these energies, however, the equilibrium spectrum must be determined by the ratio $Q(p)/D(p)$, where both quantities are assumed to follow a pure power-law behavior. 
 
-Prior to questioning well-established theoretical models to seek the elusive physical mechanism responsible for this bizarreness, it is crucial to ascertain whether the break should be attributed to the numerator or the denominator of~\cref{eq:finalprimary}. 
+Prior to questioning well-established theoretical models to seek the elusive physical mechanism responsible for this bizarreness, it is crucial to ascertain whether the break should be attributed to the numerator or the denominator of~\ref{eq:finalprimary}. 
 %
 In other words, we need to identify whether the break occurs at the \emph{injection} stage or during the \emph{transport} of CRs in the Galaxy.
 
@@ -458,7 +458,7 @@ If the same change of slope is also present in the B/C ratio, then the conclusio
 \label{fig:bchighen}
 \end{figure}
 
-As shown in~\cref{fig:bchighen}, where we extend B/C data over the multi-TeV range thanks to measurements by DAMPE and CALET, the situation indeed aligns with the former scenario, and thereby all the current explanations of this feature are given in terms of some alteration in the galactic transport. 
+As shown in~\ref{fig:bchighen}, where we extend B/C data over the multi-TeV range thanks to measurements by DAMPE and CALET, the situation indeed aligns with the former scenario, and thereby all the current explanations of this feature are given in terms of some alteration in the galactic transport. 
 %
 These revisions in the transport of CRs might be associated with a spatial dependence of the diffusion coefficient, as proposed in ~\cite{Tomassetti2012apj}, or due to the transition from selfgenerated turbulence to preexisting turbulence, see, e.g.,~\cite{Evoli2018prl}.
 
