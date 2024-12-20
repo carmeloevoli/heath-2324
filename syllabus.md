@@ -58,13 +58,29 @@
     - The diffusion coefficient in space
     - Implications on the Galactic mean free path
 
-11. December 16, 2024
+11. December 16, 2024 🚀
+    - Diffusion equation in pitch angle
+    - Diffusion equation in space
+    - Cosmic ray diffusive flux and anisotropy
 
 12. December 17, 2024
+    - General conditions for particle acceleration
+    - The Hillas criterion and plausible Galactic cosmic ray sources
+    - Generalities of Stochastic Acceleration
+    - Second order Fermi acceleration  
 
 13. December 18, 2024
-
+    - The Formation of Shock Waves
+    - Interstellar Shock Waves
+    - The Rankine-Hugoniot jump conditions
+    - Compression ratio
+      
 14. December 19, 2024
-
+    - Dynamical Evolution of Supernova Remnants
+    - Free expansion phase
+    - Sedov-Taylor phase
+    - Historical Supernovae in the Milky Way
+      
 15. December 20, 2024
+    
 
