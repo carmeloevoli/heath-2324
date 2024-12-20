@@ -5,17 +5,15 @@
 
 In 1949, Fermi proposed a physical system where this mechanism for particle acceleration can take place. In particular, he postulated the existence of an inhomogeneous interstellar medium, hence the presence of \emph{magnetic clouds} moving in random directions relative to the Galactic frame. These clouds, carrying magnetic fields, can reflect incoming charged particles.
 
-The fundamental principle of the second-order Fermi mechanism is straightforward: \emph{particles gain energy when they encounter a magnetic cloud moving towards them and lose energy in encounters with clouds moving away}\footnote{This behavior mirrors a general property of elastic collisions in mechanics (see appendix~\ref{sec:app_collisions} for details on Newtonian collisions).}. Due to the greater frequency of head-on encounters compared to tail-on ones, there is an overall \emph{increase} in energy.
+The fundamental principle of the second-order Fermi mechanism is straightforward: \emph{particles gain energy when they encounter a magnetic cloud moving towards them and lose energy in encounters with clouds moving away}\footnote{This behavior mirrors a general property of elastic collisions in mechanics (see appendix~\ref{app:collisions} for details on Newtonian collisions).}. Due to the greater frequency of head-on encounters compared to tail-on ones, there is an overall \emph{increase} in energy.
 
 To quantify the energy change during a single interaction, we employ a double reference frame transformation: quantities measured in the magnetic cloud rest frame are denoted by primes, while those in the Galactic frame remain unprimed.
 
-A particle with initial energy \( E_{\rm i} \) and momentum \( p_{\rm i} \) in the Galactic frame encounters a magnetic cloud moving along the \( x \)-axis with a velocity factor \( \beta = V / c \). We transform to the cloud rest frame, where the particle energy is given by\footnote{For simplicity, we have assumed the particle is relativistic, where \( p \simeq E \) (using units where \( c = 1 \))}:
+A particle with initial energy \( E_i \) and momentum \( p_i \) in the Galactic frame encounters a magnetic cloud moving along the \( x \)-axis with a velocity factor \( \beta = u / c \). We transform to the cloud rest frame, where the particle energy is given by\footnote{For simplicity, we have assumed the particle is relativistic, where \( p \simeq E \) (using units where \( c = 1 \))}:
 \begin{equation}
 E_i^\prime = \gamma (E_i - \beta p_{i,x}) = \gamma E_i \left( 1 - \beta \frac{p_{i,x}}{E_i} \right) = \gamma E_i \left( 1 - \beta \mu_i \right)
 \end{equation}
-where \( p_{i,x} \) is the component of the particle momentum along the cloud motion direction, and \( \mu_i = p_{i,x} / p_i = \cos\theta_i \) is the cosine of the angle between the particle velocity and the cloud velocity in the Galactic frame.
-
-%- \( -1 \leq \mu_{\rm in} \leq 1 \), corresponding to all possible directions of particle motion relative to the cloud.
+where \( p_{i,x} \) is the component of the particle momentum along the cloud motion direction, and \( \mu_i = p_{i,x} / p_i = \cos\theta_i \) is the cosine of the angle between the particle velocity and the cloud velocity in the Galactic frame, and \( -1 \leq \mu_i \leq 1 \), corresponding to all possible directions of particle motion relative to the cloud.
 
 Upon reflection by the cloud, the particle energy, as observed externally, becomes:
 \begin{equation}
@@ -53,9 +51,11 @@ Initially, we can average over the exit angle to get:
 \gamma^2 \left( 1 - \beta \mu_i \right) - 1
 \end{equation}
 
-{\color{red}Next, we must consider averaging over all possible initial angles. Since the frequency of particle-cloud collisions depends on their relative velocity, the probability distribution for the incoming angle is:
+Next, we must consider averaging over all possible initial angles. 
+
+{\color{red}Since the frequency of particle-cloud collisions depends on their relative velocity, therefore the probability distribution for the incoming angle is:
 \begin{equation}
-P(\mu) \propto v_{\rm{rel}} \propto 1 - \beta \mu_i  
+P(\mu) \propto v_{\rm{rel}} =  \frac{\beta \mu + v}{1 + v \beta \mu} \rightarrow 1 - \beta \mu_i  
 \end{equation}}
 
 Normalizing this probability over \( \mu_i \in [-1,1] \), we get:
@@ -79,30 +79,25 @@ This confirms that Fermi's mechanism effectively accelerates charged particles: 
 For the second-order Fermi mechanism to account for the high-energy particles observed in cosmic rays, it must accelerate particles efficiently. Let us assess its viability within the ISM, where the typical cloud velocity is of the order of the Alfvén speed, \( v_A \sim 10 \, \text{km/s} \). In terms of \( \beta = v / c \), this translates to \( \beta \sim 10^{-4} \). 
 
 The fractional energy change per encounter is therefore:
-\[
+\begin{equation}\label{eq:deltaeovere}
 \frac{\Delta E}{E} \sim \frac{4}{3} \beta^2 \sim 10^{-8},
-\]
+\end{equation}
 indicating a highly inefficient energy gain mechanism. 
 
 To further quantify this inefficiency, we define the \emph{acceleration time}, \( \tau_{\rm acc} \), as the characteristic timescale for a particle to significantly increase its energy:
-\[
+\begin{equation}
 \tau_{\rm acc} = \left( \frac{1}{E} \frac{dE}{dt} \right)^{-1}.
-\]
+\end{equation}
 
 Assuming the average distance between magnetic clouds is \( L \), and neglecting the magnetic field in the space between clouds (providing a lower limit), the average time between two encounters is:
-\[
+\begin{equation}\label{eq:tauc}
 \tau_{\rm c} = \frac{L}{c}.
-\]
+\end{equation}
 
-The rate of energy gain is then:
-\[
-\frac{dE}{dt} \simeq \frac{\Delta E}{\tau_{\rm c}} = \frac{4}{3} \frac{\beta^2 c E}{L}.
-\]
-
-From this, the acceleration time can be expressed as:
-\[
-\tau_{\rm acc} = \frac{3}{4} \frac{L}{c \beta^2}.
-\]
+From this, the acceleration time can be expressed, using equations~\eqref{eq:deltaeovere} and~\eqref{eq:tauc}, as:
+\begin{equation}
+\tau_{\rm acc} = \left( \frac{1}{E} \frac{\Delta E}{\tau_c} \right)^{-1} = \frac{3}{4} \frac{L}{c \beta^2}~.
+\end{equation}
 
 Using typical ISM values, \( \beta \sim 10^{-4} \) and \( L \sim 1 \, \text{pc} \), we find:
 \[
@@ -110,7 +105,7 @@ Using typical ISM values, \( \beta \sim 10^{-4} \) and \( L \sim 1 \, \text{pc} 
 \]
 just for the particle to \emph{double its energy}. This timescale is vastly longer than the lifetimes of most astrophysical accelerators and is far too slow to explain the high energies observed in Galactic cosmic rays. In fact, particles in the ISM are subject to various energy loss mechanisms, such as ionization losses, that occur on timescales much shorter than \( \tau_{\rm acc} \), further diminishing the effectiveness of the second-order Fermi mechanism.
 
-Another issue lies in the resulting energy spectrum. From previous discussions (see equation~\ref{Eq:slopegeneralized}), the spectrum slope depends on the ratio of the acceleration timescale \( \tau_{\rm acc} \) to the escape timescale \( \tau_{\rm esc} \). This ratio is highly variable across different regions of the Galaxy, depending on the density and velocity of magnetic clouds. As a result, the energy spectrum varies significantly between regions, thereby, when summed over the Galaxy, the contributions from different regions are unlikely to produce a coherent, universal power-law spectrum as observed for Galactic cosmic rays.
+Another issue lies in the resulting energy spectrum. From previous discussions (see equation~\ref{eq:gammapescxi}), the spectrum slope depends on the ratio of the acceleration timescale \( \tau_{\rm acc} \) to the escape timescale \( \tau_{\rm esc} \). This ratio is highly variable across different regions of the Galaxy, depending on the density and velocity of magnetic clouds. As a result, the energy spectrum varies significantly between regions, thereby, when summed over the Galaxy, the contributions from different regions are unlikely to produce a coherent, universal power-law spectrum as observed for Galactic cosmic rays.
 
 These limitations point to significant drawbacks of the second-order Fermi mechanism.
 %

@@ -12,63 +12,66 @@ They discovered that \emph{astrophysical shocks} could act as extremely efficien
 
 Current observations confirm that particles are indeed accelerated at these shocks, evidenced by the radiation emitted from such regions, typically interpreted as the energy losses of fresh accelerated electrons~\cite{ref}. 
 
-We know at this point that, in the vicinity of the discontinuity, the upstream region is characterized by fast-moving, cold plasma, whereas the downstream region contains slower, hotter plasma. 
+We know at this point that \TODO{(see section)}, in the vicinity of the discontinuity, the upstream region is characterized by fast-moving, cold plasma, whereas the downstream region contains slower, hotter plasma. 
 %
-The typical shock wave's velocity in the ISM is approximately \( \sim 10^3-10^4 \) km/s, which corresponds to a Mach number of about 100-1000, placing us firmly in the \emph{strong} shock regime.
+The typical shock wave's velocity in the ISM is approximately \( \sim 10^3-10^4 \) km/s, which corresponds to a Mach number of about \( 10^2-10^3 \), placing us firmly in the \emph{strong} shock regime.
 
-The key concept here revolves around how particles perceive the plasma in the context of a shock front. From a particle's perspective, the plasma appears to approach at about the shock velocity from both the upstream and downstream sides. 
-%
-Consider a group of particles with energy \( E \) initially located on the upstream side of the shock. These particles undergo diffusion through collisions with magnetic turbulence present in the plasma, which tends to isotropize their angular distribution in the frame where the upstream plasma is at rest.
-%
-Upon crossing the shock to the downstream side, these particles encounter magnetic turbulence associated with the downstream plasma. This plasma is moving towards the particles at a velocity \( \sim \frac{3}{4} u_s \) in the same reference frame. If collisions with the downstream plasma further isotropize the particles, then from the particles' viewpoint, they effectively experience a collision with a \emph{cloud} moving towards them. 
-%
-Some of these particles will eventually diffuse back to the upstream side of the shock. Upon their return, they perceive the upstream plasma as moving towards them, on average. In the shock frame, the unshocked plasma advances towards the downstream at a speed of \( |u_1 - u_2| \sim u_s \), resulting again in a head-on \emph{cloud} collision.
-%
-There are never crossings in which the particles lose energy, and the increment in energy is the same going in both directions. At such, the continual diffusion of particles back and forth across the shock front can significantly accelerate the particles. 
+The key concept here revolves around how particles perceive the plasma in the context of a shock front. 
 
-As in both upstream and downstream scenarios, the particles experience head-on collisions, this mechanism will result in a  \emph{first-order} Fermi acceleration.
+From a particle's perspective, the plasma appears to approach at about the shock velocity from both the upstream (\( u \)) and downstream (\( d \)) sides. 
+%
+Consider a group of particles with energy \( E \) initially located on the \emph{upstream} side of the shock. These particles undergo diffusion through collisions with magnetic turbulence present in the plasma, which tends to isotropize their angular distribution in the frame where the upstream plasma is at rest.
+%
+Upon crossing the shock to the \emph{downstream} side, these particles encounter magnetic turbulence associated with the downstream plasma. This plasma is moving towards the particles at a velocity \( \sim \frac{3}{4} u_{\rm shock} \) in the same reference frame. If collisions with the downstream plasma further isotropize the particles, then from the particles' viewpoint, they effectively experience a collision with a \emph{cloud} moving towards them (head-on). 
+%
+Some of these particles will eventually diffuse back to the upstream side of the shock. Upon their return, they perceive the upstream plasma as moving towards them, on average. In the shock frame, the unshocked plasma advances towards the downstream at a speed of \( |u_u - u_d| \sim u_{\rm shock} \), resulting again in a \emph{head-on} cloud collision.
+%
+There are \emph{never} crossings in which the particles lose energy, and the increment in energy is the same going in both directions. At such, the continual diffusion of particles back and forth across the shock front can significantly accelerate the particles. 
+
+As in both upstream and downstream scenarios, the particles experience head-on collisions, this mechanism will result in a \emph{first-order} Fermi acceleration.
 
 %Therefore, numerous cycles of crossing the shock can significantly accelerate the particles. 
 %Scattering ensures that once the particles enter in the upstream or downstream regions there their velocities become isotropically distributed.
 %There are never crossings in which the particles lose energy, and the increment in energy is the same going in both directions.
 
-It is clear from this description that, for this process to occur effectively, particle directions need to be isotropized, which can happen through pitch-angle scattering by MHD waves. The generation of these waves is attributed to large-scale turbulence cascade downstream, and upstream by the energetic particles themselves (cosmic-ray streaming).
+It is clear from this description that, for this process to occur effectively, particle directions need to be isotropized, which can happen through pitch-angle scattering by MHD waves. The generation of these waves is attributed to large-scale turbulence cascade downstream (injected by the SNR), and upstream by the energetic particles themselves (cosmic-ray streaming).
+%
+Additionally, it's crucial for particles to have a finite probability of escaping \emph{downstream} to fulfill the conditions of the generalized Fermi acceleration mechanism.
 
-Additionally, it's crucial for particles to have a finite probability of escaping downstream to fulfill the conditions of the generalized Fermi acceleration mechanism.
-
-More quantitatively, consider now a particle in the upstream with energy \( E_u \). This particle diffuses and crosses the shock, and its energy in the downstream \( E_d \) can be calculated using Lorentz transformation:
+More quantitatively, consider now a particle in the upstream with initial energy \( E_i \). 
+%
+This particle diffuses and crosses the shock, and its energy in the downstream \( E_i^\prime \) can be calculated using Lorentz transformation:
 %
 \begin{equation}
-E_d = \gamma E_u (1 + \beta \mu_d)
+E_i^\prime = \gamma E_i \left( 1 + \beta \mu_i \right)
 \end{equation}
 %
-here, \( 0 \le \mu \le 1 \) and \( \beta = \frac{u_1 - u_2}{c} > 0 \).
+here, \( 0 \le \mu_i \le 1 \) and \( \beta = \frac{u_u - u_d}{c} > 0 \).
 
-The same principle applies to a particle transitioning from downstream to upstream, with the angle \( \mu^\prime \) having the opposite sign:
+The same principle applies to a particle transitioning from downstream to upstream, with the angle \( \mu_f^\prime \) having the opposite sign:
 %
 \begin{equation}
-E_u = \gamma E_d (1 - \beta \mu^\prime)
+E_f = \gamma E^\prime_f (1 - \beta \mu_f^\prime)
 \end{equation}
-here, \( -1 \le \mu^\prime \le 0 \).
+here, \( -1 \le \mu_f^\prime \le 0 \).
 
-As a consequence, after completing a cycle (upstream $\rightarrow$ downstream $\rightarrow$ upstream), there is an overall gain in energy:
+As a consequence, after completing a cycle (upstream $\rightarrow$ downstream $\rightarrow$ upstream), and assuming \( E^\prime_f \simeq E^\prime_i \), there is an overall gain in energy:
 %
 \begin{equation}
-%= \gamma^2 E (1 + \beta \mu) (1 - \beta \mu^\prime) \rightarrow 
-\frac{\Delta E}{E} = \frac{E_u - E}{E} = \gamma^2 (1 + \beta \mu) (1 - \beta \mu^\prime) - 1
+\frac{\Delta E}{E} = \frac{E_f - E_i}{E_i} = \overbrace{\gamma^2}^{\ge 1} \overbrace{(1 + \beta \mu_i)}^{\ge 1} \overbrace{(1 - \beta \mu_f^\prime)}^{\ge 1} - 1 > 0
 \end{equation}
 
 Notice that now, due to the different angular distributions, there are no configurations leading to an energy decrease, and \( \Delta E / E \) is \emph{always positive}.
 
 To compute the mean energy gain over all the possible configurations, we have to compute the probability of a particle encountering the shock front with a specific pitch angle \( \mu \). 
 
-Assuming \( n \) is the number density of isotropically distributed particles due to diffusion, this probability can be derived from the ratio of the flux of particles moving in the direction of \( \mu \) to the total flux \( J \):
+Assuming \( n \) is the number density of isotropically distributed particles due to diffusion, this probability can be derived from the ratio of the flux of particles moving in the direction of \( \mu \) (\( J_\mu = n v \mu \)) to the total flux \( J \):
 %
 \begin{equation}
-J = \int d\Omega \frac{n}{4\pi} v \mu = \frac{n v}{4\pi} \int_0^{2\pi} d\phi \int_0^1 d\mu \mu = \frac{n v}{4}
+J = \int \frac{d\Omega}{4\pi} J_\mu = \frac{n v}{4\pi} \int_0^{2\pi} d\phi \int_0^1 d\mu \mu = \frac{n v}{4}
 \end{equation}
 %
-where we use the information that only those particles with a projected \( \cos \theta < 0 \) will actually cross the shock front.
+where we use the information that only those particles with a projected \( \cos \theta > 0 \) will actually cross the shock front.
 
 Therefore, the probability density is given by:
 %
@@ -86,7 +89,8 @@ It is evident that this probability is symmetric in both directions. Consequentl
 %
 \begin{remark}
 \begin{equation}
-\left\langle \frac{E_u -E}{E} \right\rangle_{\mu,\mu^\prime} = -\int_0^1 d\mu \int_{-1}^0 d\mu^\prime P(\mu)P(\mu^\prime)\left[ \gamma^2(1+\beta\mu)(1-\beta\mu')-1 \right] = \frac{4}{3} \beta = \frac{4}{3} \frac{u_1-u_2}{c}
+\left\langle \frac{\Delta E}{E} \right\rangle_{\mu_i,\mu_f^\prime} \!\!\! = \! \int_0^1 \! d\mu_i \int_{-1}^0 \! d\mu^\prime_f \, P(\mu_i)P(\mu_f^\prime)\left[ \gamma^2(1+\beta\mu_i)(1-\beta\mu_f^\prime)-1 \right] 
+= \frac{4}{3} \beta = \frac{4}{3} \left(\frac{u_u - u_d}{c} \right)
 \end{equation}
 \end{remark}
 

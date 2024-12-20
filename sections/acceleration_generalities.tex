@@ -12,46 +12,50 @@ In a stochastic acceleration process:
 \end{itemize}
 
 Over \( n \) cycles, a particle's energy evolves geometrically, leading to:
-\[
-E_n = E_0 (1 + \xi)^n,
-\]
-where \( E_0 \) is the initial energy. Consequently, the number of cycles required to reach a final energy \( E_n \) from \( E_0 \) is:
-\[
-n = \frac{\ln \left( E_n/E_0 \right)}{\ln (1 + \xi)}.
-\]
+\begin{equation}
+E_n = E_0 (1 + \xi)^n~,
+\end{equation}
+where \( E_0 \) is the initial energy. 
+%
+Consequently, the number of cycles required to reach a final energy \( E_n \) from \( E_0 \) is:
+\begin{equation}
+n = \frac{\ln \left( E_n/E_0 \right)}{\ln (1 + \xi)}~.
+\end{equation}
 
 Therefore, in this model, attaining significantly higher energies demands a \emph{larger number of acceleration cycles}.
 
 Now consider the cumulative probability of a particle remaining in the acceleration region after \( n \) cycles:
-\[
+\begin{equation}
 P_{\text{survive}} = (1 - P_{\text{esc}})^n.
-\]
-s
+\end{equation}
+
 The fraction of particles that reach energies exceeding a threshold \( E \) can be determined by summing the probabilities for particles that survive \( m \geq n \) cycles. Using the geometric series with ratio \( x = (1 - P_{\text{esc}}) \), we obtain:
-\[
-f(>E) \propto \sum_{m=n}^\infty (1 - P_{\text{esc}})^m = \frac{(1-P_{\text{esc}})^n}{P_{\text{esc}}}.
-\]
+\begin{equation}
+f(>E) \propto \sum_{m=n}^\infty (1 - P_{\text{esc}})^m = \frac{(1-P_{\text{esc}})^n}{P_{\text{esc}}}~.
+\end{equation}
 Substituting for \( n \) using the energy relation:
-\[
-f(>E) \propto \frac{(1-P_{\text{esc}})^{\frac{\ln \left( E/E_0 \right)}{\ln (1 + \xi)}}}{P_{\text{esc}}}.
-\]
+\begin{equation}
+f(>E) \propto \frac{(1-P_{\text{esc}})^{\frac{\ln \left( E/E_0 \right)}{\ln (1 + \xi)}}}{P_{\text{esc}}}~.
+\end{equation}
 
 Utilizing the logarithmic identity \( a^{\ln b} = b^{\ln a} \), this expression simplifies to a power-law distribution:
-\[
-f(>E) \propto \frac{1}{P_{\text{esc}}} \left( \frac{E}{E_0} \right)^{\gamma}, \quad \text{where} \quad \gamma = \frac{\ln (1-P_{\text{esc}})}{\ln (1+\xi)}.
-\]
+\begin{equation}
+f(>E) \propto \frac{1}{P_{\text{esc}}} \left( \frac{E}{E_0} \right)^{\gamma}, \quad \text{where} \quad \gamma = \frac{\ln (1-P_{\text{esc}})}{\ln (1+\xi)}~.
+\end{equation}
 
 The parameter \( \gamma \) governs the spectral slope and can be approximated under the assumptions \( \xi \ll 1 \) and \( P_{\text{esc}} \ll 1 \):
-\[
+\begin{remark}
+\begin{equation}\label{eq:gammapescxi}
 \gamma \simeq -\frac{P_{\text{esc}}}{\xi}.
-\]
+\end{equation}
+\end{remark}
 
 Despite its simplicity, this framework highlights a universal feature of stochastic acceleration: it naturally produces a \emph{power-law energy distribution}, which is ubiquitous in astrophysical observations.  
 
 The maximum energy achievable by this stochastic process is constrained by two primary factors:
 \begin{itemize}
-\item Finite Lifetime of the Accelerator: The total time available for acceleration, \( T \), limits the number of cycles \( n \), with \( n_{\text{max}} \sim T / \tau \),
-\item Energy-Dependent Escape Probability: In realistic scenarios, the escape probability \( P_{\text{esc}} \) often increases with energy due to competing processes such as energy losses or dynamic changes in the accelerator. These factors eventually counteract the energy gains, capping the achievable energy.
+\item \emph{Finite Lifetime of the Accelerator}: The total time available for acceleration, \( T \), limits the number of cycles \( n \), with \( n_{\text{max}} \sim T / \tau \),
+\item \emph{Energy-Dependent Escape Probability}: In realistic scenarios, the escape probability \( P_{\text{esc}} \) often increases with energy due to competing processes such as energy losses or dynamic changes in the accelerator. These factors eventually counteract the energy gains, capping the achievable energy.
 \end{itemize}
 
 Stochastic acceleration serves as a fundamental model for understanding cosmic particle spectra. Future sections will explore specific implementations, including Fermi second-order acceleration.

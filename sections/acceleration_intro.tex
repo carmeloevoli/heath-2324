@@ -7,30 +7,30 @@ At these temperatures, the universe predominantly exists in the \emph{plasma sta
 
 However, particles in cosmic rays exhibit energies that far exceed this range: How do particles achieve such extreme energies?
 
-The only known mechanism to increase the energy of a charged particle is through an \emph{electric field}, as electric fields exert forces that directly accelerate charged particles. Yet, this process faces a critical obstacle in astrophysical plasmas: the rapid motion of free electrons relative to protons in a plasma effectively short-circuits electric fields, preventing sustained acceleration\footnote{The only occurrence in which an electric field plays an important role in particle acceleration is the unipolar inductor.}.
+The only known mechanism to increase the energy of a charged particle is through an \emph{electric field}, as electric fields exert forces that directly accelerate charged particles. Yet, this process faces a critical obstacle in astrophysical plasmas: the rapid motion of free electrons relative to protons in a plasma effectively short-circuits electric fields, preventing sustained acceleration\footnote{The only occurrence in which an electric field plays an important role in particle acceleration is the \emph{unipolar inductor}~\cite{}.}.
 %   
 On the other hand, while magnetic fields are ubiquitous in the universe, they only alter the direction of particle motion and cannot increase particle energy directly.
 
-How can particles in a plasma --- where electric fields are neutralized and magnetic fields deflect rather than accelerate --- be energized to the levels observed in cosmic rays? The answer lies in \emph{magnetic induction}. Electric fields can be induced in a plasma when magnetic fields are dynamic—that is, when they change over time or move relative to the plasma. This principle, encapsulated in \emph{Faraday's law of induction}, forms the foundation of many astrophysical particle acceleration mechanisms.
+How can particles in a plasma --- where electric fields are neutralized and magnetic fields deflect rather than accelerate --- be energized to the levels observed in cosmic rays? The answer lies in \emph{magnetic induction}. Electric fields can be induced in a plasma when magnetic fields are dynamic --- that is, when they change over time or move relative to the plasma. This principle, encapsulated in \emph{Faraday's law of induction}, forms the foundation of many astrophysical particle acceleration mechanisms.
 
 According to Faraday's law, a time-varying magnetic field generates an electric field:
 \[
-\nabla \times \vec{\mathcal E} = -\frac{1}{c} \frac{\partial \vec{\mathcal B}}{\partial t}.
+\vb\nabla \times \vec{\mathcal E} = -\frac{1}{c} \frac{\partial \vec{\mathcal B}}{\partial t}.
 \]
 
 Dimensionally, this relationship implies:
-\[
-\frac{\mathcal E}{L} \sim \frac{1}{c} \frac{\mathcal B}{T} \, \longrightarrow \, \mathcal E \sim \frac{U}{c} \mathcal B~,
-\]
-where \( L \) is the characteristic size of the system, \( T \) is the timescale of magnetic field variation, and \( U \) is the velocity associated with the system.
+\begin{equation}
+\frac{\mathcal E}{L} \sim \frac{1}{c} \frac{\mathcal B}{T} \, \longrightarrow \, \mathcal E \sim \frac{u}{c} \mathcal B~,
+\end{equation}
+where \( L \) is the characteristic size of the system, \( T \) is the timescale of magnetic field variation, and \( u \) is the velocity associated with the system.
 
 For a particle of charge \( q \), this electric field translates to a maximum energy gain:
+\begin{equation}\label{eq:Hillas1}
+E_{\rm max} \sim q \, \mathcal E \, L \sim \frac{q}{c} \, L \, \mathcal B \, u.
+\end{equation}
+or \TODO{numerically}
 \[
-E_{\rm max} \sim q \, \mathcal E \, L \sim \frac{q}{c} \, L \, \mathcal B \, U.
-\]
-or numerically
-\[
-E_{\rm max} \sim 3 \times 10^{12} Z \left( \frac{B}{\mu\text{G}} \right) \left( \frac{U}{10^3~\text{km/s}} \right) \left( \frac{L}{\text{pc}} \right)~\text{eV}
+E_{\rm max} \sim 3 \times 10^{12} Z \left( \frac{B}{\mu\text{G}} \right) \left( \frac{u}{10^3~\text{km/s}} \right) \left( \frac{L}{\text{pc}} \right)~\text{eV}
 \]
 
 This shows that achieving significant acceleration requires:
@@ -38,13 +38,13 @@ This shows that achieving significant acceleration requires:
 \begin{itemize}
 \item Large system sizes (\( L \)),
 \item Strong magnetic fields (\( \mathcal B \)),
-\item Fast-moving magnetic structures (\( U \)).
+\item Fast-moving magnetic structures (\( u \)).
 \end{itemize}
 
-Assuming \( U \sim c \) (the most optimistic case), the confinement condition becomes:
-\[
+Assuming \( u \sim c \) (the most optimistic case), the confinement condition becomes:
+\begin{equation}
 r_{\rm L} \lesssim L,
-\]
+\end{equation}
 where \( r_{\rm L} = \frac{E}{q \mathcal B} \) is the particle's Larmor radius. 
 
 This relation shows that to accelerate a particle effectively, the particle must remain confined within the accelerator. 
@@ -52,15 +52,15 @@ This relation shows that to accelerate a particle effectively, the particle must
 This condition leads to the \emph{Hillas criterion}~\cite{Hillas1984}, which sets a key limit on the maximum particle energy. 
 
 The total magnetic energy, \( W_B \), in the acceleration system is given by the product of the magnetic energy density, \( \frac{\mathcal{B}^2}{8\pi} \), and the volume of the accelerator, \( \frac{4\pi}{3} \, L^3 \):  
-\[
+\begin{equation}
 W_B \sim \frac{\mathcal{B}^2 L^3}{6} \sim \frac{E_{\rm max}^2 L}{6 q^2},
-\]  
-where we have made use of the Hillas criterion to relate the magnetic field strength \( \mathcal{B} \), system size \( L \), and maximum particle energy \( E_{\rm max} \).  
+\end{equation}
+where we have made use of the Hillas criterion in equation~\ref{eq:Hillas1} to relate the magnetic field strength \( \mathcal{B} \), system size \( L \), and maximum particle energy \( E_{\rm max} \).  
 
-Numerically, this gives:
-\[
+\TODO{Numerically}, this gives:
+\begin{equation}
 W_B \sim 5 \times 10^{52} Z^{-1} \left( \frac{E_{\rm max}}{10^{20}~\text{eV}} \right)^2 \left( \frac{L}{\text{pc}} \right)~\text{erg}~.
-\]  
+\end{equation}
 
 This total magnetic energy, \( W_B \), cannot exceed the total energy injected by the source. In other words, the accelerator’s magnetic energy must be derived from the energy supplied by the astrophysical system driving it.
 
@@ -72,14 +72,10 @@ Moreover, we must note that the Hillas condition is a necessary but not suﬃcie
 
 In conclusion, identifying a good candidate for particle acceleration requires a system that satisfies the following conditions:  
 \begin{itemize}
-\item \textbf{Large energetics}: The system must have a substantial energy reservoir to draw from --- be it kinetic energy (e.g., translational motion in supernova remnants), rotational energy (e.g., in pulsars), or gravitational potential energy (e.g., in accretion disks).
-
-\item \textbf{Sufficient confinement time}: Particles need to remain within the accelerator long enough to achieve significant energy gains.
-
-\item \textbf{Minimal energy losses}: Effective acceleration requires that energy losses (e.g., due to radiation or collisions) remain negligible during the acceleration process.
-
-\item \textbf{An efficient energy transfer mechanism}: There must be a way to transfer energy from macroscopic astrophysical phenomena into the microscopic acceleration of particles.
-
+\item \emph{Large energetics}: The system must have a substantial energy reservoir to draw from --- be it kinetic energy (e.g., in supernova remnants), rotational energy (e.g., in pulsars), or gravitational potential energy (e.g., in accretion disks).
+\item \emph{Sufficient confinement time}: Particles need to remain within the accelerator long enough to achieve significant energy gains.
+\item \emph{Minimal energy losses}: Effective acceleration requires that energy losses (e.g., due to radiation or collisions) remain negligible during the acceleration process.
+\item \emph{An efficient energy transfer mechanism}: There must be a way to transfer energy from macroscopic astrophysical phenomena into the microscopic acceleration of particles.
 \end{itemize}
 
-While several astrophysical systems meet the first three conditions --- possessing sufficient energy, scale, and lifetime to accelerate particles --- the mechanism of energy transfer remains a more complex problem. This challenge was first addressed by Enrico Fermi in 1949, laying the foundation for our understanding of particle acceleration in astrophysical contexts.
+While several astrophysical systems meet the first three conditions --- possessing sufficient energy, scale, and lifetime to accelerate particles --- the mechanism of energy transfer remains a more complex problem. This challenge was first addressed by Enrico Fermi in 1949~\cite{}, laying the foundation for our understanding of particle acceleration in astrophysical contexts.
