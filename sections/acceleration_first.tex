@@ -46,7 +46,11 @@ This particle diffuses and crosses the shock, and its energy in the downstream \
 E_i^\prime = \gamma E_i \left( 1 + \beta \mu_i \right)
 \end{equation}
 %
-here, \( 0 \le \mu_i \le 1 \) and \( \beta = \frac{u_u - u_d}{c} > 0 \).
+here, \( 0 \le \mu_i \le 1 \) and
+%
+\begin{equation}
+\beta = \frac{u_u - u_d}{c} > 0~.
+\end{equation}
 
 The same principle applies to a particle transitioning from downstream to upstream, with the angle \( \mu_f^\prime \) having the opposite sign:
 %
@@ -82,70 +86,103 @@ P(\mu) \propto \frac{n \mu v}{J} = 4 \mu
 To normalize \( P \) as a probability, we impose the condition:
 %
 \begin{equation}
-\int_0^1 d\mu P(\mu) = 1 \rightarrow P(\mu) = 2\mu 
+\int_0^1 d\mu_i P(\mu_i) = 1 \rightarrow P(\mu_i) = 2\mu_i
+\end{equation}
+%
+and
+%
+\begin{equation}
+\int_{-1}^0 d\mu^\prime_f P(\mu^\prime_f) = 1 \rightarrow P(\mu^\prime_f) = -2\mu^\prime_f
 \end{equation}
 
-It is evident that this probability is symmetric in both directions. Consequently, the average energy gain can be calculated as follows:
+%It is evident that this probability is symmetric in both directions. 
+
+Consequently, the average energy gain can be calculated as follows:
 %
 \begin{remark}
-\begin{equation}
+\begin{equation}\label{eq:firstorderxi}
 \left\langle \frac{\Delta E}{E} \right\rangle_{\mu_i,\mu_f^\prime} \!\!\! = \! \int_0^1 \! d\mu_i \int_{-1}^0 \! d\mu^\prime_f \, P(\mu_i)P(\mu_f^\prime)\left[ \gamma^2(1+\beta\mu_i)(1-\beta\mu_f^\prime)-1 \right] 
-= \frac{4}{3} \beta = \frac{4}{3} \left(\frac{u_u - u_d}{c} \right)
+\oset{\beta \sim 0}{\longrightarrow} \frac{4}{3} \beta 
+%= \frac{4}{3} \left(\frac{u_u - u_d}{c} \right)
 \end{equation}
 \end{remark}
 
-This result implies that the energy gain per cycle is first order in $\beta$ as expected, for interstellar shock the resulting energy gain is of the order of \( 10^{-2}-10^{-3} \), which is enormously more than the second order mechanism! 
+This result implies that the energy gain per cycle is \emph{first order} in $\beta$ as expected, for interstellar shock the resulting energy gain is of the order of \( 10^{-2}-10^{-3} \), which is enormously more than the second order mechanism! 
 
 In assessing the efficiency of the proposed mechanism, we must additionally ensure that particles can effectively cross the shock in both directions. 
-%
-In the upstream region, particles, regardless of the diffusion coefficient, will eventually encounter the shock front, which moves towards them at thousands of kilometers per second. Hence, the probability of crossing from upstream to downstream, \( P_{1 \rightarrow 2} \), is 1. Particles leave the upstream region only when their Larmor radius becomes larger than the accelerator's size or the maximum scale of the upstream turbulence.
+%s
+In the upstream region, particles, regardless of the diffusion coefficient, will eventually encounter the shock front, which moves towards them at thousands of kilometers per second. Hence, the probability of crossing from upstream to downstream, \( P_{u \rightarrow d} \), is 1. Particles leave the upstream region only when their Larmor radius becomes larger than the accelerator's size or the maximum scale of the upstream turbulence.
 
-In the downstream region, besides diffusion, we must consider that the plasma moves away from the shock, dragging particles with it. This leads to a finite probability of particles not returning to the shock front, resulting in a leakage. To estimate this escape probability, we recall that the particle flux through an infinite planar shock is \( n v / 4 \), assuming efficient isotropization in the upstream. In the shock rest frame, there is a particle flow \( u_2 n \) downstream, away from the shock front, which is lost to the acceleration process. Therefore, the escape probability is:
+In the downstream region, besides diffusion, we must consider that the plasma moves away from the shock, dragging particles with it. This leads to a finite probability of particles not returning to the shock front, finally resulting in a \emph{leakage}. 
+
+To estimate this escape probability, we recall that the particle flux through an infinite planar shock is \( n v / 4 \), assuming efficient isotropization in the upstream. In the shock rest frame, there is a particle flow \( u_d n \) downstream, away from the shock front, which is lost to the acceleration process. Therefore, the escape probability is:
 %
 \begin{equation}
-P_{2 \rightarrow \infty} = \frac{4 u_2}{c}
+P_{d \rightarrow \infty} = \frac{u_d n}{n v / 4} \sim \frac{4 u_d}{c}
 \end{equation}
 
 The probability of return to the shock front is simply:
 %
-\begin{equation}
-P_{2 \rightarrow 1} = 1 - P_{2 \rightarrow \infty} = 1 - \frac{4 u_2}{c}
+\begin{equation}\label{eq:pdtou}
+P_{d \rightarrow u} = 1 - P_{d \rightarrow \infty} = 1 - \frac{4 u_d}{c}
 \end{equation}
 
-With \( u_2/c \sim 10^{-2} \), most particles from the downstream will return to the upstream. This results in a highly efficient first-order Fermi acceleration mechanism with a high probability of completing a cycle.
+With \( u_d / c \sim 10^{-2} \), most particles from the downstream will return to the upstream. This results in a highly efficient first-order Fermi acceleration mechanism with a high probability of completing a cycle.
 
-The existence of a small escape probability is crucial, as it leads to a distribution of energies rather than uniform acceleration. Applying previous results, the slope of the \emph{differential spectrum}\footnote{The differential spectrum \( n(E)dE \) is  the number of particles with energy between \( E \) and \( E + dE \) thus \( E n(E) \propto E^{-\gamma} \)} produced by shock acceleration is:
+The existence of a small escape probability is crucial, as it leads to a distribution of energies rather than uniform acceleration. Applying equation~\eqref{eq:gammapescxi}, the slope of the \emph{differential spectrum}\footnote{The differential spectrum \( n(E)dE \) is  the number of particles with energy between \( E \) and \( E + dE \) thus \( E n(E) \propto E^{-\gamma} \)} produced by shock acceleration is given by the fractional energy gain (equation~\ref{eq:firstorderxi}) and the escape probability (equation~\ref{eq:pdtou}):
 %
 \begin{remark}
 \begin{equation}
-\gamma \simeq \frac{3 u_2}{u_1 - u_2} + 1 = \frac{r + 2}{r - 1} \rightarrow 2
+\gamma \simeq \frac{\frac{4}{3} \beta}{4 \frac{u_d}{c}} + 1 = \frac{3 u_d}{u_u - u_d} + 1 = \frac{r + 2}{r - 1} \rightarrow 2
 \end{equation}
 \end{remark}
 
 We found that this mechanism results in a \emph{universal} power-law spectrum for strong shocks, as the slope depends only on the compression factor. Worth noticing, the accelerated spectrum is independent of the diffusion coefficient, which in turn depends on the poor-understood microphysics of particle-wave scattering.
-
-On the other hand, the acceleration process's efficiency and the potential to accelerate particles to sufficiently high energies dramatically depend on the diffusion coefficient. 
 %
-To estimate the acceleration time, we need to consider the energy gain per crossing and the time taken for each crossing. %
-The average distance traveled by a particle in each region is obtained by equating the diffusion length (\( l_{\text{d,i}} \simeq \sqrt{2 D_i t_i} \)) to the distance covered by the shock or the advected plasma.
+On the other hand, the acceleration process's efficiency and the potential to accelerate particles to sufficiently high energies dramatically depend on the diffusion coefficient. 
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/SNRspectra.pdf} 
+\caption{Typical gamma-ray energy spectra for several of the most prominent SNRs. Young SNRs (e.g. Tycho) are shown in cyan. Solid lines show hadronic fits to the data. Adapted from~\cite{Funk2015}.}
+\label{fig:snrspectra}
+\end{figure}
+
+%%% TO BE DONE 
+
+To estimate the acceleration time, we need to consider the energy gain per crossing and the \emph{time taken for each cycle}.
+%
 The total cycle time is the sum of the times spent in the downstream and upstream\footnote{$
 t_{\rm c, i} = \frac{\lambda_i}{\langle v_{x,i} \rangle} = \frac{\lambda_i}{-\int_0^{\pi/2} v_i \cos \theta d\cos\theta} = \frac{\lambda_i}{v_i / 2} \sim \frac{2\lambda_i}{c}$}:
 %
 \begin{equation}
-t_{\text{cycle}} = \frac{2\lambda_1}{c} + \frac{2\lambda_2}{c} = \frac{4}{c} \left(\frac{D_1}{u_1} + \frac{D_2}{u_2}\right)
+\tau_{\rm cycle} = \frac{2\lambda_u}{c} + \frac{2\lambda_d}{c} %= \frac{4}{c} \left(\frac{D_1}{u_1} + \frac{D_2}{u_2}\right)
 \end{equation}
+%
+where \( \lambda_i \) is the average distance traveled by a particle in each region.
+
+The distance covered is obtained by computing the diffusion length \( \lambda_i \sim (2 D_i t_i)^{1/2} \) in the time spent by the advected plasma to catch the particle \( t_i \sim \lambda_i / u_i \), so we obtain
+%
+\begin{equation}
+\langle \lambda_i \rangle = \frac{2 D_i}{u_i}
+\end{equation} 
+%
+%{\color{red}where \( \lambda_i \) is the average distance traveled by a particle in each region is obtained by equating the diffusion length (\( l_{\text{d,i}} \simeq \sqrt{2 D_i t_i} \)) to the distance covered by the shock or the advected plasma.}
+
+%%% END 
 
 The characteristic acceleration timescale is then:
 %
+\begin{remark}
 \begin{equation}
-\tau_{\text{acc}} = \frac{3}{u_1 - u_2} \left( \frac{D_1}{u_1} + \frac{D_2}{u_2} \right)
+\tau_{\text{acc}} = \left( \frac{1}{E} \frac{dE}{dt} \right)^{-1} \sim \left( \frac{\Delta E}{E} \frac{1}{\tau_{\rm cycle}} \right)^{-1} \sim \frac{3}{u_u - u_d} \left( \frac{D_u}{u_u} + \frac{D_d}{u_d} \right) \oset{D_d \ll D_u}{\longrightarrow} 4 \frac{D_u}{u_u^2}
 \end{equation}
+\end{remark}
 
-To compare this time with the age of the system, we use typical values for the upstream diffusion coefficient and the shock speed of a young SNR. For example, with \( D_1 \simeq 10^{28}~\text{cm}^2~\text{s}^{-1} (E/\text{GeV})^{1/2} \) and \( u_1 = 10^4 \) km/s, we find:
+To compare this time with the age of the system, we use typical values for the upstream diffusion coefficient and the shock speed of a young SNR. For example, with \( D_u \simeq 10^{28}~\text{cm}^2~\text{s}^{-1} (E/\text{GeV})^{1/2} \) and \( u_u = 10^4 \) km/s, we find:
 %
 \begin{equation}
-{\color{red}\tau_{\text{acc}} \simeq 1~\text{kyr}~(E/\text{GeV})^{1/2}}
+\tau_{\text{acc}} \simeq 1~\text{kyr}~\left( \frac{E}{\text{GeV}} \right)^{1/2} 
 \end{equation}
 
-However, observations of particles accelerated up to 100 TeV in events like Tycho's supernova (age \( \sim 500 \) years) suggest that our estimates are off by orders of magnitude. Reconciling this discrepancy requires \emph{reducing} the diffusion coefficient, possibly through cosmic-ray induced plasma instabilities. This leads to an inherently non-linear problem, underscoring the complexity of particle acceleration in astrophysical shocks.
+However, observations of particles accelerated up to 100 TeV (see figure~\ref{fig:snrspectra}) in events like Tycho's supernova (age \( \sim 500 \) years) suggest that our estimates are off by orders of magnitude! Reconciling this discrepancy requires \emph{reducing} the diffusion coefficient in the upstream, possibly through cosmic-ray induced plasma instabilities. This leads to an inherently non-linear problem, underscoring the complexity of particle acceleration in astrophysical shocks.
