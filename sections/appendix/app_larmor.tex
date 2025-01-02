@@ -1,0 +1,80 @@
+% !TEX root = ../main.tex
+\section{Motion of a Charged Particle in a Constant Magnetic Field}
+
+Let's start from the Lorentz force
+%
+\begin{equation*}
+\frac{d}{dt} \left( m \gamma \vb v\right) = q \frac{\vb v}{c} \times \vb B \longrightarrow m \gamma \frac{d\vb v}{dt} = \frac{q}{c} \, \vb v \times \vb B
+\end{equation*}
+%
+where I used the fact that in the absence of electric fields, $\gamma$ is constant with time % (in fact, $d/dt(\gamma m c^2) = q \vec v \cdot \vec E$)
+
+The projection along $z$ of $\vb v \times \vb B$ is null, therefore
+%
+\begin{equation*}
+m \gamma \frac{d}{dt} v_z = \frac{d}{dt} p_z = 0
+\end{equation*}
+
+% $\frac{d}{dt} v_z = 0$ and $v_z =$~const and $p_z = m \gamma v_z =$~const
+
+from this it follows $p_z / p = \mu =$~const (is the \emph{pitch angle}) and 
+%
+\begin{equation*}
+p_\perp = (p^2 - p_z^2)^{1/2} = (p_x^2 + p_y^2)^{1/2} = (1-\mu^2)^{1/2} =~\text{const}
+\end{equation*}
+
+in the orthogonal projection
+%
+\begin{equation*}
+m \gamma \frac{d}{dt} v_\perp = \frac{q}{c} v B \sin \theta = \frac{q v_\perp B}{c}  
+\longrightarrow \frac{d}{dt} v_\perp = \frac{q v_\perp B}{m \gamma c}  = \frac{v_\perp^2}{r_{\rm L}}
+\end{equation*}
+%
+where I introduced the \emph{Larmor radius}:
+%
+\begin{remark}
+\[
+r_{\rm L} = \gamma r_g = \frac{{\color{red}\gamma} m c  v_\perp}{q B} \simeq \frac{\gamma m c^2}{qB}
+\]
+\end{remark}
+%
+notice that this is the same as the gyro-radius with the difference of this $\gamma$ factor
+
+(reminder: centripetal force is $\frac{m v_\perp^2}{r_g}$)
+
+The corresponding Larmor angular frequency is
+%
+\begin{equation*}
+\Omega_{\rm L} = \frac{v_\perp}{r_{\rm L}} = \frac{qB}{\gamma m c} = \frac{\Omega_0}{\gamma}
+\end{equation*}
+
+The equation of motion after integrating becomes
+%
+\begin{eqnarray}
+v_x & = & v_\perp \cos \left(\Omega t\right) \\
+v_y & = & v_\perp \sin \left(\Omega t\right) \\
+v_z & = & v \mu
+\end{eqnarray}
+%
+and for the trajectory
+%
+\begin{eqnarray}
+x(t) & = & x_g + r_L \sin \left(\Omega t\right) \\
+y(t) & = & y_g + r_L \cos \left(\Omega t\right) \\
+z(t) & = & z_g + v \mu t
+\end{eqnarray}
+
+where $(x_g, y_g, z_g)$ are the coordinates of the guiding centre.
+
+Recap of quantity defined here: 
+%
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\toprule
+radius & $r_g = \frac{m c v_\perp}{qB}$ & $r_L = \gamma r_g$ \\
+angular frequency & $\Omega_0 = \frac{v_\perp}{r_g} = \frac{qB}{m c}$ & $\Omega_L =  \frac{v_\perp}{r_L} = \frac{\Omega_0}{\gamma} $\\
+frequency & $\nu_g = \frac{\Omega_0}{2\pi} = \frac{qB}{2 \pi m c}$ & $\nu_L =  \frac{\nu_g}{\gamma} $\\
+\bottomrule
+\end{tabular}
+\end{center}
+

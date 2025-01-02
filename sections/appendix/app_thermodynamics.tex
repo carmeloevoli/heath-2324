@@ -1,0 +1,121 @@
+% !TEX root = ../main.tex
+\section{Thermodynamics of Adiabatic Processes}
+
+An adiabatic process is defined by the absence of heat transfer to or from the system \( \delta Q = 0 \). According to the first law of thermodynamics:
+\begin{equation}
+\label{eq:firstlaw}
+d\mathcal U + PdV = 0
+\end{equation}
+This equation implies that any work (\(PdV\)) performed must be compensated by a change in the internal energy (\(\mathcal U\)), as no heat is exchanged with the surroundings.
+
+For an ideal gas, obeying the equation of state \(PV = nRT\) (where \(R\) is the universal gas constant), the internal energy is given by:
+\begin{equation}
+\label{eq:nrt} 
+\mathcal U = \alpha n R T = \alpha PV 
+\end{equation}
+Here, \(n\) represents the number of moles, and \( \alpha \) is the number of degrees of freedom divided by 2.
+
+Differentiating Equation~\ref{eq:nrt} results in:
+\begin{equation}\label{eq:dunrdt}
+d\mathcal U = \alpha n R dT = \alpha (P dV + V dP)
+\end{equation}
+
+Substituting this into Equation~\ref{eq:firstlaw} yields:
+\begin{equation}
+- PdV = \alpha P dV + \alpha V dP \rightarrow -(\alpha + 1) \frac{dV}{V} = \alpha \frac{dP}{P}
+\end{equation}
+
+Integrating both sides of this equation, we get:
+\begin{equation}
+\ln \left( \frac{P}{P_0} \right) = - \frac{\alpha + 1}{\alpha} \ln \left( \frac{V}{V_0} \right) = - \gamma_g \ln \left( \frac{V}{V_0} \right)
+\end{equation}
+where \( \gamma_g \) is the heat capacity ratio, \( c_V = \alpha R \), and we have used Mayer's relation \(c_P - c_V = R\).
+
+Thus, a reversible adiabatic process (one with no entropy generation) can be characterized by the polytropic process equation:
+\begin{remark}
+\begin{equation}
+PV^\gamma = \text{constant}
+\end{equation}
+\end{remark}
+%%% END CGPT
+
+Notice that for an ideal gas the \emph{internal energy} is solely a function of temperature. Indeed, from Eq.~\ref{eq:nrt}, we obtain 
+\begin{equation}
+\mathcal U = n c_V T = \frac{PV}{\gamma_g - 1}
+\end{equation}
+
+Thus, expressing internal energy per unit volume as \(u\), we get:
+%
+\begin{equation}
+u = \frac{\mathcal U}{V} = \frac{P}{\gamma_g - 1}
+\end{equation}
+
+On the other hand, \emph{enthalpy} \( \mathcal H\) is defined as:
+\[
+\mathcal H = \mathcal U + PV \rightarrow  \frac{\mathcal H}{V} = u + P
+\]
+
+Employing the relation \(u = \rho \epsilon\) (where \(\rho\) is the density and \(\epsilon\) is the \emph{specific} internal energy, i.e., energy per unit mass), we derive the \emph{specific} enthalpy:
+\begin{remark}
+\begin{equation}
+h = \frac{1}{\rho} \frac{\mathcal H}{V} = \epsilon + \frac{P}{\rho}
+\end{equation}
+\end{remark}
+
+
+%%% END
+
+% Last the first law of thermodynamics states that
+% \[
+% dU=TdS-PdV
+% \]
+% with $S$ the entropy,  which is conserved (so $dS=0$).  If we divide by mass we obtain the specific quantities,  namely
+% \[
+% d\epsilon=-Pd\left(\frac{1}{\rho}  \right)
+% \]
+%
+% Therefore:
+% \[
+% dw = d\epsilon +\frac{dP}{\rho}+P d\left(\frac{1}{\rho}  \right)=\frac{dP}{\rho}
+% \]
+%
+%
+%Noting that $U = \frac{P}{\rho (\gamma − 1)}$ from ideal gas law, with $U$ internal energy per unit mass.
+%
+%Now introduce the entropy per unit mass $s$,  satisfying the adiabatic condition
+%\begin{equation}
+%\frac{\partial s}{\partial t} + u \frac{\partial s}{\partial z}=0
+%\end{equation}
+%Entropy per unit volume would be $\rho s$,  so that we can write (questa si puo derivare ma u e' costante o no?)
+%\begin{equation}
+%\frac{\partial (\rho s)}{\partial t}+\vec{\nabla}(\rho s\vec{u}) =0 \underset{1d}{\implies} \frac{\partial (\rho s)}{\partial t}+\frac{\partial}{\partial z}(\rho su) =0 
+%\end{equation}
+%
+%The \textbf{enthalpy} of the system is \[ \mathcal W = E + PV \], while the specific enthalpy is \[ w=\epsilon +\frac{P}{\rho} \].
+%
+%Therefore
+%\begin{equation}
+%dw=d\epsilon +d\left(\frac{P}{\rho} \right)
+%\end{equation}
+%On the other hand
+%\begin{equation}
+%\begin{aligned}
+% dE &= dQ-PdV\\
+%&=\cancel{TdS} -PdV\\
+%\implies d\epsilon &=-Pd\left(\frac{1}{\rho}\right)\\
+%&=\frac{P}{\rho^2}d\rho
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\implies
+%dw=\frac{P}{\rho^2}d\rho +\frac{dP}{\rho}-\frac{P}{\rho^2}d\rho =\frac{dP}{\rho}
+%\end{equation}
+%Now we can use again the conservation of momentum and write:
+%\begin{equation}
+%\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial z}=-\frac{\nabla P}{\rho}\equiv \nabla \left[\epsilon +\frac{P}{\rho}  \right]
+%\end{equation}
+%Remember the energy density per unit volume
+%\begin{equation}
+%u=\frac{P}{\gamma_g -1}=\rho\epsilon \implies \epsilon =\frac{1}{\gamma_g -1}\frac{P}{\rho}
+%\end{equation}
+%

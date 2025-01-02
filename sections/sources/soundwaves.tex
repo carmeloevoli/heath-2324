@@ -1,0 +1,182 @@
+% !TEX root = ../lectures.tex
+\section{Small Perturbations in a Fluid: Sound Waves}
+
+In fluid dynamics, we often encounter scenarios where disturbances in the fluid are \emph{small} compared to the equilibrium values of a steady state solution. 
+%
+Consider a fluid at equilibrium with a density \(\rho_0(x)\) at a given point. If a disturbance occurs at time \(t\), altering the density to \(\rho(x, t)\), we define the relative density difference as \( \frac{\delta \rho}{\rho} = \frac{\rho(x, t) - \rho_0(x)}{\rho_0(x)} \). 
+%
+We assume that a linear theory can be developed as long as this relative difference remains  \( \frac{\delta \rho}{\rho} \ll 1 \).
+
+The validity of linear theory allows us to \emph{linearize} the equations of motion around the equilibrium state. This simplification transforms the complex, non-linear fluid dynamics equations into more manageable linear differential equations. These linear equations are advantageous as they adhere to the superposition principle, making the analysis and solution of these disturbances more straightforward.
+
+Within this linear framework, the disturbances propagate as a series of normal modes. Each mode represents a wave with a distinct frequency. Any arbitrary disturbance in the fluid can thus be reduced to a linear superposition of these fundamental wave modes. 
+
+However, it is crucial to note that certain conditions might lead to one or more normal modes exhibiting exponential growth over time. In such scenarios, even infinitesimal perturbations can amplify beyond the linear theory's scope, rendering the linear approximation invalid. This exponential growth is indicative of an \emph{instability} in the fluid's equilibrium state.
+
+To describe the dynamics of small perturbations, we revisit the fundamental fluid equations. 
+%
+The conservation law for any physical quantity \(A\) in fluid dynamics is generally expressed as:
+%
+\[
+\frac{\partial}{\partial t} (\text{density of}~A) + \nabla \cdot (\text{flux of}~A) = 0
+\]
+%
+This equation encapsulates the principle that any change in the density of \(A\) over time must be compensated by the divergence of its flux. Source and sink terms are included on the right-hand side if they are present in the system.
+
+In this context, we are adopting the \emph{Eulerian} perspective, which focuses on describing physical quantities at fixed spatial locations  over time. 
+%
+Accordingly, the temporal change of a quantity \(A\) in the Eulerian perspective is described by the partial time derivative:
+%
+\[
+\frac{\partial A}{\partial t} = \frac{A(\vb x, t +\delta t) - A(\vb x, t)}{\delta t} 
+\]
+
+In contrast, the \emph{Lagrangian} view offers a different approach, emphasizing tracking physical quantities as they move with the fluid flow. This perspective is akin to following a fluid parcel as it travels through space and time. Here, the temporal changes in a quantity \(Q\) are described by a convective time derivative:
+%
+\[
+\frac{d A}{dt} = \frac{A(\vb x + \delta \vb x, t + \delta t) - A(\vb x, t)}{\delta t} 
+\]
+%
+where \( \delta \vb x \) is the displacement, which can be expressed as \( \vb v \delta t \), with \( \vb v \) being the velocity of the fluid element.
+
+To transition from the fixed fluid element description (Lagrangian) to a fixed position in space description (Eulerian), we use the relation:
+%
+\begin{equation}
+\frac{d}{dt} \rightarrow \frac{\partial}{\partial t} + \vb u \cdot \nabla
+\end{equation}
+
+To describe the dynamics of a fluid, we introduce these quantities that are functions of both space and time: density (\( \rho \)), velocity (\( \vb v \)), and pressure (\( P \)).
+
+The continuity equation reflects the principle of mass conservation in fluid dynamics:
+%
+\begin{equation}
+\frac{d\rho}{dt}  = 0 \rightarrow \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \vb v) = 0
+\end{equation}
+
+The Euler equation describes the conservation of momentum in the fluid:
+%
+\begin{equation}
+\frac{\partial \vb v}{\partial t} + \vb v \cdot \nabla \vb v = - \frac{\nabla P}{\rho}
+\end{equation}
+
+This equation relates the variation of momentum density (\( \rho \vb v \)) to the gradient of pressure (which act a net force on the system).
+%
+Additional forces, like gravity (represented through its potential by \( - \nabla \phi \)), can be included on the RHS.
+
+To solve the continuity and Euler equations, the relationship between pressure and other fluid properties must be established. This is where the equation of state (EoS) becomes essential.
+
+In the case of a barotropic fluid, a common simplification in fluid dynamics, the EoS is expressed as \( P=P(\rho) \). This relationship directly relates pressure to density, providing a way to close the system of equations.
+
+For more complex scenarios, where the EoS also depends on temperature, an additional equation governing the evolution of temperature is necessary. 
+
+\TODO{See appendix on hydrostatic. TBD}
+
+Consider a fluid in a static steady state defined by a constant density \( \rho_0(x) \), pressure \( P_0(x) \), and zero velocity \( \vb v_0(x) = 0 \). This state, being time-independent, will persist indefinitely in the absence of external disturbances.
+
+Now, let's introduce small perturbations into this system, denoted by \( \delta A \), where \( A \) represents the fluid properties, and we assume the relative perturbation to be \( \delta A / A \ll 1 \). 
+
+These perturbations lead to changes in the fluid's velocity, density, and pressure:
+%
+\begin{eqnarray}
+\vb v = 0 & \rightarrow & \vb v = \delta \vb v \\
+\rho = \rho_0 & \rightarrow & \rho = \rho_0 + \delta \rho \\
+P = P_0 & \rightarrow & P = P_0 + \delta P
+\end{eqnarray}
+
+With these perturbations, the continuity equation is modified as:
+%
+\begin{equation}
+\frac{\partial}{\partial t} \delta \rho + \rho_0 \nabla \cdot \delta \vb v = - \nabla \cdot ( \cancel{\delta \rho \delta \vb v}) \simeq 0
+\end{equation}
+
+Similarly, the Euler equation for the perturbed state becomes:
+%
+\begin{equation}
+\frac{\partial}{\partial t} \delta \vb v = -\cancel{\delta \vb v \cdot \nabla \delta \vb v} - \frac{1}{\rho_0 + \cancel{\delta \rho}} \nabla \delta P \simeq - \frac{\nabla \delta P}{\rho_0} 
+\end{equation}
+
+In both cases, we simplified the equations by linearizing them, which involves discarding higher-order terms and using the equations valid for the background state. Specifically, we eliminate the non-linear term \( \vb v \cdot \nabla \vb v \), which often complicates or renders problems unsolvable and is a primary factor in modeling \emph{turbulence} within fluid equations.
+
+Now, we focus exclusively on adiabatic perturbations, wherein the entropy remains constant. Under this condition, the variation in pressure, typically a function of density \( \rho \) and entropy \( s \), can be expressed as:
+%
+\begin{equation}
+\delta P = \left( \frac{\partial P}{\partial \rho} \right)_s \delta \rho + \left( \frac{\partial P}{\partial s} \right)_\rho \delta s \simeq \left( \frac{\partial P}{\partial \rho} \right)_s \delta \rho \equiv c_{s,0}^2 \delta \rho
+\end{equation}
+
+Here, \( c_{s,0}^2 \equiv  \left( \frac{\partial P}{\partial \rho} \right)_s \) is considered a constant. In particular, for an equation of state \( P = K \rho^\gamma \), the constant is given by 
+\begin{equation}\label{eq:cs02}
+c_{s,0}^2 = \frac{\gamma P_0}{\rho_0}~.
+\end{equation}
+
+Moving forward, by differentiating the continuity equation with respect to time and using the Euler equation, we can combine the two to derive:
+%
+\begin{equation}
+\frac{\partial^2}{\partial t^2} \delta \rho - \nabla^2 \delta P = 0
+\end{equation}
+
+Finally, applying the equation of state, we arrive at:
+%
+\begin{remark}
+\begin{equation}
+\frac{\partial^2}{\partial t^2} \delta \rho - c_{s,0}^2 \nabla^2 \delta \rho = 0
+\end{equation}
+\end{remark}
+
+This equation is a hyperbolic partial differential equation, commonly known as the \emph{wave equation}. 
+%
+Indeed, the general solution of this equation is in the form of:
+%
+\begin{equation}
+\delta \rho = R(x - c_{s,0} t) + L (x + c_{s,0} t)
+\end{equation}
+
+Here, \( R \) and \( L \) are arbitrary functions representing disturbances propagating to the right and left, respectively, at a velocity \( c_{s,0} \), which turns our to be the speed of sound in the medium.
+
+Given that the problem is both linear and homogeneous, the solution to the wave equation can be effectively found using \emph{eigenmode} decomposition. This approach allows us to break down any disturbance into a series of Fourier modes, each of which can be solved independently.
+
+For each mode characterized by a wavenumber \( k \), we seek solutions in the following form:
+%
+\begin{equation}
+\delta \rho = \rho_0 A {\rm e}^{i(\vb k \cdot \vb x - \omega t)}
+\end{equation}
+
+Here, \( A \) represents a constant amplitude, with the condition \( A \ll 1 \) ensuring that the perturbations remain small.
+
+We can demonstrate that any function \( f \) of this type satisfies the following relations:
+%
+\begin{eqnarray}
+\frac{\partial^2}{\partial t^2} f & = & - \omega^2 f \\
+\nabla^2 f & = & -k^2 f
+\end{eqnarray}
+
+Consequently, we derive from the wave equation that the condition for the existence of non-trivial solutions is:
+%
+\begin{remark}
+\begin{equation}
+\omega^2 - c_{s,0}^2 k^2 = 0
+\end{equation}
+\end{remark}
+
+This condition effectively establishes a \emph{dispersion relation}, indicating that for a given medium with a sound speed of \( c_{s,0} \), the frequency of the wave is directly proportional to its wavenumber. 
+
+Reverting to the original form of the perturbation and taking the real part\footnote{Recall Euler's formula \( e^{ix} = \cos x + i \sin x \).}, the solution for a single mode propagation is expressed as:
+%
+\begin{equation}\label{eq:rhowaveform}
+\frac{\delta \rho}{\rho_0} = A \cos(kx + \omega t) + B \cos(kx - \omega t) 
+\end{equation}
+%
+here, \( A \) and \( B \) are constants that determine the amplitude of the waves traveling in the positive and negative \( x \)-directions, respectively.
+
+This equation represents \emph{plane wave solutions} with phase velocity \( V_p = \frac{\omega}{k} = c_{s,0} \), and group velocity \( V_g = \frac{\partial \omega}{\partial k} = c_{s,0} \).
+
+It is crucial to note that the group velocity \( V_g \) is equal to the phase velocity \( V_p \), indicating that these waves are non-dispersive. This means that all waves travel at the same speed in the medium, preserving the shape of the wave packet over distance.
+
+{\color{red}Sound waves are longitudinal because \( \delta v \) and \( k  \) are parallel.}
+
+Furthermore, these waves are compressional because \( \nabla \cdot \delta \vb v \ne 0 \), indicating that they involve variations in volume and density as they propagate through the medium.
+
+In summary, any solution of the wave equation, and thus any generic small perturbation in the fluid, can be expressed as a linear combination of plane waves, each described by the equation above and satisfying the dispersion relation. These solutions encapsulate the properties of what we term as \emph{sound waves}.
+
+%\begin{problem}
+%Derive Gravity waves
+%\end{problem}

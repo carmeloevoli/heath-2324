@@ -1,0 +1,336 @@
+% !TEX root = ../lectures.tex
+\section{Inverse Compton Scattering}
+
+The IC process involves the up-scattering of background photons by high-energy (HE) electrons (\(e + \gamma \rightarrow e' + \gamma'\)). It is a significant energy loss mechanism for electrons if their energy exceeds that of the photons.
+
+To derive the power emitted during IC scattering, we initially approach from a classical perspective before discussing quantum interpretations.
+
+In the classical view, an electromagnetic wave strikes an electron, causing it to oscillate and thus radiate power due to acceleration. The Poynting flux (\( \vb S \)) of a plane wave incident on an electron is:
+%
+\[
+\vb S =  \frac{c}{4\pi} \vb E \times \vb B \rightarrow S = \frac{c}{4\pi} | \vb E |^2   
+\]
+
+The Lorentz force acting on the electron is:
+%
+\[
+\vb F = q (\vb E + \frac{\vb v}{c} \times \vb B) \simeq q \vb E
+\]
+%
+assuming \( | \vb v | \ll c \).
+
+The oscillating electric field of the wave is:
+%
+\[
+\vb E = E_0 \vb \epsilon \sin (\omega t + \phi)
+\]
+%
+leading to an average acceleration:
+%
+\[
+\vb a = \frac{\vb F}{m} \rightarrow \langle a^2 \rangle = \frac{q^2}{m^2} \frac{E_0^2}{2}
+\]
+%
+where we used
+%
+\[
+\frac{1}{T} \int_0^{T = \frac{2\pi}{\omega}} \sin^2 (\omega t) dt = \frac{1}{2}
+\]
+
+Thus, the average power radiated by the electron is:
+%
+\[
+\langle P \rangle = \frac{2}{3} \frac{q^2 a^2}{c^3} = \frac{2}{3} \frac{q^2}{c^3} \frac{a^2}{m^2} \frac{E_0}{2} = \frac{1}{3} \frac{q^4}{m^2 c^3} E_0^2
+\]
+
+The classical cross-section associated to this process is the \emph{ratio} between the power radiated and the impinging flux
+%
+\begin{remark}
+\begin{equation*}
+\langle P \rangle = \sigma_{\rm T} \langle | \vb S | \rangle \rightarrow \sigma_{\rm T} = \frac{1}{3} \frac{q^4}{m^2 c^3} E_0^2 \frac{8\pi}{c} \frac{1}{E_0^2} = \frac{8}{3} \pi \left( \frac{q^2}{m c^2} \right)^2
+\end{equation*}
+\end{remark}
+%
+where we use the average Poynting flux $\langle \vb S \rangle = \frac{c}{8\pi} E_0^2$.
+
+This is known as Thomson cross-section and its numerical value is 
+%
+\begin{equation*}
+\sigma_{\rm T} \simeq 6.652 \cdot 10^{-25}~\text{cm}^2
+\end{equation*}
+
+In other words, the electron will extract from the incident radiation the amount of power flowing through the area $\sigma_T$ and reradiate that power over the doughnut-shaped pattern given by Larmor’s equation.
+
+%The classical cross-section associated with this process, known as the Thomson cross-section, is:
+%\[
+%\sigma = \frac{8}{3} \pi \left( \frac{q^2}{m c^2} \right)^2
+%\]
+
+%This implies the electron extracts and reradiates power from the incident radiation flowing through an area equal to the Thomson cross-section (\( \sigma_{\rm T} \)).
+
+The time-averaged scattered power by a single particle is:
+%
+\[
+P = \sigma_{\rm T} c U_{\rm rad}
+\]
+%
+where \( U_{\rm rad} = S /c \) is the energy density of the incident radiation.
+
+Incidentally, the Thomson optical depth, representing the probability of a photon undergoing Thomson scattering (notice this is the opposite process!) is:
+%
+\[
+\tau_e = \int n_e \sigma_{\rm T} ds
+\]
+
+\begin{problem}
+The Intergalactic Medium (IGM) at redshifts \( z \lesssim 10 \) is observed to be highly ionized, likely due to radiation from galaxies and quasars. Post-recombination at \( z \approx 10^3 \), the IGM was almost completely neutral. This observation indicates that reionization of the IGM occurred somewhere \( z_r \gtrsim 10 \), although the exact timing of this crucial transition remains unknown. 
+
+An ionized IGM Thomson scatters CMB photons. Under the assumption of a uniform Universe with a specified baryon fraction \( \Omega_b \) in units of the critical density \( \Omega_c \), derive the relation between \( \tau_r \) and \( z_r \) and calculate \( \tau_r \) assuming a reionization redshift \( z_r = 10 \) for an Einstein-de Sitter Universe.
+\end{problem}
+
+The Compton scattering process, involving the interaction of photons with electrons, can be effectively described using quantum mechanics.
+
+We start by imposing the energy and momentum balance in the scattering process:
+%
+\[
+K_i^\mu + P_i^\mu = K_f^\mu + P_f^\mu
+\]
+%
+where \( P_{i,f}^2 = m_e^2 \) and \( K_{i,f}^2 = 0 \) (for photons).
+
+Contracting the final momentum gives:
+%
+\[
+ P_f^\mu P_{f \mu} = (P_i + K_i - K_f)^\mu (P_i + K_i - K_f)_\mu  \rightarrow m_e^2 = m_e^2 + 2 (P_i K_i - P_i K_f - K_i K_f)
+\]
+
+In the frame where the electron is initially at rest \( P_i = \left( m_e, \vb 0 \right) \), and assuming the x-axis is aligned with the incoming photon, we have:
+%
+\[
+K_i = \epsilon_i (1, 1, 0, 0) \quad \text{and} \quad K_f = \epsilon_f (1, \cos \theta, \sin \theta, 0)
+\]
+
+Substituting these into the equation, we get:
+%
+\[
+m_e^2 = m_e^2 + 2 \left( m_e \epsilon_i - m_e \epsilon_f - \epsilon_i \epsilon_f + \epsilon_i \epsilon_f \cos \theta \right)
+ \rightarrow m_e (\epsilon_i - \epsilon_f) = \epsilon_i \epsilon_f (1-\cos\theta)    
+\]
+
+Leading to the relation for the final photon energy:
+%
+\begin{remark}
+\[
+\epsilon_f = \frac{\epsilon_i}{1+ \frac{\epsilon_i}{m_e c^2} (1-\cos\theta)}
+\]
+\end{remark}
+
+The fractional energy change of the photon is:
+%
+\[
+\frac{\Delta \epsilon}{\epsilon}  
+= \frac{\epsilon_f - \epsilon_i}{\epsilon_i} = -1 + \frac{1}{1 + \frac{\epsilon_i}{m_e c^2} (1-\cos\theta)} \overset{\epsilon_i \ll m_e c^2}{\longrightarrow} - \frac{\epsilon_i}{m_e c^2} (1-\cos\theta)
+\]
+
+This equation describes \emph{Compton scattering}, where a photon scatters off an electron and transfers energy, resulting in a decrease in photon energy. Notably, unless the photon's energy is comparable to or larger than the electron mass in the electron's rest frame, the photon energy is only slightly altered.
+
+Thomson scattering accurately describes the regime where the incident photon energy \( \epsilon_i \) is much less than the electron rest energy (\( \epsilon_i \ll m_e c^2 \)). In this regime, energy transfer is minimal, \( \epsilon_i \simeq \epsilon_f \), indicative of quasi-elastic scattering.
+
+However, as \( \epsilon_i \) approaches or exceeds \( m_e c^2 \), the energy transfer becomes significant, marking a transition to deeply inelastic scattering. This regime is governed by the Klein-Nishina (KN) cross-section.
+
+The full Klein-Nishina cross-section, derived using Quantum Electrodynamics (QED), is given by:
+%
+\[
+\sigma_{\rm KN} = \frac{3}{4} \sigma_{\rm T} \left[ \frac{1+x}{x^3} \left(\frac{2x(1+x)}{1+2x} - \ln (1+2x)\right) + \frac{1}{2x} \ln (1+2x) - \frac{1+3x}{(1+2x)^2} \right]
+\]
+%
+where \( x = \epsilon_i / m_e c^2 \).
+
+In the limit of \( x \ll 1 \), the equation converges to the Thomson limit \[ \sigma(x) \simeq \sigma_{\rm T} (1-2x+\dots) \] while in the extreme KN limit (\( x \gg 1 \)), it approaches \[ \sigma(x) \simeq \frac{3}{8} \sigma_{\rm T} \frac{1}{x} (\ln 2x + \frac{1}{2}) \]
+
+Therefore, the principal effect of the KN regime is a reduction in the cross-section relative to the classical Thomson value as the photon energy increases.
+
+%%% PLOT
+
+When the electron involved in Compton scattering has a velocity \( \beta \) in the laboratory (LAB) frame, the scattering dynamics change.
+
+The relationship in the electron's rest frame (primed frame) remains valid:
+%
+\[
+\epsilon^\prime_f = \frac{\epsilon^\prime_i}{1+ \frac{\epsilon^\prime_i}{m_e c^2} (1-\cos\theta^\prime)}
+\]
+%
+where \( \theta^\prime \) is the angle between incoming and outgoing photon directions in the primed frame. Applying Lorentz transformation:
+%
+\[
+\epsilon'_i = \epsilon_i \gamma (1-\beta \cos \alpha)
+\]
+%
+where \( \alpha \) is the angle between the photon and electron in the LAB frame.
+
+To express \( \epsilon^\prime_f \) in the LAB frame and account for the emission angle \( \alpha^\prime \) in the comoving frame:
+%
+\[
+\epsilon_f = \gamma(1+\beta \cos\alpha^\prime) \epsilon^\prime_f = 
+\gamma (1+\beta \cos \alpha^\prime) \frac{\epsilon^\prime_i}{1+ \frac{\epsilon^\prime_i}{m_e c^2} (1-\cos\theta^\prime)}
+\]
+%
+or
+\[
+\epsilon_f = \gamma^2 \epsilon_i \frac{(1+\beta \cos\alpha^\prime)(1-\beta \cos\alpha)}{1+ \frac{\epsilon^\prime_i}{m_e c^2} (1-\cos\theta^\prime)}
+\]
+
+In the limit \( \epsilon_i \ll m_e \) (or equivalently \( \gamma \epsilon_i \ll m_e c^2 \) or \( E_e \epsilon_i \ll m_e^2 c^4 \) in the LAB frame):
+%
+\[
+\epsilon_f \simeq \gamma^2 \epsilon_i (1+\beta \cos\alpha^\prime)(1-\beta \cos\alpha)
+\]
+
+For isotropic incident and outgoing radiation in the electron's comoving frame, the average final energy is approximately 
+%
+\begin{remark}
+\[
+ \epsilon_f \simeq \gamma^2 \epsilon_i \simeq 4 \left(\frac{\epsilon_i}{\rm eV}\right)\left(\frac{E_e}{\rm GeV}\right)^2 \, \text{MeV}   
+\]
+\end{remark}
+
+While the scattering angle is arbitrary in the \emph{comoving} frame, in the LAB frame, the outgoing radiation is \emph{beamed} in the forward direction with an angle \( \frac{1}{\gamma} \).
+
+In the Thomson regime (\( \epsilon^\prime_i \ll m_e \)), the maximum final photon energy, when \( \beta \sim 1 \), \( \cos \alpha^\prime \sim 1 \), and \( \cos \alpha \sim - 1 \), is:
+%
+\[
+\epsilon_{f} \sim 4 \gamma^2 \epsilon_i
+\]
+
+In the KN limit, the typical energy of the outgoing photon is:
+%
+\[
+\epsilon_f \simeq \frac{\gamma^2 \epsilon_i}{1 + \frac{\epsilon^\prime_i}{m_e}} \simeq \frac{\gamma^2 \epsilon_i}{\epsilon^\prime_i} m_e \simeq \frac{\gamma^2 \epsilon_i}{\gamma \epsilon_i} m_e \simeq E_e
+\]
+
+This implies that in the extreme KN regime, the scattering becomes less frequent, but when it occurs, the scattered photon carries away a significant fraction of the electron's energy.
+
+\begin{remark}
+In summary, in the LAB frame:
+%
+\begin{itemize}
+\item In the Thomson regime: \( \epsilon_f \simeq \gamma^2 \epsilon_i \) for \( \gamma \epsilon_i \ll m_e c^2 \)
+\item In the KN regime: \( \epsilon_f \simeq \gamma m_e c^2 \) for \( \gamma \epsilon_i \gg m_e c^2 \)
+\end{itemize}
+\end{remark}
+
+\subsection{Single particle power radiated in IC scattering}
+
+In the Thomson regime, namely $\epsilon'_i \ll m_e c^2$, the power re-emitted by scattering is $\frac{dE}{dt} \simeq \sigma_{\rm T} c U_{\rm rad}$.
+
+We consider now radiation scattering by an ultrarelativistic electron. This expression is still valid in the primed frame instantaneously moving with the electron
+%
+\begin{equation*}
+\frac{dE'}{dt'} = \sigma_{\rm T} c U'_{\rm rad}
+\end{equation*}
+%
+and we want to transform in the LAB frame.
+
+ We recall that the power is LI as it is the ratio of two time-like components, thereby
+\begin{equation*}
+ \frac{dE}{dt} = \frac{dE'}{dt'} = \sigma_{\rm T} c U'_{\rm rad}
+\end{equation*}
+
+The photon density can be seen as the number density of photon of energy $\epsilon$, that is
+%
+\begin{equation*}
+U'_{\rm rad} \simeq 
+\int n'_\gamma(\epsilon'_i) \epsilon'_f(\epsilon'_i, \theta) d\epsilon'_i
+\end{equation*}
+%
+where $n'_\gamma(\epsilon') d\epsilon'$ is the number density of incident photons with energy $\epsilon' \rightarrow \epsilon' + d\epsilon'$ \, .
+
+%which is the total power emitted by an electron exposed to some photonfield $n_\gamma(\epsilon)$, 
+
+Similarly, the phase-space distribution is LI as $f (\vb x, \vb p) = \frac{dN}{d^3\vb x d^3 \vb p} = f'(\vb x', \vb p')$, therefore $n(\epsilon) d\epsilon = f d^3 \vb p$ transforms as $d^3 \vb p$ which transforms as an energy, follows
+%
+\begin{equation*}
+\frac{n_\gamma(\epsilon) d\epsilon}{\epsilon} = \frac{n_\gamma(\epsilon') d\epsilon'}{\epsilon'}
+\end{equation*}
+
+finally, reminding that in Thomson $\epsilon'_i \simeq \epsilon'_f$ (we are in the electron frame!)
+
+\begin{equation*}
+U'_{\rm rad} 
+\simeq \int n^\prime_\gamma(\epsilon^\prime_i) {\color{red}\epsilon^\prime_i}  d\epsilon^\prime_i 
+= \int \epsilon_i^{\prime 2} \frac{n_\gamma(\epsilon_i)}{\epsilon_i} d\epsilon_i 
+% %= \int \epsilon'_i^2 \frac{n'_\gamma(\epsilon'_i)}{\epsilon'_i} d\epsilon'_i 
+= \int \epsilon_i^2 \gamma^2 (1-\beta\cos\theta)^2 \frac{n_\gamma(\epsilon_i)}{\epsilon_i} d\epsilon_i 
+\end{equation*}
+
+Assuming isotropic incident radiation field
+%
+\begin{equation*}
+\frac{1}{2} \int_{-1}^{1} (1-\beta \cos \theta)^2 d\cos\theta = \frac{1}{2} \int_{-1}^{1} (1-2\beta\cos\theta + \beta^2\cos^2\theta) d\cos\theta = 1 + \frac{\beta^2}{3}
+\end{equation*}
+%
+\begin{equation*}
+U'_{\rm rad} = \gamma^2 \left(1 + \frac{\beta^2}{3}\right) U_{\rm rad}
+\end{equation*}
+
+therefore the angle-averaged Compton scattered power (in the LAB frame) is
+%
+\begin{equation*}
+\frac{dE}{dt} = \sigma_{\rm T} c U'_{\rm rad} = \sigma_{\rm T} c \gamma^2 \left( 1 + \frac{\beta^2}{3} \right) U_{\rm rad} 
+\end{equation*}
+
+We are not done yet! The energy \emph{lost by the electron} and \emph{gained by the photons} is the up-scattered power (power in the final photon field) minus the scattered power (power in the initial photon field)
+%
+\begin{equation*}
+\frac{dE_e}{dt} 
+= \sigma_{\rm T} c U'_{\rm rad} - \sigma_{\rm T} c U_{\rm rad}
+\end{equation*}
+
+This leads to the IC power as
+%
+\begin{equation*}
+P_{\rm IC} = \sigma_{\rm T} c \left(\gamma^2 +\frac{\gamma^2 \beta^2}{3} -1 \right) U_{\rm rad} = \frac{4}{3}
+\sigma_{\rm T} c \beta^2 \gamma^2 U_{\rm rad}
+\end{equation*}
+%
+where I used $\gamma^2 - 1 = \beta^2 \gamma^2$
+
+This is the \emph{net inverse-Compton power gained by the radiation field and lost by the electron}. 
+
+The similarity of the inverse Compton and synchrotron equations shouldn’t be too surprising: they both describe the interaction of an electron with an electromagnetic field.
+
+Note that synchrotron and inverse-Compton losses have the same electron-energy dependence, so their effects on  spectra are indistinguishable.
+
+Dividing by the corresponding synchrotron power 
+%
+\begin{remark}
+\[
+\frac{P_{\rm IC}}{P_{\rm s}} = \frac{U_{\rm rad}}{U_{\rm B}}    
+\]
+\end{remark}
+%
+which is valid if no absorption and no KN effects are relevant.
+
+What is the average energy increase in the Thomson regime? 
+
+ The number of photons scattered per unit time are
+%
+\begin{equation*}
+\frac{dN_s}{dt} \simeq \frac{\sigma_{\rm T} c U_{\rm rad}}{\langle \epsilon_i \rangle}
+\end{equation*}
+
+The average energy increase can be written as
+%
+\begin{equation*}
+P_{\rm IC} \simeq \langle \epsilon_f \rangle \frac{dN_s}{dt} \rightarrow \epsilon_f = \frac{P_{\rm IC}}{dN_s/dt} = \frac{4}{3} \gamma^2 \beta^2 \epsilon_i \simeq {\color{red}\frac{4}{3} \gamma^2 \epsilon_i}
+\end{equation*}
+
+If the energy transfer in the K' frame is not neglected (KN regime)
+%
+\begin{equation*}
+- \frac{dE_e}{dt} = P_{\rm IC} = \frac{4}{3} \gamma^2 \beta^2 \sigma_{\rm T} c U_{\rm rad} \left[1 - \frac{63}{10} \frac{\gamma}{m_e c^2} \frac{\langle \epsilon_i^2 \rangle}{\langle \epsilon_i \rangle} + \dots \right]
+\end{equation*}
+%
+where $<\epsilon_i> = \frac{\int \epsilon_i n_\gamma(\epsilon_i) d\epsilon_i}{\int n_\gamma(\epsilon_i) d\epsilon_i}$, which is obtained for incident isotropic photon distribution (see Blumenthal and Gould, 1970).
+
+ Notice that in this regime the photon-field  distribution is relevant (not only the total density as before).
